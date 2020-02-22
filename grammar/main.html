@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en, ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="About project: contacts, programmers, goals etc.">
+	<meta name="author" content="Nicolas">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Main</title>
+	<script>
+		function toggle(el) {
+		el.style.display = (el.style.display == 'none') ? '' : 'none'
+		}
+	</script>
+
+</head>
+<body>
+	<header>
+		<div class="heading">
+			<div class="block">
+				<div class="block_main">
+					<a href="index.html">
+						<p class="heading_name">Grammar</p>
+						<p class="heading_secondname">: learn it easier</p>
+					</a>
+				</div>
+				<div class="block_nav">
+					<a href="https://t.me/joinchat/AAAAAE8dbuTbTVI6-2NisA" target="_blank"><p>telegram</p></a>
+
+				</div>
+			</div>
+		</div>
+
+		<nav>
+			<div class="navigation">
+				<div class="menu">
+					<ul class="menu-ul">
+						<li><a href="#">main</a></li>
+						<li><a href="#">tools</a></li>
+						<li><a href="#">contacts</a></li>
+						<li  class="telegram"><a href="#">telegram</a></li>
+					</ul>					
+				</div>
+			</div>
+		</nav>
+
+		<div class="psevdonav">
+			<div class="drop-menu_btn">
+				<a onclick="toggle(drop_menu_nav)">menu</a>
+			</div>
+
+			<div id="drop_menu_nav" style="display: none;">
+				<div class="navigation2">
+					<div class="menu2">
+						<ul class="menu-ul2">
+							<li><a href="index.html">main</a></li>
+							<li><a href="#">tools</a></li>
+							<li><a href="#">contacts</a></li>
+							<li  class="telegram"><a href="https://t.me/joinchat/AAAAAE8dbuTbTVI6-2NisA">telegram</a></li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<main class="wrapper">
+		<article class="article-1">
+			<h1>Добро пожаловать!</h1>
+			<p>(?) - это независимый консультационно-справочный сайт. Наша задача - упростить вам изучение английского языка. Здесь вы сможете найти детальный разбор всех времен, получите качественные подсказки и как уместнее их использовать. Чтобы упростить изучения незнакомых слов, ниже будет размещен блок со всеми используемыми в примерах словами  и речевыми оборотами и их переводом.</p>
+			<p>Полезные статьи как для начинающих, так и для продвинутых будут размещены во вкладке "tools". </p>
+			<p>При возникновении вопросов по той или иной теме, пишите нам в группу в Телеграмме, ссылка на которую находится в верхней части страницы.</p>
+			<hr>
+		</article>
+		<article class="article-2">
+			<h1>Времена в английском языке</h1>
+			<p>Ангийский язык включает в себя 4 времени, в каждом из которых по 4 временных формы. В итоге - 16. Пугаться не стоит - их легко отличить друг от друга, так как они логичны и легки для понимания. Научиться орудовать ими в совершенстве за несколько дней не выйдет, необходимо время для усвоения материала. Лучший способ - практика.</p>
+			<p>Ниже находится кнопка "tenses". При нажатии выскочит меню, разбитое на четыре блока, в соответствии с уровнем сложности. Заметьте, последний 4-й блок включает времена, которые мало используются в повседневной жизни, но могут употребляться в разного вида литературе (художественной, научной, учебной и т.д.), а так же по телевиденью. </p>
+
+		
+			<div class="drop-menu">
+				<a onclick="toggle(hidden_content)">tenses</a>
+			</div>
+			<div id="hidden_content" style="display: none;">
+				<div class="tenses">
+					<div class="tenses-holder">
+						<ul class="first-group">
+							<li><a href="presentsimple.html">Present Simple <span>/ Простое настоящее время</span></a></li>						
+							<li><a href="pastsimple.html">Past Simple <span>/ Простое прошедшее время</span></a></li>
+							<li><a href="#">Future Simple <span>/ Простое будущее время</span></a></li>
+							<li><a href="#">Future-in-the-Past Simple<span>/ Будущее в прошедшем</span></a></li>
+						</ul>
+						<ul class="sec-group">
+							<li><a href="#">Present Continuous <span>/ Настоящее продолженное время</span></a></li>	
+							<li><a href="#">Past Continuous <span>/ Прошедшее длительное время</span></a></li>
+							<li><a href="#">Future Continuous <span>/ Будущее длительное время</span></a></li>
+							<li><a href="#">Future-in-the-Past Continuous <span>/ Будущее продолженное время в прошедшем</span></a></li>
+						</ul>
+						<ul class="thrd-group">
+							<li><a href="#">Present Perfect <span>/ Настоящее совершенное время</span></a></li>						
+							<li><a href="#">Past Perfect <span>/ Прошедшее совершенное время</span></a></li>
+							<li><a href="#">Future Perfect <span>/ Будущее совершенное время</span></a></li>
+							<li><a href="#">Future-in-the-Past Perfect<span>/ Будущее совершенное время в прошедшем</span></a></li>
+						</ul>
+						<ul class="fr-group">
+							<li><a href="#">Present Perfect Continuous<span>/ none</span></a></li>						
+							<li><a href="#">Past Perfect Continuous <span>/ none</span></a></li>
+							<li><a href="#">Future Perfect Continuous <span>/ none</span></a></li>
+							<li><a href="#">Future-in-the-Past Perfect Continuous <span>/ none</span></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		<hr>
+		</article>
+		<article class="article-3">
+			<h1>Пассивный залог в английском языке</h1>
+			<p>В предидущем блоке шла речь о временах, в который главную роль играл человек(я сделал, ты играл, мы не виделись сто лет и т.д.). Другими словами человек выполнял то или иное действия над предметом. В пассивном залоге мы смотрим на вещи под другим углом, где главную роль выполняет предмет(горшок был разбит, картина куплена, текст был написан мной) Passive Voice (англ.) - следующий, более продвинутый уровень в английском языке, овладев которым вы разнообразите свою речь и подниметесь в глазах окружающих.</p>
+			<p>
+			Изучение пассивного залога рекомендуется начинать после полного закрепления Active Voice (активного залога) , так как он имеет ряд особенностей и исключений, базирующихся на ранее закрепленном материале. Чтобы полностью ознакомится c темой, перейдите <a href="#" class="article-3_link">сюда</a>.</p>
+			<div class="drop-menu">
+				<a onclick="toggle(hidden_content_2)">passive voice</a>
+			</div>
+			<div id="hidden_content_2" style="display: none;">
+				<div class="tenses">
+					<div class="tenses-holder">
+						<ul class="first-group">
+							<li><a href="#">Present Simple Passive<span>/ Простое настоящее время</span></a></li>						
+							<li><a href="#">Past Simple Passive<span>/ Простое прошедшее время</span></a></li>
+							<li><a href="#">Future Simple Passive<span>/ Простое будущее время</span></a></li>
+							<li><a href="#">Future-in-the-Past Passive<span>/ Будущее в прошедшем</span></a></li>
+						</ul>
+						<ul class="sec-group">
+							<li><a href="#">Present Continuous Passive<span>/ Настоящее продолженное время</span></a></li>	
+							<li><a href="#">Past Continuous Passive<span>/ Прошедшее длительное время</span></a></li>
+						</ul>
+						<ul class="thrd-group">
+							<li><a href="#">Present Perfect Passive<span>/ Настоящее совершенное время</span></a></li>		
+							<li><a href="#">Past Perfect Passive<span>/ Прошедшее совершенное время</span></a></li>
+							<li><a href="#">Future Perfect Passive<span>/ Будущее совершенное время</span></a></li>
+							<li><a href="#">Future-in-the-Past Perfect Passive<span>/ Будущее совершенное время в прошедшем</span></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<hr>
+		</article>
+		<article class="article-4">
+			<h1>А как же все остальное?</h1>
+			<p>Очевидно, что одной грамматикой не перебиться. Модальные глаголы, прямая и непрямая речь, герундий, идиомы и многое другое будет в скором времени на сайте по <a class="article-4_link" href="#">этой ссылке</a>. Следите за обновлениями в Телеграмм канале!</p>
+		</article>
+		
+
+		
+	</main>
+
+
+	<footer class="footer">
+		<div class="footer_p">
+			<p>
+				© 2019 права не защищены, вы спокойно можете забрать у меня этот сайт / rights are not protected, you can calmly take this site from me
+			</p>
+
+		</div>
+		<div class="footer_p_2">
+			<ul><li><a href="https://t.me/joinchat/AAAAAE8dbuTbTVI6-2NisA" target="_blank">telegram</a></li></ul>
+		</div>
+	</footer>
+
+</body>
+</html>
