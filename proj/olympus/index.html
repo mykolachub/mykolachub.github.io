@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>test for olypus</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<img src="images/header.jpg" alt="header image">
+			<div class="header_title">
+				<h1>"Котедж Карпати"</h1>
+				<h2>відпочинок</h2>
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#cottage">Котедж</a></li>
+				<li><a href="#">Сервіс</a></li>
+				<li><a href="#">Галерея</a></li>
+				<li><a href="#">Бронювання</a></li>
+				<li><a href="#">Контакти</a></li>
+			</ul>
+		</nav>
+		<main>
+			<div class="gallery-wrap">
+				<img src="images/1.jpg" id="img_">
+				<div id="btn_gallery_next" onclick="sliderUp()">></div>
+				<div id="btn_gallery_back" onclick="sliderDown()"><</div>
+				<div class="gallry_desc">
+					Credits: Wesley Buurke
+				</div>
+			</div>
+			<div class="content">
+				<article class="cottage" id="cottage">
+					<h1>Cottage</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga reprehenderit quasi, ab quisquam voluptatum officia consequatur repellat accusamus, ad eligendi corporis voluptate impedit quibusdam, porro doloremque maiores tempore rerum at.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque asperiores labore nemo at quo eum esse, modi architecto saepe nisi laudantium accusantium tempora atque sunt, minima officia fugiat quod voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga reprehenderit quasi, ab quisquam voluptatum officia consequatur repellat accusamus, ad eligendi corporis voluptate impedit quibusdam, porro doloremque maiores tempore rerum at.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque asperiores labore nemo at quo eum esse, modi architecto saepe nisi laudantium accusantium tempora atque sunt, minima officia fugiat quod voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga reprehenderit quasi, ab quisquam voluptatum officia consequatur repellat accusamus, ad eligendi corporis voluptate impedit quibusdam, porro doloremque maiores tempore rerum at.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque asperiores labore nemo at quo eum esse, modi architecto saepe nisi laudantium accusantium tempora atque sunt, minima officia fugiat quod voluptate.</p>
+					<div id="btn_moreinfo" onclick="showMore()">more</div>
+				</article>
+				<article class="service">
+					<div class="service_title">
+						<h1>Service</h1>
+					</div>
+					<div class="service_grid">
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+						<div>service</div>
+					</div>
+				</article>
+				<article class="contacs">
+					<div class="contacs_title">
+						<h1>
+							Contacs
+						</h1>
+					</div>
+					<div class="contacs_content">
+						<ul>
+							<li>Електронна адреса : email@site.com</li>
+							<li>Телефон : +380888888888</li>
+							<li>Адреса : вул.Назва Вулиці, 1</li>
+						</ul>
+						<form>
+						  <div>
+						  	<label for="name"></label>
+						  	<input type="text" name="name" id="name" placeholder="Ім'я" required>
+						  </div>
+						  <div>
+						  		<label for="email"></label>
+						  		<input type="emain" name="email" id="email" required placeholder="Електронна адреса">
+						  </div>
+						  <div>
+						  		<textarea name="text" id="text" cols="18" rows="5" placeholder="Ваш текст, по бажанню"></textarea>
+						  </div>
+						  <div>
+						  	<button type="submit">Відправити</button>
+						  </div>
+						</form>
+					</div>
+				</article>
+			</div>
+
+		</main>
+		<div id="btn_move_to_top">
+			up
+		</div>
+		<footer>
+			<div class="current_time_wrap">
+				<marquee class="current_time" behavior="scroll" direction="left" loop="-1" font-size="20px" scrollamount="6" width="50%">
+					<div id="current_time"></div>
+				</marquee>
+			</div>
+			<div class="copyrights">All rights reserved </div>
+		</footer>
+	</div>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
