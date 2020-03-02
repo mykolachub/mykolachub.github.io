@@ -42,13 +42,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
     };
 
     // typed.js
-    /*var typed = new Typed('#typed-text', {
-        strings: ['Навіщо цей проект?', 'Чому це безкоштовно? '],
-        smartBackspace: true ,
+    let typed = new Typed('#typed-text', {
+        strings: ['Хто ми?', 'Чому цей проект безкоштовний?', 'Навіщо взагалі цей проект?'],
         loop: true,
         typeSpeed: 80,
         backSpeed: 40
-    });*/
+    });
+
+    // wow.js
+    new WOW().init();
 
     menuBtn.addEventListener('click', ()=>{
         closeModalMenu();
