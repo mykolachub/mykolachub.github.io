@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     };
 
     // typed.js
-    let typed = new Typed('#typed-text', {
-        strings: ['Хто ми?', 'Чому цей проект безкоштовний?', 'Навіщо взагалі цей проект?'],
-        loop: true,
-        typeSpeed: 80,
-        backSpeed: 40
-    });
+    // *  let typed = new Typed('#typed-text', {
+    // *      strings: ['Хто ми?', 'Чому цей проект безкоштовний?', 'Навіщо взагалі цей проект?'],
+    // *      loop: true,
+    // *      typeSpeed: 80,
+    // *      backSpeed: 40
+    // *  });
 
     // wow.js
     new WOW().init();
