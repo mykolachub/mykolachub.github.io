@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         menuWindow = document.getElementById('menu-modal'),
         modalBtnToHome = document.getElementById('menu-a-home'),
         modalBtnToMore = document.getElementById('menu-a-more'),
+        modalMenuItems = document.querySelectorAll('.menu__item'),
         windowBtnToMore = document.getElementById('btn-more'),
         sectionMore = document.getElementById('fisrt'),
         modalBtnToAbout = document.getElementById('menu-a-about'),
@@ -41,16 +42,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }); 
     };
 
-    // typed.js
-    // *  let typed = new Typed('#typed-text', {
-    // *      strings: ['Хто ми?', 'Чому цей проект безкоштовний?', 'Навіщо взагалі цей проект?'],
-    // *      loop: true,
-    // *      typeSpeed: 80,
-    // *      backSpeed: 40
-    // *  });
-
     // wow.js
     new WOW().init();
+
+
+    //
+
+
+    // func changes menu item name
+    if(window.matchMedia('(max-width: 560px)').matches){
+       for (let i = 0; i < modalMenuItems.length; i++) {
+            modalMenuItems[i].childNodes[0].data = ''; 
+            const modalMenuItemsLib = ['Головна', "Про проект", "Про команду", "Розпочати"];
+            modalMenuItems[i].childNodes[1].innerHTML = `${modalMenuItemsLib[i]}`;
+           console.log(modalMenuItems[i].childNodes[1]);
+       }
+    }
 
     menuBtn.addEventListener('click', ()=>{
         closeModalMenu();
