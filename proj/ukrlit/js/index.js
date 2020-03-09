@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         modalBtnToAbout = document.getElementById('menu-a-about'),
         sectionAbout = document.getElementById('about');
 
+    let btnStart = document.getElementById('menu-a-start'),
+        btnStart2 = document.getElementById('btn-start'),
+        footerBtnStart = document.getElementById('footer-btn-start');
 
     // internal variables
     let currentPos;
@@ -81,6 +84,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     modalBtnToAbout.addEventListener('click', () =>{
         closeModalMenu();
         scrollToSection(sectionAbout);
+    });
+
+    btnStart.addEventListener('click', () =>{
+        window.open('main.html')
+    });
+
+    btnStart2.addEventListener('click', () =>{
+        window.open('main.html')
+    });
+
+    footerBtnStart.addEventListener('click', () =>{
+        window.open('main.html')
     });
 });
 
