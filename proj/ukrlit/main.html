@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="content">
-            <div class="space-column"></div>
             <div class="content__body">
                 <div class="content__headering">
                     <div class="content__logo">
                         UkrLit
                     </div>
                     <div class="content__sublogo">
-                        <h2><span class="underline">UrkLit </span>- вивчай українську літературу.</h2>
+                        <h2><span class="underline">UrkLit</span> - вивчай українську літературу.</h2>
                     </div>
                 </div>
                 <div class="content__search">
@@ -27,63 +28,63 @@
                     <div class="blocks elastic">
                         <div class="block__item">
                             <div class="block__picture">
-                                <img src="https://lh3.googleusercontent.com/proxy/hKJULHLHYB_Bt0TWcCbwCJ7qLqEBkyJc6Nx_GXpgP5nmvYUokwZzNDJULlQ9TR3l1BbDIWlyxkZNgJ8algGdHIx9tZS_QFZNMMDY82CsPpK8rdmRDbcJUUfiLDTGhDuib6dPFrfr2g" alt="">
+                                <img src="imgs/main/authors/nestor.jpg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Нестор Летописец</span>
                             </div>
                         </div>
-                        <div class="block__item">
+                        <div id="skovoroda_author" class="block__item" data-name="skovoroda">
                             <div class="block__picture">
-                                <img src="https://lh3.googleusercontent.com/proxy/peiXmSpCmjDSZNhgkZm7xYF3Ke8QtyxuDLEP5amwsD2TnPJpH3mQj4sn-0VTeZUn13B69tr9fHnFei7AFuPVH0IRebA0CyrnXVnJuCxI9z-RhWSUgw" alt="">
+                                <img src="imgs/main/authors/skovoroda.jpg" alt="skovoroda">
                             </div>
                             <div class="block__text">
                                 <span>Григорій Сковорода</span>
                             </div>
                         </div>
-                        <div class="block__item">
+                        <div id="kotlyarevsky_author" class="block__item" data-name="kotlyarevsky">
                             <div class="block__picture">
-                                <img src="https://md-eksperiment.org/images/posters/5442bcb66c967.jpg" alt="">
+                                <img src="imgs/main/authors/kotlyarevsky.jpg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Іван Котляревский</span>
                             </div>
                         </div>
-                        <div class="block__item">
+                        <div id="shevchenko_author" class="block__item" data-name="shevchenko">
                             <div class="block__picture">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Taras_Shevchenko_selfportrait_oil_1840-2.jpg/1200px-Taras_Shevchenko_selfportrait_oil_1840-2.jpg" alt="">
+                                <img src="imgs/main/authors/shevchenko.jpg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Тарас Шевченко</span>
                             </div>
                         </div>
-                        <div class="block__item">
+                        <div id="panteleimonkulish_author" class="block__item" data-name="panteleimonkulish">
                             <div class="block__picture">
-                                <img src="http://www.rmikola.com/wp-content/uploads/58961323-4983-4179-9DBC-EE31EF05F915_w650_r0_s.jpg" alt="">
+                                <img src="imgs/main/authors/panteleimonkulish.jpg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Пантелеймон Куліш</span>
                             </div>
                         </div>
-                        <div class="block__item">
+                        <div id="nechuylevitsky_author" class="block__item" data-name="nechuylevitsky">
                             <div class="block__picture">
-                                <img src="https://lh3.googleusercontent.com/proxy/nP8lmj-U62fPDsf07MFCkwImPFyVVgTTXNBq4g-Y2bHaSfKmbUa8Oe0F94aHdMf4g-UHtsHhVNA3_wBUbPUigRsL" alt="">
+                                <img src="imgs/main/authors/nechuylevitsky.jpg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Іван Нечуй-Левицький</span>
                             </div>
-                        </div>
-                        <div class="block__item">
+                        </div> 
+                        <div id="myrnyy_author" class="block__item" data-name="myrnyy">
                             <div class="block__picture">
-                                <img src="https://prolviv.com/wp-content/uploads/2017/05/2899006.jpg" alt="">
+                                <img src="imgs/main/authors/myrnyy.jpeg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Панас Мирний</span>
                             </div>
                         </div>
-                        <div class="block__item">
+                        <div id="karpenkokariy" class="block__item" data-name="karpenkokariy">
                             <div class="block__picture">
-                                <img src="https://3.bp.blogspot.com/-cw_zjZVaQ9s/Vgloz3hBF5I/AAAAAAAAPZQ/A0ee4RFFvUA/s1600/%25D0%2586%25D0%25B2%25D0%25B0%25D0%25BD-%25D0%259A%25D0%25B0%25D1%2580%25D0%25BF%25D0%25B5%25D0%25BD%25D0%25BA%25D0%25BE-%25D0%259A%25D0%25B0%25D1%2580%25D0%25B8%25D0%25B9.-%25D0%2591%25D1%2596%25D0%25BE%25D0%25B3%25D1%2580%25D0%25B0%25D1%2584%25D1%2596%25D1%258F.-1.jpg" alt="">
+                                <img src="imgs/main/authors/karpenkokariy.jpg" alt="">
                             </div>
                             <div class="block__text">
                                 <span>Іван Карпенко-Карий</span>
@@ -317,10 +318,115 @@
                     </div>
                 </div>
             </div>
-            <div class="space-column"></div>
+        </div>
+
+        
+        <!-- author area -->
+
+        <div class="author" id="author">
+            <div class="author__head">
+                <div id="btn_to_top">
+                    Повернутись до пошуку
+                </div>
+            </div>
+            <div id="skovoroda" class="author__content skovoroda">
+                <div class="author__body">
+                    <div class="author__title">
+                        <div class="author__picture">
+                            <img src="imgs/main/authors/skovoroda.jpg" alt="">
+                        </div>
+                        <div class="author__description-wrap">
+                            <div class="author__description">
+                                <h1>Григорій Сковорода</h1>
+                                <p class="gray-color">1722-1794</p>
+                                <p>Поет, філософ, музикант</p>
+                                <p style="text-align: left;">
+                                    <span class="bold">Називають:</span> Мандрівний філософ, український Сократ, Єзоп, Горацій.</span>
+                                </p>
+                                <p style="text-align: left;">Представник бароко, останній автор давної української літератури.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author__main">
+                        <div class="author__quote">
+                            <p class="italic">"Світ ловив мене, але не спіймав" - Григорій Сковорода.</p>
+                        </div>
+                        <p>Народився на полтавщині в сім'ї козака. Навчався у Киево-Могилянскій академії. Мав хист до музики - був запрошений співати до царского палацу. Викладав у харківському та переясловському колегіумі.</p>
+
+                        <div class="author__devider">
+                            <div class="author__link">
+                                <details class="author__details">
+                                    <summary>Зміст статті</summary>
+                                    <div class="author__details-content">
+                                        <ul>
+                                            <li><a href="#">Біографія</a></li>
+                                            <li><a href="#">"Бджола та Шершень"</a></li>
+                                            <li><a href="#">"Всякому місту звичай и права"</a></li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="author__text">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="author__footer">
+    
+                </div>
+            </div>
+            <div id="shevchenko" class="author__content shevchenko">
+                <div class="author__body">
+                    <div class="author__title">
+                        <div class="author__picture">
+                            <img src="imgs/main/authors/shevchenko.jpg" alt="">
+                        </div>
+                        <div class="author__description-wrap">
+                            <div class="author__description">
+                                <h1>Григорій Сковорода</h1>
+                                <p class="gray-color">1722-1794</p>
+                                <p>Поет, філософ, музикант</p>
+                                <p style="text-align: left;">
+                                    <span class="bold">Називають:</span> Мандрівний філософ, український Сократ, Єзоп, Горацій.</span>
+                                </p>
+                                <p style="text-align: left;">Представник бароко, останній автор давної української літератури.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author__main">
+                        <div class="author__quote">
+                            <p class="italic">"Світ ловив мене, але не спіймав" - Григорій Сковорода.</p>
+                        </div>
+                        <p>Народився на полтавщині в сім'ї козака. Навчався у Киево-Могилянскій академії. Мав хист до музики - був запрошений співати до царского палацу. Викладав у харківському та переясловському колегіумі.</p>
+
+                        <div class="author__devider">
+                            <div class="author__link">
+                                <details class="author__details">
+                                    <summary>Зміст статті</summary>
+                                    <div class="author__details-content">
+                                        <ul>
+                                            <li><a href="#">Біографія</a></li>
+                                            <li><a href="#">"Бджола та Шершень"</a></li>
+                                            <li><a href="#">"Всякому місту звичай и права"</a></li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="author__text">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="author__footer">
+    
+                </div>
+            </div>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
