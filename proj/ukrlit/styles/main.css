@@ -27,13 +27,6 @@
     --dark-white: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body,
-    html{
-        background: var(--black);
-    }
-}
-
 
 h1{
     font-family: 'Roboto Slab', serif;
@@ -170,7 +163,8 @@ html{
 }
 
 .content__search input::placeholder{
-    text-transform: capitalize;
+    text-transform: initial;
+    
 }
 
 .content__search input:focus{
@@ -363,7 +357,7 @@ html{
     height: auto;
     padding: 1rem;
     position: sticky;
-    top: 0;
+    top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -373,20 +367,22 @@ html{
 
 #btn_to_top{
     width: auto;
-    padding: 1rem 2rem;
-    height: 48px;
-    background: var(--purple-light);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto';
-    font-size: 2rem;
-    color: var(--lightgray);
-    font-weight: 400;
-    border-radius: 24px;
     transition: all 250ms ease;
+    background: #e2e5ea;
+    color: var(--purple-light);
+    font-weight: 700;
+    border-radius: 24px;
+    padding: .5rem 1.2rem;
+    font-size: 1.8rem;
+    font-family: 'Roboto';
+    letter-spacing: .1rem;
+    transition: all 250ms ease;
+    height: 32px;
     cursor: pointer;
-    opacity: .8;
+    opacity: .7;
 }
 
 #btn_to_top:hover{
@@ -423,9 +419,8 @@ html{
     height: 100%;
     object-fit: cover;
     object-position: center left;
-    border-radius: 24px;
+    border-radius: 24px 0 0 24px;
 
-    border: 1rem solid var(--lightgray);
     /*box-shadow:  41px 41px 82px #d9d9d9, 
              -41px -41px 82px #ffffff;*/
 }
@@ -434,6 +429,25 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.author__description-wrap .btn{
+    background: #e2e5ea;
+    color: var(--purple-light);
+    font-weight: 700;
+    border-radius: 24px;
+    padding: .5rem 1.2rem;
+    font-size: 1.8rem;
+    font-family: 'Roboto';
+    letter-spacing: .1rem;
+    transition: all 250ms ease;
+    height: 32px;
+    cursor: pointer;
+}
+
+.author__description-wrap .btn:hover{
+    opacity: .7;
 }
 
 .author__description{

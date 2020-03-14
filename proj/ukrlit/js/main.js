@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function scrollToSection(target) { 
         let targetPos = target.getBoundingClientRect().top;
         window.scrollTo({
-        top: targetPos,
+        top: targetPos - 10,
         behavior: 'smooth'
         });
     };
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // slider activator
     $('.blocks').slick({
-        infinite: true,
+        infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
-        autoplay: true,
-        autoplaySpeed: 2500,
+        //autoplay: true,
+        autoplaySpeed: 3000,
         dots: true,
         arrows: false,
         speed: 1500,
