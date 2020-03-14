@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //func describes the way it moves down to necessary section(target)
     function scrollToSection(target) { 
         let targetPos = target.getBoundingClientRect().top;
-        console.log('tragetPos:',  targetPos);
         window.scrollTo({
         top: targetPos,
         behavior: 'smooth'
@@ -28,8 +27,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3,
-        //autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: true,
+        autoplaySpeed: 2500,
         dots: true,
         arrows: false,
         speed: 1500,
@@ -70,6 +69,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     };
 
 
+    let clickedAuthors = [];
+    
+
     // viewing the necessary article about the author
     function openArticle(article) {
         let authorBlock = document.getElementById('author'),
@@ -78,18 +80,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         let authorDispChecker = authorBlock.classList.contains('author__active');
 
-        /*if (authorDispChecker === false) {*/
-            authorBlock.classList.add('author__active');
-            authorArticle.classList.add('author__content__active');
-            scrollToSection(authorArticle);
-        /*}
-        else{
-            console.log('authorBlock уже был открыт');
-        }*/
+        // добавляю елемент в массив
+        clickedAuthors.push(`${authorSearchName}`);
 
 
-        
-    }
+        // нажал на автора 
+        if (clickedAuthors.length == 1) {
+            authorBlock.classList.add('author__active'); 
+            document.getElementById(`${clickedAuthors[0]}`).classList.add('author__content__active'); 
+            scrollToSection(document.getElementById(`${clickedAuthors[0]}`));
+            
+            //console.log('НАЖАЛИ НА ', authorSearchName);
+            //console.log('МАССИВ: ', clickedAuthors);
+
+        } else{
+            //console.log('НАЖАЛИ НА ', authorSearchName);
+
+            //console.log('ПРОШЛЫЙ МАССИВ + АВТОР ТОЛЬКО ЧТО :', clickedAuthors);
+
+            document.getElementById(`${clickedAuthors[0]}`).classList.remove('author__content__active'); 
+            document.getElementById(`${clickedAuthors[1]}`).classList.add('author__content__active'); 
+            scrollToSection(document.getElementById(`${clickedAuthors[1]}`));
+
+            clickedAuthors.shift();
+            //console.log('ПРОШЛЫ АВТОР В МАССИВЕ УДАЛЕН  ', clickedAuthors);
+        }        
+    };
 
 
     // author list
