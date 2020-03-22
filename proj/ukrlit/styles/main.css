@@ -145,7 +145,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     
 }
 
@@ -390,7 +390,7 @@ html{
 }
 
 .author__body{
-    height: 200vh; /*change !!*/
+    height: auto; /*change !!*/
     width: 100%;
     margin: 0 auto;
 }
@@ -459,107 +459,356 @@ html{
 
 /*author__bio*/
 
-.author__main{
+.author__wrapper{
     width: 100%;
     height: auto;
     margin-top: 1rem;
-}
-
-.author__quote{
-    width: 100%;
-    height: auto;
-    background: var(--lightgray);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    transition: all 500ms ease-in-out;
-    border-radius:24px;
-
-
-}
-
-.author__quote::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--purple-light);
-    transition: all 500ms ease-in-out;
-    z-index: -1;
     border-radius: 24px;
-}
-
-.author__quote:hover{
-    color: white;
-}
-
-.author__quote:hover::before{
-    width: 100%;
-    border-radius: 24px;
-
-}
-
-
-.author__devider{
-    width: 100%;
-    height: auto;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column-gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+}
+
+
+
+/*author__text*/
+
+.author__text{
+    height: auto;
+    width: 100%;
+    line-height: 1.75;
+    border-radius: 24px;
+}
+
+.author__text h2{
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.author__article{
+    padding: 1rem 2rem;
+    background: var(--lightgray);
+    border-radius: 24px;
+    margin-bottom: 1rem;
 }
 
 .author__link{
-    width: 100%;
-    height: auto;
     position: sticky;
     top: 1rem;
+    z-index: 10;
 }
 
-.author__details{
+.author__btn{
     width: 100%;
     height: auto;
-    font-family: 'Roboto';
-    font-size: 2rem;
-}
-
-.author__details summary{
-    width: 100%;
-    height: auto;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem 1rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    background: var(--purple-light);
-    margin-bottom: 1rem;
+    background:var(--lightgray);
     border-radius: 24px;
-    color: var(--lightgray);
+    transition: all 250ms ease;
+    cursor: pointer;
+}
+
+.author__btn-active{
+    border-radius: 24px 24px 0 0;
+}
+
+.author__artion{
+    font-size: 1.7rem;
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: black;
+}
+
+.author__circle-btn{
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    background: var(--white);
+    border-radius: 50%;
+    transition: all 250ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+}
+
+.author__circle-btn-active{
+    transform: rotate(-90deg);
+}
+
+.author__circle-btn img{
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.author__list{
+    background: var(--lightgray);
+    border-radius: 0 0 24px 24px;
+    padding: 1rem 2rem;
+    transition: all 250ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+}
+
+.author__list-active{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.author__list ul{
+    list-style: none;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.author__list ul li{
+    margin: 1rem 0;
+    position: relative;
+}
+
+.author__list ul li a:hover{
+    color: var(--purple-light);
+}
+
+.author__list ul::before{
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 24px;
+    background: var(--dark-lightlightgray);
     transition: all 250ms ease;
 }
 
-.author__details-content{
-    padding: 1rem;
-}
-
-.author__details-content ul{
-    list-style: none;
-}
-
-.author__details-content ul li{
-    margin: 1rem;
-
-}
-
-.author__details-content ul li a{
+.author__list ul li a{
     text-decoration: none;
-    color: black;
-    transition: all 250ms ease-in-out;
+    color: var(--black);
+    font-family: 'Roboto';
+    transition: all 250ms ease;
+    font-size: 1.7rem;
 }
 
-.author__details-content ul li a:hover{
-    color: var(--purple-light);
+.author__quote{
+    padding: 0 2rem;
+    position: relative;
+    font-style: italic;
+}
+
+.author__quote::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--dark-lightlightgray);
+}
+
+/* media */
+
+@media all and (max-width: 1024px){
+    h1{
+        font-size: 2.6rem;
+    }
+
+    .content{
+        max-width: 768px;
+    }
+    .block__text{
+        padding: 1rem 0;
+        font-size: 1.5rem;
+        align-items: center;
+    }
+    .block__text div{
+        font-size: 1.5rem;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25px;
+    }
+    .author__content{
+        max-width: 768px;
+    }
+
+    .author__description p{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (orientation:landscape) and (max-device-width: 900px) {
+    html{
+        -webkit-transform: rotate(-90deg);
+           -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+             -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        -webkit-transform-origin: left top;
+           -moz-transform-origin: left top;
+            -ms-transform-origin: left top;
+             -o-transform-origin: left top;
+                transform-origin: left top;
+        width: 320px; /*Разрешение экрана iPhone*/
+        position: absolute;
+        top: 100%;
+            left: 0
+    }
+}
+
+@media all and (max-width: 768px){
+    .content{
+        height: auto;
+        padding-top: 10vh;
+    }
+
+    .content__logo{
+        font-size: 12.2rem;
+    }
+
+    .content__sublogo h2{
+        font-size: 2rem;
+    }
+
+    .blocks{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    .block__item{
+        flex: 0 0 auto;
+        margin-right: 1rem;
+        width: 150px;
+    }
+
+    .content__search{
+        padding: 1rem;
+    }
+
+    .author__wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .author__content {
+        width: calc(100% - 2rem);
+    }
+    .author__link{
+        position: static;
+        top: auto;
+    }
+
+    .author__list{
+        height: 0;
+        padding: 0;
+    }
+
+    .author__list-active{
+        height: auto;
+        padding: 1rem 2rem;
+    }
+
+    .author__list-active ul li{
+        margin: 1rem 0 !important;
+    }
+
+    .author__list ul li{
+        margin: 0;
+    }
+
+    .block__text div{
+        position: relative;
+        font-size: 0;
+        width: 25px;
+        height: 25px;
+    }
+
+    .block__text div:after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-image: url('../imgs/main/icons/open.svg');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 10;
+    }
+
+    .author__description{
+        max-width: 90%;
+    }
+
+    
+}
+
+@media all and (max-width: 646px){
+    .author__description h1{
+        font-size: 2rem;
+    }
+
+    .author__description p{
+        font-size: 1.3rem;
+        line-height: 1.5;
+        margin: 1rem;
+    }
+}
+
+@media all and (max-width: 586px){
+    .content__logo{
+        font-size: 10rem;
+    }
+
+    .content__sublogo h2{
+        font-size: 1.5rem;
+    }
+
+    .author__title{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .author__picture{
+        padding-bottom: 75%;
+    }
+
+    .author__picture img{
+        border-radius: 24px 24px 0 0;
+        object-position: center top;
+    }
+
+    .author__description{
+        max-width: 70%;
+    }
+
+    .author__description h1{
+        font-size: 2.6rem;
+    }
+
+    .author__description p{
+        font-size: 1.6rem;
+        line-height: 1.5;
+        margin: 1rem;
+    }
+}
+
+@media all and (max-width: 360px){
+    .content__logo{
+        font-size: 7.5rem;
+    }
+
+    .content__sublogo h2{
+        font-size: 1.3rem;
+    }
 }

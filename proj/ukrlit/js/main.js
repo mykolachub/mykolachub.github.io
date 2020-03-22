@@ -3,7 +3,10 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     console.log('welcome to my console');
 
-    let btnToTop = document.getElementById('btn_to_top');
+    let btnToTop = document.getElementById('btn_to_top'),
+        authorContentBtn = document.querySelector('.author__btn'),
+        authorContentBtnCircle = document.getElementById('author-contentbtn-circle'),
+        authorContentList = document.getElementById('author-contentlist');
 
     //func describes the way it moves down to necessary section(target)
     function scrollToSection(target) { 
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
-        //autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         dots: true,
         arrows: false,
@@ -38,7 +41,41 @@ document.addEventListener('DOMContentLoaded', ()=>{
         draggable: true,
         swipe: true,
         touchThreshold: 10,
-        waitForAnimate: false
+        waitForAnimate: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: false,
+                    dots: true,
+                    autoplay: false
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: false,
+                    dots: true,
+                    autoplay: false
+                }
+            }
+          ]
+    });
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        $('.blocks').slick('unslick');
+
+    } else {
+    }
+
+    authorContentBtn.addEventListener('click', ()=> {
+        authorContentBtn.classList.toggle('author__btn-active');
+        authorContentList.classList.toggle('author__list-active');
+        authorContentBtnCircle.classList.toggle('author__circle-btn-active');
     });
 
     //btn to top
@@ -54,16 +91,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if (val != '') {
             elasticItems.forEach(function (elem) {
                 if (elem.innerText.toLowerCase().search(val) == -1) {
-                    elem.parentElement.parentElement.parentElement.parentElement.classList.add('hide');
+                    if (window.matchMedia("(max-width: 768px)").matches) {
+                        elem.parentElement.parentElement.classList.add('hide');
+                    } else {
+                        elem.parentElement.parentElement.parentElement.parentElement.classList.add('hide');
+                    }
                 }
                 else{
-                    elem.parentElement.parentElement.parentElement.parentElement.classList.remove('hide');
+                    if (window.matchMedia("(max-width: 768px)").matches) {
+                        elem.parentElement.parentElement.classList.remove('hide');
+                    } else {
+                        elem.parentElement.parentElement.parentElement.parentElement.classList.remove('hide');
+                    }
                 }
             });
         }
         else{
             elasticItems.forEach(function (elem) {
-                elem.parentElement.parentElement.parentElement.parentElement.classList.remove('hide');
+                if (window.matchMedia("(max-width: 768px)").matches) {
+                    elem.parentElement.parentElement.classList.remove('hide');
+                } else {
+                    elem.parentElement.parentElement.parentElement.parentElement.classList.remove('hide');
+                }
             });
         }
     };
@@ -110,12 +159,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // author list
     const   skovoroda = document.getElementById('skovoroda_author'),
-            shevchenko = document.getElementById('shevchenko_author');
+            shevchenko = document.getElementById('shevchenko_author'),
+            simonenko = document.getElementById('simonenko_author');
 
 
     // author init
     skovoroda.addEventListener('click', ()=>{openArticle(skovoroda)});
     shevchenko.addEventListener('click', ()=>{openArticle(shevchenko)});
+    simonenko.addEventListener('click', ()=> {openArticle(simonenko)});
 
 
 
