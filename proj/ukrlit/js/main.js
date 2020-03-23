@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }); 
     };
 
-    // slider activator
     $('.blocks').slick({
         infinite: false,
         slidesToShow: 3,
@@ -41,35 +40,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
         draggable: true,
         swipe: true,
         touchThreshold: 10,
-        waitForAnimate: false,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: false,
-                    dots: true,
-                    autoplay: false
-                }
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: false,
-                    dots: true,
-                    autoplay: false
-                }
-            }
-          ]
+        waitForAnimate: false
     });
 
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    function slickDown() {
         $('.blocks').slick('unslick');
+    }
 
+    // slider activator
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        
     } else {
+        slickDown();
     }
 
     authorContentBtn.addEventListener('click', ()=> {
@@ -78,7 +60,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         authorContentBtnCircle.classList.toggle('author__circle-btn-active');
     });
 
-    //btn to top
+    // btn to top
     btnToTop.addEventListener('click' , moveToTop);
 
     // search
@@ -91,27 +73,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if (val != '') {
             elasticItems.forEach(function (elem) {
                 if (elem.innerText.toLowerCase().search(val) == -1) {
-                    if (window.matchMedia("(max-width: 768px)").matches) {
-                        elem.parentElement.parentElement.classList.add('hide');
-                    } else {
+                    if (window.matchMedia("(min-width: 768px)").matches) {
                         elem.parentElement.parentElement.parentElement.parentElement.classList.add('hide');
+                        
+                    } else {
+                        elem.parentElement.parentElement.classList.add('hide');
                     }
                 }
                 else{
-                    if (window.matchMedia("(max-width: 768px)").matches) {
-                        elem.parentElement.parentElement.classList.remove('hide');
-                    } else {
+                    if (window.matchMedia("(min-width: 768px)").matches) {
                         elem.parentElement.parentElement.parentElement.parentElement.classList.remove('hide');
+                    } else {
+                        elem.parentElement.parentElement.classList.remove('hide');
+                        
                     }
                 }
             });
         }
         else{
             elasticItems.forEach(function (elem) {
-                if (window.matchMedia("(max-width: 768px)").matches) {
-                    elem.parentElement.parentElement.classList.remove('hide');
-                } else {
+                if (window.matchMedia("(min-width: 768px)").matches) {
                     elem.parentElement.parentElement.parentElement.parentElement.classList.remove('hide');
+                } else {
+                    elem.parentElement.parentElement.classList.remove('hide');
+                   
                 }
             });
         }
@@ -138,21 +123,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
             authorBlock.classList.add('author__active'); 
             document.getElementById(`${clickedAuthors[0]}`).classList.add('author__content__active'); 
             scrollToSection(document.getElementById(`${clickedAuthors[0]}`));
-            
-            //console.log('НАЖАЛИ НА ', authorSearchName);
-            //console.log('МАССИВ: ', clickedAuthors);
-
         } else{
-            //console.log('НАЖАЛИ НА ', authorSearchName);
-
-            //console.log('ПРОШЛЫЙ МАССИВ + АВТОР ТОЛЬКО ЧТО :', clickedAuthors);
-
             document.getElementById(`${clickedAuthors[0]}`).classList.remove('author__content__active'); 
             document.getElementById(`${clickedAuthors[1]}`).classList.add('author__content__active'); 
             scrollToSection(document.getElementById(`${clickedAuthors[1]}`));
 
             clickedAuthors.shift();
-            //console.log('ПРОШЛЫ АВТОР В МАССИВЕ УДАЛЕН  ', clickedAuthors);
         }        
     };
 
