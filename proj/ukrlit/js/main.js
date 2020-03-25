@@ -137,14 +137,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const   skovoroda = document.getElementById('skovoroda_author'),
             shevchenko = document.getElementById('shevchenko_author'),
             simonenko = document.getElementById('simonenko_author'),
-            kotlyarevsky = document.getElementById('kotlyarevsky_author');
+            kotlyarevsky = document.getElementById('kotlyarevsky_author'),
+            tyutyunnyk = document.getElementById('tyutyunnyk_author');
 
 
     // author init
     skovoroda.addEventListener('click', ()=>{openArticle(skovoroda)});
-    kotlyarevsky.addEventListener('click', ()=> {openArticle(kotlyarevsky)});
+    kotlyarevsky.addEventListener('click', ()=>{openArticle(kotlyarevsky)});
     shevchenko.addEventListener('click', ()=>{openArticle(shevchenko)});
     simonenko.addEventListener('click', ()=> {openArticle(simonenko)});
+    tyutyunnyk.addEventListener('click', ()=>{openArticle(tyutyunnyk)});
     
 
 
