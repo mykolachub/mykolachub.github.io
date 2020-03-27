@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             simonenko = document.getElementById('simonenko_author'),
             kotlyarevsky = document.getElementById('kotlyarevsky_author'),
             tyutyunnyk = document.getElementById('tyutyunnyk_author'),
-            oles = document.getElementById('oles_author');
+            oles = document.getElementById('oles_author'),
+            kobylyanska = document.getElementById('kobylyanska_author');
 
 
     // author init
@@ -149,6 +150,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     simonenko.addEventListener('click', ()=> {openArticle(simonenko)});
     tyutyunnyk.addEventListener('click', ()=>{openArticle(tyutyunnyk)});
     oles.addEventListener('click', ()=>{openArticle(oles)});
+    kobylyanska.addEventListener('click', ()=>{openArticle(kobylyanska)});
 
     
 
