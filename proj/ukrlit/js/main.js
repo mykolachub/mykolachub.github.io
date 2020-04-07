@@ -54,11 +54,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         slickDown();
     }
 
-    authorContentBtn.addEventListener('click', ()=> {
-        authorContentBtn.classList.toggle('author__btn-active');
-        authorContentList.classList.toggle('author__list-active');
-        authorContentBtnCircle.classList.toggle('author__circle-btn-active');
-    });
+    
 
     // btn to top
     btnToTop.addEventListener('click' , moveToTop);
@@ -110,9 +106,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function openArticle(article) {
         let authorBlock = document.getElementById('author'),
             authorSearchName = article.dataset.name,
-            authorArticle = document.getElementById(`${authorSearchName}`);
+            authorListBtn = document.getElementById(`${authorSearchName}` + "_btn"),
+            authorList = document.getElementById(`${authorSearchName}` + "_list");
+            console.log('authorListBtn: ', authorListBtn);
 
-        let authorDispChecker = authorBlock.classList.contains('author__active');
 
         // добавляю елемент в массив
         clickedAuthors.push(`${authorSearchName}`);
@@ -129,7 +126,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
             scrollToSection(document.getElementById(`${clickedAuthors[1]}`));
 
             clickedAuthors.shift();
-        }        
+        }      
+        
+        authorListBtn.addEventListener('click', ()=> {
+            authorListBtn.classList.toggle('author__btn-active');
+            authorList.classList.toggle('author__list-active');
+        });
     };
 
 
@@ -140,9 +142,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
             kotlyarevsky = document.getElementById('kotlyarevsky_author'),
             tyutyunnyk = document.getElementById('tyutyunnyk_author'),
             oles = document.getElementById('oles_author'),
-            kobylyanska = document.getElementById('kobylyanska_author');
+            kobylyanska = document.getElementById('kobylyanska_author'),
+            ukrayinka = document.getElementById('ukrayinka_author'),
+            voroniy = document.getElementById('voroniy_author'),
+            tychyna = document.getElementById('tychyna_author'),
+            rylskyiy = document.getElementById('rylskyiy_author'),
+            sosyura = document.getElementById('sosyura_author');
 
 
+            sosyura
     // author init
     skovoroda.addEventListener('click', ()=>{openArticle(skovoroda)});
     kotlyarevsky.addEventListener('click', ()=>{openArticle(kotlyarevsky)});
@@ -151,6 +159,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     tyutyunnyk.addEventListener('click', ()=>{openArticle(tyutyunnyk)});
     oles.addEventListener('click', ()=>{openArticle(oles)});
     kobylyanska.addEventListener('click', ()=>{openArticle(kobylyanska)});
+    ukrayinka.addEventListener('click', ()=>{openArticle(ukrayinka)});
+    voroniy.addEventListener('click', ()=>{openArticle(voroniy)});
+    tychyna.addEventListener('click', ()=>{openArticle(tychyna)});
+    rylskyiy.addEventListener('click', ()=>{openArticle(rylskyiy)});
+    sosyura.addEventListener('click', ()=>{openArticle(sosyura)});
+
+
+
+
+
 
     
 

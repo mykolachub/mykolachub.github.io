@@ -102,7 +102,8 @@ html{
     flex-direction: column;
     background: var(--white);
     opacity: 1;
-    animation: logoWrapperDisapp 500ms ease-in 1500ms 1 normal forwards;
+    animation: logoWrapperDisapp 500ms ease-in 2500ms 1 normal forwards,
+                blockOff 0ms ease-in 3000ms 1 normal forwards;
     
 }
 
@@ -145,7 +146,7 @@ html{
     }
     to{
         box-shadow:  20px 20px 60px #d9d9d9, 
-        -20px -20px 60px #ffffff;
+                    -20px -20px 60px #ffffff;
     }
 }
 
@@ -153,11 +154,8 @@ html{
     0%{
         opacity: 1;
     }
-    50%{
-        opacity: 0;
-    }
     100%{
-        z-index: -100;
+        opacity: 0;
     }
 }
 
@@ -168,6 +166,17 @@ html{
     }
     to{
         opacity: 1;
+    }
+}
+
+@keyframes blockOff{
+    from{
+        transform: translateX(0);
+
+    }
+    to{
+        transform: translateX(-100%);
+
     }
 }
 
@@ -538,7 +547,6 @@ html{
     font-size: 1.8rem;
     font-family: 'Roboto';
     letter-spacing: .1rem;
-    transition: all 250ms ease;
     height: 32px;
     cursor: pointer;
     opacity: .7;
@@ -699,6 +707,12 @@ html{
     border-radius: 24px 24px 0 0;
 }
 
+.author__btn-active .author__circle-btn{
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+}
+
 .author__artion{
     font-size: 1.7rem;
     font-family: 'Roboto';
@@ -727,12 +741,6 @@ html{
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-}
-
-.author__circle-btn-active{
-    -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
 }
 
 .author__circle-btn img{
@@ -871,11 +879,15 @@ html{
         width: 320px; /*Разрешение экрана iPhone*/
         position: absolute;
         top: 100%;
-            left: 0
+        left: 0
     }
 }
 
 @media all and (max-width: 768px){
+    #btn_to_top{
+        opacity: 1;
+    }
+
     .content{
         height: auto;
         padding-top: 10vh;
