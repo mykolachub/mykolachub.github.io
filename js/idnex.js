@@ -1,135 +1,131 @@
-'use strict';
+"use strict";
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('welcome to my console!');
+document.addEventListener('DOMContentLoaded', () =>{
+    console.log('welcome to my console');
+
+    let body =  document.getElementById('body'),
+        html =  document.getElementById('html');
+
+    // menu section
+    let mainBtn = document.getElementById('main-btn'),
+        projectsBtn = document.getElementById('projects-btn'),
+        aboutBtn = document.getElementById('about-btn');
+
+    // main page section
+    let headerBtnMenu = document.getElementById('header-btn-menu'),
+        page =  document.getElementById('page'),
+        projectsSection = document.getElementById('projects');
+
+    let scrolled,
+        timer;
     
-    let chosenMenu = document.getElementById('show_chosen_item'),
-        menuAbout = document.getElementById('menu_about'),
-        menuProjects = document.getElementById('menu_projects'),
-        showProjects = document.getElementById('show_projects'),
-        showAbout = document.getElementById('show_about'),
-        wrapper = document.getElementById('wrapper'),
-        pleaseholder = document.getElementById('viewport-small'),
-        viewportWidth = document.documentElement.clientWidth,
-        grammarProj = document.getElementById('grammarProject'),
-        grammarBtn = document.getElementById('grammar'),
-        maryProj = document.getElementById('mary_portfolioProject'),
-        maryBtn = document.getElementById('mary_portfolio'),
-        modalAdvice = document.getElementById('advice');
     
-    if (viewportWidth <= 1000) {
-        wrapper.style.display = 'none';
-        pleaseholder.style.display  = 'flex';
-    } else {
-        wrapper.style.display = 'grid';
-    }
+    //func describes the way it moves down to necessary section(target)
+    function scrollToSection(target) { 
+        window.scrollTo({
+        top: target.getBoundingClientRect().bottom,
+        behavior: 'smooth'
+        }); 
+    };
 
-    menuAbout.addEventListener('mouseover', () =>{
-        chosenMenu.innerHTML = 'about';
-        chosenMenu.classList.add('opacity');
-    })
 
-    menuAbout.addEventListener('mouseout', () =>{
-        chosenMenu.innerHTML = '';
-        chosenMenu.classList.remove('opacity');
-    })
+    // animation for menu appearing
+    let OnOrOff = 0;
+    function pageShowClose() {
 
-    menuProjects.addEventListener('mouseover', () =>{
-        chosenMenu.innerHTML = 'projects';
 
-        chosenMenu.classList.add('opacity');
-    })
+        // changing styles for #page__wrapper
+        let pageMoving = [
+            {
+            transform: "translateX(0%) perspective(0px) translateZ(0px) rotateY(0deg)"
+            },
+            { 
+            transform: "translateX(33%) perspective(1000px) translateZ(-50px) rotateY(-5deg)"
+            }
+        ];
+        
+        // animation timing when opened for #page__wrapper
+        let pageTimingOn = {
+            duration: 1250,
+            iterations: 1,
+            fill: 'forwards',
+            easing: 'cubic-bezier(.62,.28,.23,.99)'
+        };
+    
+        // animation timing when closed for #page__wrapper
+        let pageTimingOff = {
+            duration: 1250,
+            direction: 'alternate-reverse',
+            iterations: 1,
+            fill: 'forwards',
+            easing: 'ease-in-out'
 
-    menuProjects.addEventListener('mouseout', () =>{
-        chosenMenu.innerHTML = '';
-        chosenMenu.classList.remove('opacity');
-    })
+        };
 
-    /**********/
+        
+        if (OnOrOff == 0) {
 
-    menuProjects.addEventListener('click' , () =>{
-        if (showProjects.style.display == 'grid') {
-            showProjects.classList.add('close');
-            showProjects.classList.remove('open');
-            menuProjects.innerHTML = 'projects';
-            console.log('closed');
-            setTimeout(closeitfuckyou, 250);
-                  
+            body.classList.toggle('body-on');
+            html.classList.toggle('body-on');    
+
+            function addPageWrappClass() {
+                page.classList.toggle('page__wrapper-on');
+            }
+            
+            setTimeout(addPageWrappClass, 0);
+
+            page.animate(
+                pageMoving,
+                pageTimingOn
+            ).play();
+            OnOrOff++;
+
         } else {
-            showProjects.style.display = 'grid';
-            showProjects.classList.add('open');
-            showProjects.classList.remove('close');
-            console.log('opened');
-            menuProjects.innerHTML = 'close';
-            setTimeout(closeitfuckyou2, 50);
-            menuAbout.innerHTML = 'about';
+            body.classList.toggle('body-on');
+            html.classList.toggle('body-on'); 
+            page.animate(
+                pageMoving,
+                pageTimingOff
+            ).play();
+            function addPageWrappClass() {
+                page.classList.toggle('page__wrapper-on');
+            }
+            
+            setTimeout(addPageWrappClass, 1250);
+            OnOrOff = 0;
         }
+    };
+
+    
+
+    headerBtnMenu.addEventListener('click', ()=>{
+        pageShowClose();
+    });
+
+    mainBtn.addEventListener('click', ()=>{
+        pageShowClose();
+    });
+
+    aboutBtn.addEventListener('click', ()=>{
+        pageShowClose();
+    });
+
+    projectsBtn.addEventListener('click', ()=>{
+        pageShowClose();
+
+        function TimingForScrolling() {
+            scrollToSection(projects);
+        };
+
+        setTimeout(TimingForScrolling, 1250);
+
         
     });
     
-    menuAbout.addEventListener('click' , () =>{
-        if (showAbout.style.display == 'grid') {
-            showAbout.classList.add('close');
-            showAbout.classList.remove('open');
-            menuAbout.innerHTML = 'about';
-            console.log('closed');
-            setTimeout(closeitfuckyou2, 250);
-            
-            
-                  
-        } else {
-            setTimeout(closeitfuckyou, 50);
-            showAbout.style.display = 'grid';
-            showAbout.classList.add('open');
-            showAbout.classList.remove('close');
-            console.log('opened');
-            menuAbout.innerHTML = 'close';
-            menuProjects.innerHTML = 'projects';
-        }
-        
-    });
-
-    function closeitfuckyou(params) {
-        showProjects.style.display = 'none';
-    }
-
-    function closeitfuckyou2(params) {
-        showAbout.style.display = 'none';
-    }
-
-
-    /***********/
-
-    grammarBtn.addEventListener('click', () => {
-        if (modalAdvice.style.display == 'none') {
-            modalAdvice.style.display = 'flex';
-            grammarProj.style.display = 'none';
-            grammarBtn.classList.remove('active');
-            
-            maryBtn.classList.remove('active');
-            maryProj.style.display = 'none';
-            
-        } else {
-            modalAdvice.style.display = 'none';
-            grammarProj.style.display = 'flex';
-            grammarBtn.classList.add('active');         
-        }
-    });
-
-    maryBtn.addEventListener('click', () => {
-        if (modalAdvice.style.display == 'none') {
-            modalAdvice.style.display = 'flex';
-            maryProj.style.display = 'none';
-            maryBtn.classList.remove('active');
-
-            grammarProj.style.display = 'none';
-            grammarBtn.classList.remove('active');
-        } else {
-            modalAdvice.style.display = 'none';
-            maryProj.style.display = 'flex';
-            maryBtn.classList.add('active');
-        }
-    });
-
 
 });
+
+
+
+
+
