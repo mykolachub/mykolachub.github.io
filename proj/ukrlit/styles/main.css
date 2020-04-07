@@ -1181,6 +1181,10 @@ html{
 
     }
 
+    .block__item{
+        width: 150px;
+    }
+
     .content__sublogo h2{
         font-size: 0;
     }
