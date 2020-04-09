@@ -1170,7 +1170,12 @@ html{
     }
 
     .content__search{
-        height: 5.5rem;
+        padding: 0 1rem;
+        height: 40px;
+    }
+
+    .interface *{
+        width: 40px;
     }
 
     .author__picture{
@@ -1208,7 +1213,12 @@ html{
     }
 
     .content__search{
-        height: 5.5rem;
+        padding: 0 1rem;
+        height: 40px;
+    }
+
+    .interface *{
+        width: 40px;
     }
 
 }
@@ -1232,6 +1242,11 @@ html{
     }
 
     .content__search{
-        height: 5rem;
+        padding: 0 1rem;
+        height: 40px;
+    }
+
+    .interface *{
+        width: 40px;
     }
 }
