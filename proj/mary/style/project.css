@@ -491,7 +491,7 @@ body, html{
     padding: 1px;
     display: -ms-grid;
     display: grid;
-                                                                                            grid-template-areas: 
+                                                                                                                                                                        grid-template-areas: 
         'project__modal_picture project__modal_picture project__modal_text'
         'project__modal_picture project__modal_picture project__modal_text';
 }

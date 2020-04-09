@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let btnToTop = document.getElementById('btn_to_top'),
         authorContentBtn = document.querySelector('.author__btn'),
         authorContentBtnCircle = document.getElementById('author-contentbtn-circle'),
-        authorContentList = document.getElementById('author-contentlist');
+        authorContentList = document.getElementById('author-contentlist'),
+        colorThemeBtn = document.getElementById('color_theme'),
+        darkThemeIcon = document.getElementById('darkmode-btn'),
+        lightThemeIcon = document.getElementById('lightmode-btn'),
+        html = document.getElementById('html');
 
     //func describes the way it moves down to necessary section(target)
     function scrollToSection(target) { 
@@ -54,7 +58,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         slickDown();
     }
 
-    
+    colorThemeBtn.addEventListener('click', ()=>{
+        html.classList.toggle('dark_mode');
+        darkThemeIcon.classList.toggle('darkmode-btn-on');
+        lightThemeIcon.classList.toggle('lightmode-btn-on');
+    });
 
     // btn to top
     btnToTop.addEventListener('click' , moveToTop);
@@ -149,8 +157,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             rylskyiy = document.getElementById('rylskyiy_author'),
             sosyura = document.getElementById('sosyura_author');
 
-
-            sosyura
     // author init
     skovoroda.addEventListener('click', ()=>{openArticle(skovoroda)});
     kotlyarevsky.addEventListener('click', ()=>{openArticle(kotlyarevsky)});

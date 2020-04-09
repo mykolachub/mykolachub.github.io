@@ -3,6 +3,10 @@
     src: url("../fonts/Rich.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Alegra";
+    src: url("../fonts/Alegra.woff") format("woff");
+}
 
 
 

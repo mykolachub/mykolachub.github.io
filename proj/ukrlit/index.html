@@ -9,100 +9,47 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <div class="header" id="home">
-        <div class="header__top">
-            <div class="header__menu-wrap">
-                <div class="header__logo">
-                    <span>UkrLit</span>
-                </div>
-                <div class="header__menu" id="menu-btn">
-                    <span></span>
-                </div> 
-                <div class="menu" id="menu-modal">
-                    <div class="section-mid menu__block">
-                       <div class="section__block menu__block-wrap">
-                            <div class="menu__item" id="menu-a-home">Перейти на <span class="menu__a">головну</span></div>
-                            <div class="menu__item" id="menu-a-more">Ознайомитися з <span class="menu__a">проектом</span></div>
-                            <div class="menu__item" id="menu-a-about">Дізнатися більше <span class="menu__a">про команду</span></div>
-                            <div class="menu__item" id="menu-a-start">Хочу <span class="menu__a">розпочати</span></div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header__content-wrap">
-            <div class="section-total section-header-cells">
-                <div class="section__block header__text wow fadeInLeft">
-                    <div class="section__content">
-                        <div class="section__cont-wrap header__text-wrap">
-                            <h1><span class="underline">UrkLit</span> - вивчай українську літературу.</h1>
-                            <p>Онлайн платформа для підготовки до ЗНО з української літератури.</p>
-                            <div class="header__button-wrap">
-                                <div class="header__button header__btn-more" id="btn-more">Дізнатися більше</div>
-                                <div class="header__button header__btn-start" id="btn-start">Розпочати</div>
-                            </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__content">
+                <div class="header__component header__menu">
+                    <div class="menu">
+                        <div class="menu__logo">
+                            UrkLit
+                        </div>
+                        <div class="menu__list">
+                            <div class="menu__item">Про проект</div>
+                            <div class="menu__item">Про команду</div>
+                            <div id="start-header" class="menu__item menu__start">Розпочати</div>
                         </div>
                     </div>
                 </div>
-                <div class="section__block header__picture wow fadeInRight">
-                    <div class="section__content header__picture-item">
-                        <img src="imgs/1.svg" alt="">
+                <div class="header__component header__main">
+                    <div class="header__promo">
+                        <svg class="header__promo_img" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(300,300)">
+                                <path class="header__promo_img_path" d="M157.4,-124.2C200.6,-71.3,230,-6.1,222.5,60.4C215,126.9,170.6,194.5,111.1,218.4C51.6,242.4,-23,222.5,-89.2,189.2C-155.4,155.8,-213.2,108.8,-231.6,47.4C-250,-14,-229,-89.9,-183.8,-143.3C-138.6,-196.6,-69.3,-227.3,-6.1,-222.4C57.1,-217.5,114.1,-177,157.4,-124.2Z" />
+                            </g>
+                        </svg>
+                        <div class="header__promo_content">
+                            <span class="h0">Готуйся до ЗНО з української мови безкоштовно!</span>
+                            <span class="p1 gray">UkrLit - це безкоштовний онлайн-ресурс для вивчення та відготовки до ЗНО 2020 з української літератури.</span>
+                        </div>                
+                    </div>
+                    <div class="header__picture">
+                        <img src="imgs/index/bg/header_picture.svg" alt="">
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="first" id="fisrt">
-        <div class="section-total first__content">
-            <div class="section__block first__headering">
-                <h2>Ми - cайт для правильної підготовки до ЗНО.</h2>
-                <p>Тут ти знайнешь невеликі конспекти, що містять необхідний матеріал для сдачі тесту.</p>
-            </div>
-            <div class="section__block first__picture wow fadeInUp">
-                <img src="imgs/index/screenshots/1.png" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="section second" id="second">
-        <div class="section-total second__content">
-            <div class="section__block second__text wow fadeInLeft">
-                <h1>Коротка, проте детальна <span>біографія поетів.</span></h1>
-                <p>Історії написання творів, присвяти, цікаві факти, що допоможуть вивчити матеріал швидше методом асоцаіцій.</p>
-            </div>
-            <div class="section__block second__pic wow fadeInRight">
-                <img src="imgs/screen3.png" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="section third" id="third">
-        <div class="section-total third__content">
-            <div class="section__block third__pic wow fadeInLeft">
-                <img src="imgs/screen3.png" alt="">
-            </div>
-            <div class="section__block third__text wow fadeInRight">
-                <h1>Короткий, проте детальний<span> аналіз творів.</span></h1>
-                <p>Тема, ідея, цитатна характеристика головних героїв та стислий переказ у розмовному стилі.</p>
-            </div>
-        </div>
-    </div>
-    <div class="about" id="about">
-        <div class="section-mid about__content">
-            <div class="section__block about__picture">
-                <div class="section__content about__picture-item">
-                    <img src="imgs/7.svg" alt="">
+                <div class="header__component header__footer">
+
                 </div>
             </div>
-            <div class="section__block about__form">
-                <div class="section__content">
-                    <div class="about__text-wrap">
-                        <h1>Розпочинай підготовку разом з нами!</h1>
-                        <p>Безкоштовні Онлайн уроки чекають на тебе!</p>
-                        <div class="header__button-wrap about__button-wrap">
-                            <div class="header__button header__btn-start white-btn" id="footer-btn-start">Розпочати</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="main">
+
+        </div>
+        <div class="footer">
+
         </div>
     </div>
 
