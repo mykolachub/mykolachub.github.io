@@ -365,7 +365,7 @@ html
 .section{
     width: 100%;
     height: auto;
-    padding: 10vh 0;
+    padding: 10vh 0 0 0;
     background: #eee6f3;
     margin-bottom: 2rem;
 }
@@ -373,7 +373,7 @@ html
 .section__text{
     width: 100%;
     height: auto;
-    
+    margin-bottom: 10vh;
 }
 
 .section__heading{
@@ -383,7 +383,8 @@ html
     margin-bottom: 2rem;
 }
 
-.section__heading span{
+.section__heading span,
+.section__subheading span{
     margin: 0;
 }
 
@@ -400,7 +401,8 @@ html
 }
 
 .section__picture{
-    min-width: 100%; 
+    margin: 0 auto;
+    max-width: 1024px;
     height: auto;   
 }
 

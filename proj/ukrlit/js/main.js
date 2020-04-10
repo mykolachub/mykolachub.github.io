@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         });
     };
 
+    
+
     // func describes the way it moves up to top
     function moveToTop() {
         window.scrollTo({
@@ -173,7 +175,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 
+    let pageHash = location.hash.replace('#', '');
 
+    if (pageHash == '') {
+        console.log('none');
+    } else {
+        openArticle(document.getElementById(pageHash + '_author'))
+        console.log(pageHash);
+    }
 
 
     
