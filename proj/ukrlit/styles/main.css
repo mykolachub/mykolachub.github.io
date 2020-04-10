@@ -924,7 +924,7 @@ html{
         -webkit-transform-origin: left top;
             -ms-transform-origin: left top;
                 transform-origin: left top;
-        width: 320px; /*Разрешение экрана iPhone*/
+        width: 320px;
         position: absolute;
         top: 100%;
         left: 0
