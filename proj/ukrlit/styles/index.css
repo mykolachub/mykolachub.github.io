@@ -1,12 +1,55 @@
 /* GENERAL SETTINGS */
 
+@font-face {
+    font-family: eUkraineLight;
+    src: url("../fonts/e-Ukraine-Light.eot?#iefix") format("embedded-opentype"), 
+         url("../fonts/e-Ukraine-Light.woff2") format("woff2"), 
+         url("../fonts/e-Ukraine-Light.woff") format("woff"), 
+         url("../fonts/e-Ukraine-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: eUkraineRegular;
+    src: url("../fonts/e-Ukraine-Regular.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/e-Ukraine-Regular.woff2") format("woff2"), 
+         url("../fonts/e-Ukraine-Regular.woff") format("woff"), 
+         url("../fonts/e-Ukraine-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 *,
 *:before,
 *:after{
     padding: 0;
     margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box  !important;
+}
+
+.h0{
+    font-family: 'eUkraineRegular';
+    font-size: 5.6rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    display: block;
+    color: black;
+}
+
+.p1{
+    font-family: 'eUkraineLight';
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    color: black;
+}
+
+.gray{
+    color: rgba(0, 0, 0, 0.5);
 }
 
 :root{
@@ -37,11 +80,16 @@ html
 .wrapper{
     width: 100%;
     height: auto;
+    transition: all 500ms ease;
+}
+
+.change-color-pink{
+    background: #eee6f3;
 }
 
 .header{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 .header__content{
@@ -50,8 +98,8 @@ html
     height: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 100px 1fr 100px;
-    grid-template-rows: 100px 1fr 100px;
+    -ms-grid-rows: 100px 1fr;
+    grid-template-rows: 100px 1fr;
 }
 
 .header__menu{
@@ -92,7 +140,7 @@ html
 
 .menu__item{
     padding: 1rem 1.5rem;
-    font-family: 'Roboto';
+    font-family: 'eUkraineLight';
     font-size: 1.6rem;
     font-weight: 400;
     color: black;
@@ -146,10 +194,6 @@ html
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    /*background-image: url('../imgs/index/bg/shape1.svg');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: contain;*/
     -webkit-transition: all 250ms ease;
     -o-transition: all 250ms ease;
     transition: all 250ms ease;
@@ -224,42 +268,144 @@ html
     position: relative;
     max-width: 80%;
     height: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
 }
 
-.h0{
-    font-family: 'Roboto Slab';
-    font-size: 4.8rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    mix-blend-mode: multiply;
-}
 
-.p1{
-    font-family: 'Roboto';
-    font-size: 2.2rem;
-    font-weight: 400;
-}
-
-.gray{
-    color: rgba(0, 0, 0, 0.5);
-}
 
 .header__picture img{
     width: 100%;
     height: 100%;
     -o-object-fit: contain;
        object-fit: contain;
+}
+
+.header__feature,
+.header__btn{
+    width: auto;
+    height: auto;
+    margin-bottom: 2.5rem;
+
+}
+
+.header__feature_item{
+    display: inline-block;
+    font-family: 'Roboto';
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #6C63FF;
+    padding: 0 0 0 3.5rem;
+    margin-right: 3rem;
+}
+
+.header__writer{
+    background-image: url('../imgs/index/bg/writer.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header__poems{
+    background-image: url('../imgs/index/bg/poems.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header__analysis{
+    background-image: url('../imgs/index/bg/analysis.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header__btn_item{
+    display: inline-block;
+    font-family: 'Roboto';
+    margin-right: 1rem;
+    font-size: 2.2rem;
+}
+
+.header__btn_more{
+    padding: 1rem 1.5rem;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    transition: all 250ms ease;
+    cursor: pointer;
+
+}
+
+.header__btn_more:hover{
+    color: black;
+}
+
+.header__btn_start{
+    background: #6C63FF;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+.header__btn_start:hover{
+    background: var(--purple-dark);
+
+}
+
+/*main*/
+
+.main{
+    width: 100%;
+    height: auto;
+}
+
+.main__content{
+    margin: 0 auto;
+    max-width: 1440px;
+    height: auto;
+}
+
+.section{
+    width: 100%;
+    height: auto;
+    padding: 10vh 0;
+    background: #eee6f3;
+    margin-bottom: 2rem;
+}
+
+.section__text{
+    width: 100%;
+    height: auto;
+    
+}
+
+.section__heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section__heading span{
+    margin: 0;
+}
+
+.section__heading img{
+    width: 67px;
+    height: 67px;
+    margin-right: 1rem;
+}
+
+.section__subheading{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.section__picture{
+    min-width: 100%; 
+    height: auto;   
+}
+
+.section__picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

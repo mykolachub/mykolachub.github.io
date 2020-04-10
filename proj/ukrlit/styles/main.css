@@ -916,7 +916,7 @@ html{
     }
 }
 
-@media screen and (orientation:landscape) and (max-device-width: 900px) {
+/*@media screen and (orientation:landscape) and (max-device-width: 900px) {
     html{
         -webkit-transform: rotate(-90deg);
             -ms-transform: rotate(-90deg);
@@ -929,7 +929,7 @@ html{
         top: 100%;
         left: 0
     }
-}
+}*/
 
 @media all and (max-width: 768px){
     #btn_to_top{
