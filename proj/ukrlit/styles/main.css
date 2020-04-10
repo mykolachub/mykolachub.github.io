@@ -392,17 +392,49 @@ html{
 .slick-slide.slick-cloned{}
 /* Стрелка */ 
 .slick-arrow{
-    display: none !important;
 } 
 /* Стрелка влево */ 
-.slick-arrow.slick-prev{} 
+.slick-arrow.slick-prev{
+    background: transparent;
+    background-image: url('../imgs/main/icons/left-arrow.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 25px;
+} 
 /* Стрелка вправо */
-.slick-arrow.slick-next{} 
+.slick-arrow.slick-next{
+    background: transparent;
+    background-image: url('../imgs/main/icons/right-arrow.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 25px;
+
+} 
 /* Стрелка не активная */
-.slick-arrow.slick-disabled{}
+.slick-arrow.slick-disabled{
+    opacity: .5;
+    cursor: auto;
+}
+
+.slick-prev, .slick-next{
+    top: auto;
+    bottom: -25px;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.slick-prev:before, .slick-next:before{
+    display: none;
+}
 
 /* Точки (булиты) */
 .slick-dots{
+    width: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
 } 
 
 .slick-dots li{
@@ -905,8 +937,7 @@ html{
     }
 
     .content{
-        height: auto;
-        padding-top: 10vh;
+        height: 100vh;
     }
 
     .content__logo{
@@ -915,6 +946,7 @@ html{
 
     .content__sublogo h2{
         font-size: 2rem;
+        padding: 1rem;
     }
 
     .blocks{
@@ -980,7 +1012,17 @@ html{
         margin: 0;
     }
 
+    .block__text span{
+        width: 100%;
+        
+    }
+
     .block__text div{
+        display: none;
+       
+    }
+
+    /*.block__text div{
         position: relative;
         font-size: 0;
         width: 25px;
@@ -1000,7 +1042,7 @@ html{
         background-repeat: no-repeat;
         background-position: center;
         z-index: 10;
-    }
+    }*/
 
     .author__description{
         max-width: 90%;
@@ -1199,8 +1241,8 @@ html{
     }
 
     .content__logo{
-        font-size: 8.5rem;
-        padding: 1rem;
+        font-size: 8rem;
+        padding-bottom: 1rem;
 
     }
 
@@ -1212,13 +1254,17 @@ html{
         font-size: 0;
     }
 
+    .content__search input{
+        font-size: 1.5rem;
+    }
+
     .content__search{
         padding: 0 1rem;
-        height: 50px;
+        height: 40px;
     }
 
     .interface *{
-        width: 50px;
+        width: 40px;
     }
 
 }
@@ -1228,12 +1274,12 @@ html{
 @media all and (max-width: 320px) and (max-height: 480px){
     .content__logo{
         font-size: 7.5rem;
-        padding: 0;
+        padding: 2rem;
 
     }
 
     .block__item{
-        width: 110px;
+        width: 150px;
         
     }
 
