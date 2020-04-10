@@ -5,28 +5,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // DOM variables
     let section1 = document.getElementById('section-1'),
-        wrapper = document.getElementById('wrapper');
+        section2 = document.getElementById('section-2'),
+        wrapper = document.getElementById('wrapper'),
+        sectionNightPic = document.getElementById('section-night-pic'),
+        sectionNightBtn = document.getElementById('section__btn-darkmd');
 
     let scrolled,
-        position;
+        position1,position2,position3;
 
     // internal variables
     let currentPos;
 
-    position = section1.getBoundingClientRect().top;
-    console.log('position: ', position);
 
     window.addEventListener('scroll', ()=>{
         scrolled = window.pageYOffset;
-        position = section1.getBoundingClientRect().top;
-        if (scrolled < position) {
-            console.log('<');
+        position1 = section1.getBoundingClientRect().top;
+        //position2 = section2.getBoundingClientRect().top;
+        
+        /*if (scrolled < position1) {
             wrapper.classList.remove('change-color-pink');
+            section1.classList.remove('section-color-change');
+
         }
         else{
-            console.log('=!');
             wrapper.classList.add('change-color-pink');
-        }
+            section1.classList.add('section-color-change');
+        }*/
 
     });
 
@@ -47,6 +51,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
             behavior: 'smooth'
         }); 
     };
+
+
+    let checker = 0
+    sectionNightBtn.addEventListener('click', ()=>{
+        sectionNightBtn.classList.toggle('section__btn-darkmd-on');
+        if (checker == 1) {
+            sectionNightPic.src = 'imgs/index/screenshots/screenshot4.jpg';
+            checker = 0;
+        } else {
+            sectionNightPic.src = 'imgs/index/screenshots/screenshot5.jpg';
+            checker++;
+        }
+        
+    });
 
     // wow.js
     //new WOW().init();

@@ -87,6 +87,11 @@ html
     background: #eee6f3;
 }
 
+.change-color-yellow{
+    background: #f3f4e6;
+}
+
+
 .header{
     width: 100%;
     height: 90vh;
@@ -367,13 +372,49 @@ html
     height: auto;
     padding: 10vh 0 0 0;
     background: #eee6f3;
+    transition: all 250ms ease;
+    margin-bottom: 10vh;
+}
+
+.section_night{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background: #F2F0E6;
+    transition: all 250ms ease;
+    margin-bottom: 10vh;
+    display: flex;
+}
+
+.section_night .section__text,
+.section_night .section__picture{
+    flex: 1;
+}
+
+.section_night .section__text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section_night .section__text .p1{
+    padding: 0 15%;
     margin-bottom: 2rem;
 }
+
+#section-2{
+    background: #e6edf3;
+}
+
+#section-3{
+    background: #f2e6e6;
+}
+
 
 .section__text{
     width: 100%;
     height: auto;
-    margin-bottom: 10vh;
 }
 
 .section__heading{
@@ -391,7 +432,7 @@ html
 .section__heading img{
     width: 67px;
     height: 67px;
-    margin-right: 1rem;
+    margin: 0 1rem;
 }
 
 .section__subheading{
@@ -403,11 +444,39 @@ html
 .section__picture{
     margin: 0 auto;
     max-width: 1024px;
-    height: auto;   
+    height: auto; 
 }
 
 .section__picture img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.section__btn{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#section__btn-darkmd{
+    display: inline-block;
+    background:#1c1c1e;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 1rem 1.5rem 1rem 4.5rem;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 2.2rem;
+    font-family: 'Roboto';
+    transition: all 250ms ease;
+    background-image: url('../imgs/main/icons/moon.svg');
+    background-size: 25%;
+    background-position: left 1rem center;
+    background-repeat: no-repeat;
+
+
+}
+
+.section__btn-darkmd-on{
+    background-image: url('../imgs/main/icons/sun.svg') !important;
 }
