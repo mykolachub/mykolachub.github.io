@@ -66,6 +66,73 @@ document.addEventListener('DOMContentLoaded', ()=>{
         
     });
 
+    if (window.matchMedia("(max-width: 1440px)").matches) {
+        /* the viewport is less than 1440px wide */
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 570 570");
+        console.log('max-width: 1440px');
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(260,250)");
+      }
+      else {
+        /* the viewport is at least 1440px wide */  
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 600 600");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(300,300)");
+      }
+
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 520 520");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(260,255)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 450 450");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(250,220)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 430 430");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(250,210)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 678px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 470 470");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(250,220)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 500 500");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(270,230)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 490px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 550 550");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(290,250)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 444px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 520 520");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(290,250)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 375px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 540 540");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(280,250)");
+        console.log('max-width: 1024px');
+      }
+
+      if (window.matchMedia("(max-width: 320px)").matches) {
+        document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 520 520");
+        document.getElementById('header__svg-pos').setAttribute("transform", "translate(280,210)");
+        console.log('max-width: 1024px');
+      }
+
+
     // wow.js
     //new WOW().init();
 });
