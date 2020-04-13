@@ -66,6 +66,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
         
     });
 
+    let btnStartHead = document.getElementById('start-header'),
+        btnStartprimary = document.getElementById('primary-btn-start');
+
+    btnStartprimary.addEventListener('click', ()=>{
+          window.open("./main.html");
+      });
+        
+    btnStartHead.addEventListener('click', ()=>{
+        window.open("./main.html");
+    });
+
     if (window.matchMedia("(max-width: 1440px)").matches) {
         /* the viewport is less than 1440px wide */
         document.getElementById('header__svg-shape').setAttribute("viewBox", "0 0 570 570");
