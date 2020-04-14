@@ -6,14 +6,25 @@
     box-sizing: border-box;
 }
 
-:root{
-    /*ddd*/
-}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("https://fonts.gstatic.com/s/ebgaramond/v13/SlGFmQSNjdsmc35JDF1K5GRwUjcdlttVFm-rI7e8QL99U6g.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400;
+    unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  
 
 .black{
     color: black;
     transition: all 250ms ease;
 
+}
+
+.italic-time{
+    font-family: 'EB Garamond';
+    font-size: calc(100% + 5px);
 }
 
 body,html{
@@ -48,6 +59,7 @@ body,html{
 .wrapper{
     width: 100vw;
     height: auto;
+    overflow: hidden;
 }
 
 
@@ -58,6 +70,7 @@ body,html{
     grid-template-columns: 1fr 2fr;
     background: #f5f6fa;
     position: absolute;
+    overflow: hidden;
 
 }
 
@@ -73,6 +86,7 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .menu__item{
@@ -93,16 +107,17 @@ body,html{
     color: rgba(0,0,0,0.5);
 }
 
-.about{
-    position: relative;
+#menu__item_mail{
+    position: absolute;
+    bottom: 0;
+    display: none;
 }
 
-.about:after{
-    position: absolute;
-    content: 'me';
-    top: 0;
-    color: rgba(0,0,0,0.5);
+.menu__item_mail-on{
+    display: block !important;
+
 }
+
 
 .page__wrapper{
     width: 100%;
@@ -131,14 +146,15 @@ body,html{
 
 .header{
     width: 100%;
-    height: 10vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem 5rem;
 }
 
 .header__content{
-    width: calc(100% - 10rem);
+    width: 100%;
     margin: 0 auto;
     height: auto;
     display: flex;
@@ -184,6 +200,8 @@ body,html{
     font-size: 5rem;
     font-family: 'HelveticaMedium';
     color: black;
+    letter-spacing: -0.6px;
+
 }
 
 .label__text p{
@@ -194,7 +212,7 @@ body,html{
     font-size: 2.6rem;
     font-family: 'HelveticaRegular';
     color: rgba(0,0,0,0.5);
-    letter-spacing: -.5px;
+    letter-spacing: -0.6px;
     
 }
 
@@ -225,16 +243,15 @@ body,html{
 }
 
 .project__description{
-    width: 100%;
-    height: 20vh;
+    
+    height: auto;
     display: flex;
+    padding: 2rem 0;
 }
 
 .project__number{
-    width: 100%;
-    height: 100%;
     font-size: 10rem;
-    font-family: 'HelveticaRegular';
+    font-family: 'HelveticaLight';
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,8 +271,6 @@ body,html{
 }*/
 
 .project__text{
-    width: 100%;
-    height: 100%;
     flex: 2;
     font-size: 2.6rem;
     font-family: 'HelveticaRegular';
@@ -268,4 +283,121 @@ body,html{
 .project__text a{
     color: black;
     text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    height: auto;
+    overflow: hidden;
+}
+
+@media all and (max-width: 1024px){
+    .label__content{
+        max-width: 625px;
+    }
+
+    .label__text{
+        font-size: 4.2rem;
+    }
+    .h2{
+        font-size: 2.2rem;
+    }
+
+    .project__description{
+        max-width: 768px;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media all and (max-width: 768px){
+    .menu__wrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .label{
+        padding: 15rem 0;
+        height: auto;
+    }
+
+    .label__content{
+        max-width: 525px;
+    }
+
+    .label__text{
+        font-size: 3.528rem;
+    }
+
+
+    .project__number {
+        font-size: 8rem;
+    }
+
+    .project__text{
+        font-size: 2.08rem;
+    }
+}
+
+@media all and (max-width: 525px){
+    .header{
+        padding: 2rem 2.5rem;
+    }
+
+    .label__content{
+        max-width: 425px;
+        width: calc(100% - 4rem);
+    }
+
+    .label__text{
+        font-size: 3.087rem;
+        
+    }
+
+    .h2{
+        font-size: 2rem;
+        letter-spacing: -0.3px;
+    }
+
+    .project__number {
+        font-size: 6rem;
+    }
+
+    .menu__wrapper{
+        grid-template-columns: 2fr 1fr;
+    }
+
+}
+
+@media all and (max-width: 425px){
+    .label__text{
+        font-size: 2.7011rem;
+    }
+
+    .label__content{
+        max-width: 375px;
+    }
+
+    .h2{
+        font-size: 1.8rem;
+    }
+
+    .menu__item{
+        font-size: 2.2rem;
+    }
+
+    .project__text{
+        font-size: 1.8rem;
+    }
+}
+
+@media all and (max-width: 375px){
+    .menu__wrapper{
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+@media all and (max-width: 320px){
+    .menu__item{
+        font-size: 2rem;
+    }
 }

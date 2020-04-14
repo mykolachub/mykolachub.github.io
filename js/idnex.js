@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     // menu section
     let mainBtn = document.getElementById('main-btn'),
         projectsBtn = document.getElementById('projects-btn'),
-        aboutBtn = document.getElementById('about-btn');
+        aboutBtn = document.getElementById('about-btn'),
+        Mail = document.getElementById('menu__item_mail');
 
     // main page section
     let headerBtnMenu = document.getElementById('header-btn-menu'),
         page =  document.getElementById('page'),
-        projectsSection = document.getElementById('projects');
+        projectsSection = document.getElementById('projects'),
+        headerMailBtn = document.getElementById('header__mail');
 
     let scrolled,
         timer;
@@ -33,16 +35,62 @@ document.addEventListener('DOMContentLoaded', () =>{
     let OnOrOff = 0;
     function pageShowClose() {
 
+        let pageMoving;
+        
 
-        // changing styles for #page__wrapper
-        let pageMoving = [
-            {
-            transform: "translateX(0%) perspective(0px) translateZ(0px) rotateY(0deg)"
-            },
-            { 
-            transform: "translateX(33%) perspective(1000px) translateZ(-50px) rotateY(-5deg)"
-            }
-        ];
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            /* the viewport is less than 768px wide */
+            // changing styles for #page__wrapper
+            pageMoving = [
+                {
+                transform: "translateX(0%) perspective(0px) translateZ(0px) rotateY(0deg)"
+                },
+                { 
+                transform: "translateX(50%) perspective(1000px) translateZ(-50px) rotateY(-5deg)"
+                }
+                ];
+          }
+          else {
+            /* the viewport is at least 768px wide */  
+            // changing styles for #page__wrapper
+            pageMoving = [
+                {
+                transform: "translateX(0%) perspective(0px) translateZ(0px) rotateY(0deg)"
+                },
+                { 
+                transform: "translateX(33%) perspective(1000px) translateZ(-50px) rotateY(-5deg)"
+                }
+                ];
+            
+          }
+
+          if (window.matchMedia("(max-width: 525px)").matches) {
+            /* the viewport is less than 525px wide */
+            // changing styles for #page__wrapper
+            pageMoving = [
+                {
+                transform: "translateX(0%) perspective(0px) translateZ(0px) rotateY(0deg)"
+                },
+                { 
+                transform: "translateX(66%) perspective(1000px) translateZ(-50px) rotateY(-5deg)"
+                }
+                ];
+          }
+
+          if (window.matchMedia("(max-width: 425px)").matches) {
+            /* the viewport is less than 525px wide */
+            // changing styles for #page__wrapper
+            pageMoving = [
+                {
+                transform: "translateX(0%) perspective(0px) translateZ(0px) rotateY(0deg)"
+                },
+                { 
+                transform: "translateX(70%) perspective(1000px) translateZ(-50px) rotateY(-5deg)"
+                }
+                ];
+          }
+
+        
         
         // animation timing when opened for #page__wrapper
         let pageTimingOn = {
@@ -96,6 +144,20 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
     };
 
+        if (window.matchMedia("(max-width: 525px)").matches) {
+            headerMailBtn.innerText = '🌼 mail';
+            headerMailBtn.addEventListener('click', ()=>{
+                pageShowClose();
+    
+            });
+            Mail.classList.toggle('menu__item_mail-on');
+
+        } else {
+            return;
+        } 
+
+
+       
     
 
     headerBtnMenu.addEventListener('click', ()=>{
