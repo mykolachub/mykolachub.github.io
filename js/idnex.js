@@ -18,29 +18,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         projectsSection = document.getElementById('projects'),
         headerMailBtn = document.getElementById('header__mail');
 
-    
-
-    let  square = document.getElementById('square'),
-        cursorParaLocal = document.getElementById('cursorLocal'),
-        cursorParaGlobal = document.getElementById('cursorGlobal');
-
-    let cursorX, cursorY;
-
-    window.addEventListener('mousemove', (event)=>{
-
-            cursorX = event.clientX;
-            cursorY = event.clientY;
-        
-            cursorParaLocal.textContent = cursorX + ", " + cursorY;
-            cursorParaGlobal.textContent = event.screenX + ", " + event.screenY;
-    });
-
-
-    square.addEventListener('mousemove', ()=>{
-        console.log(cursorX);
-        square.style.setProperty('left' , `${cursorX}px`)
-    })
-
 
     //func describes the way it moves down to necessary section(target)
     function scrollToSection(target) { 

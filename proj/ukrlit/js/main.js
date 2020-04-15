@@ -108,6 +108,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     };
 
+    
+
 
     let clickedAuthors = [];
     
