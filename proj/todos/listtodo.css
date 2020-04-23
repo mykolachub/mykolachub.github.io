@@ -14,7 +14,7 @@ body,html{
 
 .wrapper{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -43,7 +43,8 @@ body,html{
 }
 
 .page__input{
-    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
     height: auto;
     display: flex;
 }
@@ -57,9 +58,7 @@ body,html{
     letter-spacing: 0.5px;
     border: 0;
     border-radius: 50px;
-    background: #f5f6fa;
-    box-shadow:  20px 20px 60px #d0d1d5, 
-                -20px -20px 60px #ffffff;
+    background: white;
     margin-right: 1rem;
 
 }
@@ -73,9 +72,7 @@ body,html{
     padding: 0 2rem;
     border: 0;
     border-radius: 50px;
-    background: #f5f6fa;
-    box-shadow:  20px 20px 60px #d0d1d5, 
-                -20px -20px 60px #ffffff;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,11 +85,24 @@ body,html{
 }
 
 .list{
-    padding: 5rem 0 0 5rem;
+    padding: 2.5rem 0;
     font-family: 'HelveticaRegular';
     font-size: 2.2rem;
+    margin: 0 auto;
+    max-width: 768px;
+    list-style: none;
 }
 
 .list li{
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0 1rem 2.5rem;
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+    background-color: white;
+}
+
+.list li:hover{
+    background-image: url(./success.svg);
 }
