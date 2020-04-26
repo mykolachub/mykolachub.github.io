@@ -12,26 +12,23 @@ document.addEventListener('DOMContentLoaded', () =>{
         GreetingImageBody = document.getElementById('modal__greeting_image');
 
     let MainPage = document.getElementById('main__page'),
-        MainNickname = document.getElementById('nickname__content'),
-        ModeLight = document.getElementById('mode__light'),
-        ModeDark = document.getElementById('mode__dark'),
-        SidebarNickname = document.getElementById('sidebar__nickname_cont');
+        WindowNotes = document.getElementById('window-notes'),
+        iconWrapper = document.getElementById('icon__wrapper'),
+        IconItems = document.querySelectorAll('.icon__item');
 
     
     
+    let mousePageX,
+        mousePageY,
+        mouseOffsetX,
+        mouseOffsetY;
     GreetingInput.value = '';
 
 
     if (localStorage.getItem('Nickname') != null && localStorage.getItem('User Image') != null) {
         GreetingContainer.style.display = 'none';
-        MainPage.style.display = 'grid';
-        SidebarNickname.innerText = localStorage.getItem('Nickname');
-
-
-        RenderingCurrentTime();
-
-        // selecting website's mode
-        SelectingMode();
+        MainPage.style.display = 'block';
+        WindowInit();
     } else {
 
         FirstRun();
@@ -99,26 +96,60 @@ document.addEventListener('DOMContentLoaded', () =>{
             };
         });
     };
-    
-    function SelectingMode() {
-        ModeDark.addEventListener('click', function() {
-            ModeDark.classList.toggle('mode__dark-off');
-            ModeLight.classList.toggle('mode__light-off');
-        });
-
-        ModeLight.addEventListener('click', function() {
-            ModeDark.classList.toggle('mode__dark-off');
-            ModeLight.classList.toggle('mode__light-off');
-        });
-    };
-
 
     function RenderingCurrentTime() {
         let interval = setInterval(() => {
             let CurrentTime = new Date();
-            MainNickname.innerHTML = CurrentTime.getHours()+ ':'+CurrentTime.getMinutes()+':'+CurrentTime.getSeconds();
+            HeaderTime.innerHTML = CurrentTime.getHours()+ ':'+CurrentTime.getMinutes()+':'+CurrentTime.getSeconds();
         }, 1000);
     }
         
+    function WindowInit() {
+        IconItems.forEach(element => {
+            element.setAttribute('draggable', 'true');
+
+            element.addEventListener('dragstart', function(event) {
+               mouseOffsetX = event.offsetX;
+               mouseOffsetY = event.offsetY; 
+            });
+            //console.log(element);
+            element.addEventListener('dragend', function (event) {
+                mousePageX = event.pageX;
+                mousePageY = event.pageY;
+                this.style.top = (mousePageY - mouseOffsetY) + 'px';
+                this.style.left = (mousePageX - mouseOffsetX) + 'px';
+            });
+
+            element.addEventListener('dblclick', ()=>{
+                console.log(element.dataset.window);
+                document.getElementById(element.dataset.window).classList.add('window-open');
+
+                document.getElementById(element.dataset.window + '-close').addEventListener('click', ()=>{
+                    document.getElementById(element.dataset.window).classList.remove('window-open');
+                });
+
+                document.getElementById(element.dataset.window + '-help').addEventListener('click', ()=>{
+                    alert('i have like nothing to help you with (:')
+                });
+
+                document.getElementById(element.dataset.window + '-drag').addEventListener('dragstart', function(event) {
+                    mouseOffsetX = event.offsetX;
+                    mouseOffsetY = event.offsetY; 
+                });
+
+                document.getElementById(element.dataset.window + '-drag').addEventListener('dragend', function(event) {
+                    mousePageX = event.pageX;
+                    mousePageY = event.pageY;
+                    document.getElementById(element.dataset.window).style.top = (mousePageY - mouseOffsetY) + 'px';
+                    document.getElementById(element.dataset.window).style.left = (mousePageX - mouseOffsetX) + 'px';
+                });
+            });
+        });
+
+        
+    }
+
+    
         
 });
+
