@@ -529,7 +529,8 @@ main
 }
 
 
-.list__active_ul{
+.list__active_ul,
+.list__done_ul{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.2rem;
@@ -538,14 +539,20 @@ main
     list-style-position: inside;
 }
 
-.list__active_ul li{
+.list__done_ul{
+    padding: 1rem;
+    text-shadow: 1px 1px 0 #fff;color: grey;
+}
+
+.list__active_ul li,
+.list__done_ul li{
     font-size: 2.2rem;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem 2rem;
     box-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;
     background: silver;
-    color: black;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .list__active_ul li:last-child{

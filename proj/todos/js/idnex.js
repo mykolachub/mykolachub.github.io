@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () =>{
         IconItems = document.querySelectorAll('.icon__item'),
         input = document.getElementById('input'),
         list = document.getElementById('list__active'),
-        enter = document.getElementById('button');
+        enter = document.getElementById('button'),
+        listDone = document.getElementById('list__done-cont');
 
     let ListItemsContainer = {
         ListArray: []
@@ -158,6 +159,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     };
 
     function ListToDo(params) {
+
+
         if (localStorage.getItem('List') != null) {
         
             let ListStorage = JSON.parse(localStorage.getItem('List'));    
@@ -167,9 +170,10 @@ document.addEventListener('DOMContentLoaded', () =>{
                 
                 let ListItem = document.createElement("li");
                 ListItem.innerHTML = ListStorage[i];
+                ListItem.setAttribute('draggable', 'true');
     
                 // if required to remove
-                if (ListItem.addEventListener('click', ()=>{
+                if (ListItem.addEventListener('dblclick', ()=>{
                     console.log('%cLOCAL removing process was started', 'color: lightblue');
                     console.log('   %c|', 'color: lightblue', 'removing of ', `${ListItem.innerHTML}`);
                     console.log('   %c|', 'color: lightblue', 'its index in array', ListItemsContainer.ListArray.indexOf(ListItem.innerHTML));
@@ -179,6 +183,21 @@ document.addEventListener('DOMContentLoaded', () =>{
                     console.log('   %c|', 'color: lightblue', 'array after removing ', ListItemsContainer.ListArray);
                     console.log('   %c|', 'color: lightblue', 'LocalStorage after removing ', ListStorage);
                 })){ 
+
+                }
+                else if (ListItem.addEventListener('dragstart', e=>{
+                    listDone.addEventListener('dragover', e=>{
+                        e.preventDefault();
+                    });
+
+                    listDone.addEventListener('drop', e=>{
+                        document.getElementById('list__done').appendChild(ListItem);
+
+                        ListItemsContainer.ListArray.splice(ListItemsContainer.ListArray.indexOf(ListItem.innerHTML), 1);
+                        localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
+                    });
+                })) {
+                    
                 }
                 // if NOT required to remove
                 else{
@@ -195,9 +214,23 @@ document.addEventListener('DOMContentLoaded', () =>{
             if (res != '') {
                 let ListItem = document.createElement("li");
                 ListItem.innerHTML = res.trim();
-    
-                // if required to remove
-                if (ListItem.addEventListener('click', ()=>{
+
+                ListItem.setAttribute('draggable', 'true');
+
+                if (ListItem.addEventListener('dragstart', e=>{
+                    listDone.addEventListener('dragover', e=>{
+                        e.preventDefault();
+                    });
+
+                    listDone.addEventListener('drop', e=>{
+                        document.getElementById('list__done').appendChild(ListItem);
+                        localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
+                        ListItemsContainer.ListArray.splice(ListItemsContainer.ListArray.indexOf(ListItem.innerHTML), 1);
+                    });
+                })) {
+                    
+                }
+                else if (ListItem.addEventListener('dblclick', ()=>{
                     console.log('%cGLOBAL removing process was started', 'color: lightgreen');
                     console.log('   %c|', 'color: lightgreen', 'removing of ', `${ListItem.innerHTML}`);
                     console.log('   %c|', 'color: lightgreen', 'its index in array', ListItemsContainer.ListArray.indexOf(ListItem.innerHTML));
@@ -208,13 +241,31 @@ document.addEventListener('DOMContentLoaded', () =>{
                 })) {
                     
                 }
-    
-                // if NOT required to remove
-                else{
+                else {
                     list.appendChild(ListItem);
                     ListItemsContainer.ListArray.push(`${ListItem.innerHTML}`);
                     localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
-                }      
+                }
+    
+                // if required to remove
+                /*if (ListItem.addEventListener('click', ()=>{
+                    console.log('%cGLOBAL removing process was started', 'color: lightgreen');
+                    console.log('   %c|', 'color: lightgreen', 'removing of ', `${ListItem.innerHTML}`);
+                    console.log('   %c|', 'color: lightgreen', 'its index in array', ListItemsContainer.ListArray.indexOf(ListItem.innerHTML));
+                    list.removeChild(ListItem);
+                    ListItemsContainer.ListArray.splice(ListItemsContainer.ListArray.indexOf(ListItem.innerHTML), 1);
+                    console.log('   %c|', 'color: lightgreen', 'array after removing ', ListItemsContainer.ListArray);
+                    localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
+                })) {
+                    
+                }*/
+    
+                // if NOT required to remove
+                /*else{
+                    list.appendChild(ListItem);
+                    ListItemsContainer.ListArray.push(`${ListItem.innerHTML}`);
+                    localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
+                }*/      
     
                 
             } 
