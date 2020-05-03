@@ -16,7 +16,17 @@ document.addEventListener('DOMContentLoaded', () =>{
     let headerBtnMenu = document.getElementById('header-btn-menu'),
         page =  document.getElementById('page'),
         projectsSection = document.getElementById('projects'),
-        headerMailBtn = document.getElementById('header__mail');
+        headerMailBtn = document.getElementById('header__mail'),
+        offerSection = document.getElementById('offer'),
+        offerBest = document.getElementById('offer__best'),
+        offerOther = document.getElementById('offer__other'),
+        offerSkill = document.getElementById('offer__skill'),
+        offerQuestion = document.getElementById('offer__question'),
+        OtherWorks =  document.getElementById('works'),
+        CloseWorks = document.getElementById('works__close'),
+        AttentionWorks = document.getElementById('works__attention'),
+        AttentionBtnWorks = document.getElementById('works__attention-btn');
+
 
 
     //func describes the way it moves down to necessary section(target)
@@ -162,10 +172,31 @@ document.addEventListener('DOMContentLoaded', () =>{
         } else {
             return;
         } */
+        //jjjjj();
 
 
-       
+    window.addEventListener('resize', ()=>{
+        //jjjjj();
+    });
     
+    function jjjjj() {
+        let workItem = OtherWorks.querySelectorAll('.works__text'),
+            workPic = OtherWorks.querySelectorAll('.works__picture'),
+            workArticle = OtherWorks.querySelectorAll('.works__article'),
+            height;
+
+        workPic.forEach(element => {
+            height = element.clientHeight;
+
+            workItem.forEach(element2 => {
+                element2.setAttribute('style', `height: ${height}px !important;`);
+            });
+        });
+
+         
+
+        
+    };
 
     headerBtnMenu.addEventListener('click', ()=>{
         pageShowClose();
@@ -190,6 +221,29 @@ document.addEventListener('DOMContentLoaded', () =>{
         setTimeout(TimingForScrolling, 1250);
 
         
+    });
+
+    offerBest.addEventListener('click', ()=>{
+        scrollToSection(projectsSection);
+    });
+
+    offerOther.addEventListener('click', ()=>{
+        scrollToSection(OtherWorks);
+        OtherWorks.classList.toggle('works-on');
+
+        offerSection.classList.toggle("offer-off");
+        projectsSection.classList.toggle('projects-off');
+    });
+
+    CloseWorks.addEventListener('click', ()=>{
+        OtherWorks.classList.toggle('works-on');
+
+        offerSection.classList.toggle("offer-off");
+        projectsSection.classList.toggle('projects-off');
+    });
+
+    AttentionBtnWorks.addEventListener('click', ()=>{
+        AttentionWorks.classList.toggle('works__attention-off');
     });
     
 
