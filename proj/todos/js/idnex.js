@@ -18,25 +18,28 @@ document.addEventListener('DOMContentLoaded', () =>{
         input = document.getElementById('input'),
         list = document.getElementById('list__active'),
         enter = document.getElementById('button'),
-        listDone = document.getElementById('list__done-cont');
+        listDoneWrapper = document.getElementById('list__done-cont'),
+        ListDone = document.getElementById('list__done');
 
     let ListItemsContainer = {
         ListArray: []
     };
 
+
     
     let mousePageX,
         mousePageY,
         mouseOffsetX,
-        mouseOffsetY;
+        mouseOffsetY,
+        BLockzIndex = 100;
     GreetingInput.value = '';
 
 
-    if (localStorage.getItem('Nickname') != null && localStorage.getItem('User Image') != null) {
+
+    if (localStorage.getItem('Nickname') != null) {
         GreetingContainer.style.display = 'none';
         MainPage.style.display = 'block';
         WindowInit();
-
         ListToDo();
     } else {
 
@@ -133,6 +136,11 @@ document.addEventListener('DOMContentLoaded', () =>{
                 console.log(element.dataset.window);
                 document.getElementById(element.dataset.window).classList.add('window-open');
 
+                document.getElementById(element.dataset.window).addEventListener('click', ()=>{
+                    BLockzIndex ++;
+                    document.getElementById(element.dataset.window).style.zIndex = BLockzIndex;
+                });
+
                 document.getElementById(element.dataset.window + '-close').addEventListener('click', ()=>{
                     document.getElementById(element.dataset.window).classList.remove('window-open');
                 });
@@ -186,12 +194,13 @@ document.addEventListener('DOMContentLoaded', () =>{
 
                 }
                 else if (ListItem.addEventListener('dragstart', e=>{
-                    listDone.addEventListener('dragover', e=>{
+                    listDoneWrapper.addEventListener('dragover', e=>{
                         e.preventDefault();
                     });
 
-                    listDone.addEventListener('drop', e=>{
-                        document.getElementById('list__done').appendChild(ListItem);
+                    listDoneWrapper.addEventListener('drop', e=>{
+                        ListDone.classList.remove('list__disable');
+                        ListDone.appendChild(ListItem);
 
                         ListItemsContainer.ListArray.splice(ListItemsContainer.ListArray.indexOf(ListItem.innerHTML), 1);
                         localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
@@ -208,24 +217,40 @@ document.addEventListener('DOMContentLoaded', () =>{
         }  else{
             console.log('%cLocalStorage is not active ', 'color: orange');
         }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.code == 'Enter') {
+              name();
+            }
+          });
     
         enter.addEventListener('click', ()=>{
+            name();
+        });
+    
+    
+        for (let i = 1; i < list.childNodes.length; i++) {
+            ListItemsContainer.ListArray.push(`${list.childNodes[i].innerHTML}`);
+        }
+
+        function name(params) {
             let res = input.value;
             if (res != '') {
                 let ListItem = document.createElement("li");
                 ListItem.innerHTML = res.trim();
-
+        
                 ListItem.setAttribute('draggable', 'true');
-
+        
                 if (ListItem.addEventListener('dragstart', e=>{
-                    listDone.addEventListener('dragover', e=>{
+                    listDoneWrapper.addEventListener('dragover', e=>{
                         e.preventDefault();
                     });
-
-                    listDone.addEventListener('drop', e=>{
-                        document.getElementById('list__done').appendChild(ListItem);
-                        localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
+        
+                    listDoneWrapper.addEventListener('drop', e=>{
+                        ListDone.classList.remove('list__disable');
+                        ListDone.appendChild(ListItem);
                         ListItemsContainer.ListArray.splice(ListItemsContainer.ListArray.indexOf(ListItem.innerHTML), 1);
+                        localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
                     });
                 })) {
                     
@@ -246,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                     ListItemsContainer.ListArray.push(`${ListItem.innerHTML}`);
                     localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
                 }
-    
+        
                 // if required to remove
                 /*if (ListItem.addEventListener('click', ()=>{
                     console.log('%cGLOBAL removing process was started', 'color: lightgreen');
@@ -259,26 +284,21 @@ document.addEventListener('DOMContentLoaded', () =>{
                 })) {
                     
                 }*/
-    
+        
                 // if NOT required to remove
                 /*else{
                     list.appendChild(ListItem);
                     ListItemsContainer.ListArray.push(`${ListItem.innerHTML}`);
                     localStorage.setItem('List', JSON.stringify(ListItemsContainer.ListArray));
                 }*/      
-    
+        
                 
             } 
             // if nothing was entered
             else{
                 console.log('%cnothing was entered! ', 'color: orange');
                 return;
-            }
-        });
-    
-    
-        for (let i = 1; i < list.childNodes.length; i++) {
-            ListItemsContainer.ListArray.push(`${list.childNodes[i].innerHTML}`);
+            };
         }
     };
         

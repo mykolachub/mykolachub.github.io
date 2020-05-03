@@ -13,29 +13,29 @@
     <div class="wrapper">
         <div id="modal__greeting" class="modal__greeting">
             <div id="modal__greeting_body" class="modal__greeting-body">
-                <div class="modal__greeting-heading">
-                    Welcome to Home Page
-                </div>
-                <div class="modal__greeting-main">
-                    <div class="modal__greeting-input">
-                        <input id="input__nickname" type="text" placeholder="write us how to call you">
+                <div id="window-start" class="window start">
+                    <div id="window-start-drag" class="window__header start__header" draggable="true">
+                        <div class="window__lable start__lable">Start</div>
+                        <div class="window__btn start__btn">
+                            <div id="window-start-help" class="window__btn_item">
+                                <img src="./icons/question.png" alt="help">
+                            </div>
+                            <div id="window-start-close" class="window__btn_item">
+                                <img src="./icons/close.png" alt="close">
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal__border"></div>
-                </div>
-                <div class="modal__greeting-accept">
-                    <div id="modal__greeting-btn">
-                        <img src="./icons/plus.svg" alt="">
+                    <div class="window__main start__main">
+                        <div class="start__text">
+                            Write your nickname to continue
+                        </div>
+                        <div class="start__input">
+                            <input style="margin-bottom: 2rem; text-align: center;" placeholder="write right here" class="input" type="text">
+                            <div class="button">
+                                Start
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div id="modal__greeting_image" class="modal__greeting-image">
-                <div id="modal__image_container" class="modal__greeting-image_body modal__greeting-image_body-off">
-                    <img id="modal__image" alt="Upload an image, please">
-                    <div class="modal__border"></div>
-                </div>
-                <div class="modal__greeting-image_btns">
-                    <input type="file" id="modal__btn-select_image" class="modal__greeting-image-btn-item"></input>
-                    <div id="modal__btn-upload_image" class="modal__greeting-image-btn-item">upload</div>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                                 Computer
                             </div>
                         </div>
-                        <div id="icon__item2" class="icon__item">
+                        <div id="icon__item2" data-window="window-help" class="icon__item">
                             <img src="./icons/book.png" alt="Computer">
                             <div class="icon__label">
                                 Info
@@ -62,6 +62,20 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="window-help" class="window help">
+                    <div id="window-help-drag" class="window__header help__header" draggable="true">
+                        <div class="window__lable help__lable">Help</div>
+                        <div class="window__btn help__btn">
+                            <div id="window-help-help" class="window__btn_item">
+                                <img src="./icons/question.png" alt="help">
+                            </div>
+                            <div id="window-help-close" class="window__btn_item">
+                                <img src="./icons/close.png" alt="close">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="window__main help__main"></div>
                 </div>
                 <div id="window-note" class="window notes">
                     <div id="window-note-drag" draggable="true" class="window__header notes__header">
@@ -77,7 +91,7 @@
                     </div>
                     <div class="window__main notes__main">
                         <div class="notes__text">
-                            Simple ListToDo
+                            ListToDo
                         </div>
                         <div class="notes__input-wrapper">
                             <div class="notes__input">
@@ -87,16 +101,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="notes__indicators">
+                            <div class="note__text">have to do:</div>
+                            <div class="note__text">have already completed:</div>
+                        </div>
                         <div class="notes__list">
                             <div class="list__active">
                                 <ul id="list__active" class="list__active_ul">
                                     
                                 </ul>
                             </div>
-                            <div id="list__done-cont" class="list__done">
-                                <ul id="list__done" class="list__done_ul">
+                            <div id="list__done-cont" class="list__done ">
+                                <ul id="list__done" class="list__done_ul list__disable">
                                     
                                 </ul>
+
                             </div>
                         </div>  
                     </div>

@@ -27,6 +27,16 @@ document.addEventListener('DOMContentLoaded', () =>{
         }); 
     };
 
+    if (window.matchMedia("(max-width: 525px)").matches) {
+        headerMailBtn.innerText = '🌼 mail';
+        headerMailBtn.addEventListener('click', ()=>{
+            pageShowClose();
+
+        });
+        Mail.classList.toggle('menu__item_mail-on');
+
+    };
+
 
     // animation for menu appearing
     let OnOrOff = 0;
@@ -115,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             function addPageWrappClass() {
                 page.classList.toggle('page__wrapper-on');
-            }
+            };
             
             setTimeout(addPageWrappClass, 0);
 
@@ -141,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
     };
 
-        if (window.matchMedia("(max-width: 525px)").matches) {
+        /*if (window.matchMedia("(max-width: 525px)").matches) {
             headerMailBtn.innerText = '🌼 mail';
             headerMailBtn.addEventListener('click', ()=>{
                 pageShowClose();
@@ -151,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         } else {
             return;
-        } 
+        } */
 
 
        
@@ -159,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     headerBtnMenu.addEventListener('click', ()=>{
         pageShowClose();
+        
     });
 
     mainBtn.addEventListener('click', ()=>{
@@ -173,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         pageShowClose();
 
         function TimingForScrolling() {
-            scrollToSection(projects);
+            scrollToSection(projectsSection);
         };
 
         setTimeout(TimingForScrolling, 1250);
