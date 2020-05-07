@@ -1,0 +1,299 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "HelveticaNeueLTPro-HvEx";
+    src: url("../../fonts/381212_0_0.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk";
+    src: url("https://type.cargo.site/NeueHaasGrotesk/NeueHaasGroteskTextRegular-3.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    unicode-range: U+0-DFFF, U+F900-FFFD;
+}
+
+:root{
+    --helvb: "HelveticaNeueLTPro-HvEx";
+    --neu: "Neue Haas Grotesk";
+}
+
+body,
+html{
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+}
+
+.wrapper__main{
+    width: 100%;
+    height: 800vh;
+}
+
+.wrapper__fixed{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+.wrapper__head{
+    width: 100%;
+    height: 7.5rem;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    z-index: 100;
+}
+
+.wrapper__label,
+.wrapper__time,
+.wrapper__menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper__label div,
+.wrapper__time,
+.wrapper__menu div{
+    font-family: var(--neu);
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper__label div,
+.wrapper__menu div{
+    cursor: pointer;
+}
+
+.wrapper__label div::after,
+.wrapper__menu div::after{
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: red;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    position: absolute;
+    display: none;
+}
+
+.zIndx-2{
+    position: relative;
+    z-index: -2;
+}
+
+.wrapper__label div:hover::after,
+.wrapper__menu div:hover::after{
+    display: block;
+}
+
+.start{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+.start__body{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.start__text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    z-index: 11;
+    grid-template-rows: 1fr 1fr;
+}
+
+.start__text_item{
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+#text1{
+    font-family: var(--helvb);
+    color: red;
+    font-size: 10rem;
+    display: inline-block;
+    position: absolute;
+    bottom: 0%;
+    transform: translateX(-50%);
+    left: 50%/*calc(50% + 100px)*/;
+}
+
+#text2{
+    font-family: var(--helvb);
+    color: transparent;
+    -webkit-text-stroke: 2px red;
+    display: inline-block;
+    position: absolute;
+    font-size: 10rem;
+    top: 0%;
+    left: 400px;
+}
+
+.start__photo{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: absolute;
+    grid-template-columns: 1fr 1fr;
+}
+
+.start__photo_item{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.start__photo_item img{
+    width: 75%;
+    height: 75%;
+    z-index: 10;
+    position: absolute;
+    object-fit: contain;
+}
+
+#pht1{
+    top: 25%;
+    left: 20%;
+    transform: translate(-20%, -25%);
+}
+
+#pht2{
+    bottom: 25%;
+    right: 20%;
+    transform: translate(20%, 25%);
+}
+
+.start__scroll{
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.start__scroll span{
+    width: 10px;
+    height: 10px;
+    background: #000;
+    display: block;
+    transition: all 500ms ease;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.scroll-1{
+    transition: all 500ms ease;
+    animation: DotAnim1 2s ease 0ms infinite normal forwards;
+}
+
+.scroll-2{
+    transition: all 500ms ease;
+    animation: DotAnim2 2s ease 2000ms infinite normal forwards;
+}
+
+.scroll-3{
+    transition: all 500ms ease;
+    animation: DotAnim3 2s ease 4000ms infinite normal forwards;
+}
+
+@keyframes DotAnim1{
+    25%{
+        background: red;
+
+    }
+}
+
+@keyframes DotAnim2{
+    50%{
+        background: red;
+
+
+    }
+}
+
+@keyframes DotAnim3{
+    75%{
+        background: red;
+
+
+    }
+}
+
+#second{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    opacity: -0.5;
+}
+
+.second__body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.second__text{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+}
+
+.second__gallery{
+    width: 100%;
+    height: 100%;
+    grid-column: 2/-1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second__pics{
+    width: 90%;
+    height: 90%;
+    background: red;
+    border: 2px solid black;
+    perspective: 1500px;
+    transform: rotate3d(180,-45,0,-135deg);
+}
+
+.second__circle{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000;
+    bottom: 50px;
+    left: 50px;
+}
