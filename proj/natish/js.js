@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         time.innerHTML = CurrentTime.getHours()+ ':'+CurrentTime.getMinutes()+':'+CurrentTime.getSeconds();
     }, 1000);
 
+
     window.addEventListener('scroll', e =>{
-        //console.log(window.scrollY / 10);
+        console.log(window.scrollY);
         //console.log(text.getBoundingClientRect());
         text1.setAttribute('style', `left: calc(50% + ${window.scrollY}px); opacity: calc(1 - ${window.scrollY / 1000});`);
         text2.setAttribute('style', `left: calc(400px - ${window.scrollY * 1.5}px); opacity: calc(1 - ${window.scrollY / 1000});`);
@@ -32,5 +33,10 @@ document.addEventListener('DOMContentLoaded', () =>{
         startScroll.setAttribute('style', `opacity: calc(1 - ${window.scrollY / 1000});`);
         document.getElementById('second').setAttribute('style', `opacity: calc(-0.5 + ${window.scrollY / 1000});`);
         document.getElementById('start').setAttribute('style', `opacity: calc(1.5 - ${window.scrollY / 1000});`);
+        
+        let height = document.getElementById('second__pht2').clientWidth + (document.getElementById('second__pht2').clientWidth * 0.3333333333333333) ;//+ 128;
+        document.getElementById('second__pht1').setAttribute('style', `left: calc(100% - 1455px + ${window.scrollY}px);`);
+        document.getElementById('second__pht2').setAttribute('style', `left: calc(100% - (1455px + ${height}px) + ${window.scrollY}px);`);
+        document.getElementById('second__circle').setAttribute('style', `transform: rotate(-${window.scrollY / 5}deg);`);
     })
 });
