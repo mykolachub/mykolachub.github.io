@@ -43,29 +43,31 @@ document.addEventListener('DOMContentLoaded', () =>{
     window.addEventListener('scroll', e =>{
         console.log(window.scrollY);
         // start frame
-        text1Start.setAttribute('style', `left: calc(50% + ${window.scrollY}px); opacity: calc(1 - ${window.scrollY / 1000});`);
-        text2Start.setAttribute('style', `left: calc(50% - ${window.scrollY / 1.2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
-        photo1Start.setAttribute('style', `top: calc(25% + ${window.scrollY / 1.2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
-        photo2Start.setAttribute('style', `bottom: calc(25% + ${window.scrollY / 1.2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
+        text1Start.setAttribute('style', `left: calc(50% + ${window.scrollY /2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
+        text2Start.setAttribute('style', `left: calc(50% - ${window.scrollY / 2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
+        photo1Start.setAttribute('style', `top: calc(25% + ${window.scrollY / 2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
+        photo2Start.setAttribute('style', `bottom: calc(25% + ${window.scrollY / 2}px); opacity: calc(1 - ${window.scrollY / 1000});`);
         dotsStart.setAttribute('style', `opacity: calc(1 - ${window.scrollY / 1000});`);
         //bodyStart.setAttribute('style', `opacity: calc(1.5 - ${window.scrollY / 1000});`);
         
         // second frame
         //bodySecond.setAttribute('style', `opacity: calc(-0.5 + ${window.scrollY / 1000});`);
         let photoLedge = photo2Second.clientWidth + (photo2Second.clientWidth * 0.3333333333333333) ;
-        photo1Second.setAttribute('style', `left: calc(100% - 1600px + ${window.scrollY / 1.5}px);`);
-        photo2Second.setAttribute('style', `left: calc(100% - (1600px + ${photoLedge}px) + ${window.scrollY / 1.5}px);`);
+        photo1Second.setAttribute('style', `left: calc(100% - 1600px + ${window.scrollY / 2}px);`);
+        photo2Second.setAttribute('style', `left: calc(100% - (1600px + ${photoLedge}px) + ${window.scrollY / 2}px);`);
         circle.setAttribute('style', `transform: rotate(-${window.scrollY / 5}deg); opacity: calc(-0.5 + ${window.scrollY / 1000});`);
         
         // third frame
-        if (window.scrollY >= 4400) {
+        let thirdPoint = 6650;
+        let thirdStart = thirdPoint * 0.67669;
+        if (window.scrollY >= thirdPoint) {
             window.addEventListener('scroll', e =>{ 
-                photo1Third.setAttribute('style', `left: calc(0% + 4400px - ${window.scrollY}px);`);
-                photo2Third.setAttribute('style', `left: calc(0% - 4400px + ${window.scrollY}px);`);
+                photo1Third.setAttribute('style', `left: calc(0% + ${thirdPoint / 2}px - ${window.scrollY / 2}px);`);
+                photo2Third.setAttribute('style', `left: calc(0% - ${thirdPoint / 2}px + ${window.scrollY / 2}px);`);
             });
         }
         else{
-            bodyThird.setAttribute('style', `top: calc(0% + 3750px - ${window.scrollY / 1.2}px);`);
+            bodyThird.setAttribute('style', `top: calc(0% + ${thirdStart}px - ${window.scrollY / 1.5}px);`);
 
             window.addEventListener('scroll', e =>{ 
                 photo1Third.setAttribute('style', `left: 0% !important;`);
@@ -74,23 +76,25 @@ document.addEventListener('DOMContentLoaded', () =>{
         };
 
         // fourth frame
-        bodyFourth.setAttribute('style', `bottom: calc(0% + 5000px - ${window.scrollY / 1.2}px);`);
+        bodyFourth.setAttribute('style', `bottom: calc(0% + 5250px - ${window.scrollY / 2}px);`);
 
         // fifth frame
-        bodyFifth.setAttribute('style', `top: calc(0% + 5000px - ${window.scrollY / 1.5}px);`);
+        let fifthPoint = 12375;
+        let fifthStart1 = fifthPoint / 1.5;
+        let fifthStart2 = 12375;
+        let fifthStart3 = fifthStart2 / 1.5;
+        bodyFifth.setAttribute('style', `top: calc(0% + ${fifthStart1}px - ${window.scrollY / 1.5}px);`);
 
-        if (window.scrollY >= 6105) {
-            //sectionNameWorks.setAttribute('style', `top: calc(100% - 5000px + ${window.scrollY}px);`);
+        if (window.scrollY >= fifthStart2) {
             window.addEventListener('scroll', e =>{ 
-                sectionNameWorks.setAttribute('style', `top: calc(0% + (5000px - ${window.scrollY / 1.5}px)); opacity: calc(-0.5 + ${window.scrollY / 1000});`);
+                sectionNameWorks.setAttribute('style', `bottom: calc(50px - (${fifthStart3}px - ${window.scrollY / 1.5}px)); opacity: calc(-0.5 + ${window.scrollY / 1000});`);
             });
         }
         else{
-            //sectionNameWorks.setAttribute('style', `top: calc(100% - 50px);`);
             window.addEventListener('scroll', e =>{ 
-                sectionNameWorks.setAttribute('style', `top: calc(100% - 50px); opacity: calc(-0.5 + ${window.scrollY / 1000});`);
+                sectionNameWorks.setAttribute('style', `bottom: 50px; opacity: calc(-0.5 + ${window.scrollY / 1000});`);
             });
         };
         
-    })
+    });
 });

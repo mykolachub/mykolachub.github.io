@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: "Neue Haas Grotesk";
-    src: url("https://type.cargo.site/NeueHaasGrotesk/NeueHaasGroteskTextRegular-3.woff") format("woff");
+    src: url("./NeueHaasGroteskTextRegular-3\(1\).woff") format("woff");
     font-style: normal;
     font-weight: normal;
     unicode-range: U+0-DFFF, U+F900-FFFD;
@@ -33,7 +33,7 @@ html{
 
 .wrapper__main{
     width: 100%;
-    height: 1000vh;
+    height: 3000vh;
 }
 
 .wrapper__fixed{
@@ -418,6 +418,7 @@ html{
     height: 75%;
     object-fit: contain;
     display: flex;
+    filter: grayscale(1);
 }
 
 .fourth__photo_keerep:nth-of-type(2n+1){
@@ -430,7 +431,7 @@ html{
 
 #fifth{
     width: 100%;
-    height: 200vh;
+    height: auto;
     position: absolute;
     bottom: calc(0% + 5800px);
 }
@@ -447,11 +448,16 @@ html{
     background: #000;
 }
 
+.fifth__text_keerep{
+    font-size: 10rem;
+    font-family: var(--neu);
+    color: black;
+}
+
 .section__name{
     position: absolute;
-    top: calc(100% - 50px);
+    bottom: 50px;
     right: 50px;
-    transform: translateY(-100%);
     display: inline-block;
     color: transparent;
     font-family: var(--helvb);
