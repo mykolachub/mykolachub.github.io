@@ -33,7 +33,7 @@ html{
 
 .wrapper__main{
     width: 100%;
-    height: 800vh;
+    height: 1000vh;
 }
 
 .wrapper__fixed{
@@ -132,7 +132,7 @@ html{
     height: 100%;
 }
 
-#text1{
+#start__text1{
     font-family: var(--helvb);
     color: red;
     font-size: 10rem;
@@ -143,7 +143,7 @@ html{
     left: 50%/*calc(50% + 100px)*/;
 }
 
-#text2{
+#start__text2{
     font-family: var(--helvb);
     color: transparent;
     -webkit-text-stroke: 2px red;
@@ -151,7 +151,8 @@ html{
     position: absolute;
     font-size: 10rem;
     top: 0%;
-    left: 400px;
+    transform: translateX(-50%);
+    left: 50%;
 }
 
 .start__photo{
@@ -176,13 +177,13 @@ html{
     object-fit: contain;
 }
 
-#pht1{
+#start__photo1{
     top: 25%;
     left: 20%;
     transform: translate(-20%, -25%);
 }
 
-#pht2{
+#start__photo2{
     bottom: 25%;
     right: 20%;
     transform: translate(20%, 25%);
@@ -253,7 +254,7 @@ html{
     width: 100%;
     height: 100vh;
     position: absolute;
-    opacity: -0.5;
+    /*opacity: -0.5;*/
 }
 
 .second__body{
@@ -264,30 +265,30 @@ html{
     grid-template-columns: 1fr 1fr;
 }
 
-.second__pic{
+.second__photo_keerep{
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
 }
 
-#second__pht1{
+#second__photo1{
     position: absolute;
     top: 50%;
-    left: calc(100% - 1455px);
+    left: calc(100% - 1600px);
     width: 75%;
     height: 75%;
     transform: translate(-100%, -50%);
 }
 
-#second__pht1 img{
+#second__photo1 img{
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center right;
 }
 
-#second__pht2{
+#second__photo2{
     position: absolute;
     top: 50%;
     width: 75%;
@@ -295,7 +296,7 @@ html{
     transform: translate(-100%, -50%);
 }
 
-#second__pht2 img{
+#second__photo2 img{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -311,7 +312,7 @@ html{
 
 
 
-#second__circle{
+#circle{
     position: absolute;
     width: 150px;
     height: 150px;
@@ -325,16 +326,136 @@ html{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    opacity: -0.5;
     /*-webkit-animation: rotate 7s linear infinite;
-    animation: rotate 10s linear infinite;*/
+    animation: circleRotate 10s linear infinite;*/
 }
 
 
-@keyframes rotate {
+@keyframes circleRotate {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
     }
+}
+
+#third{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 100%;
+}
+
+.third__body{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.third__photo_keerep{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#third__photo1{
+    grid-column: 1/2;
+    left: 0%;
+}
+
+#third__photo2{
+    grid-column: 2/-1;
+    left: 0%;
+}
+
+#third__photo1 img{
+    width: 90%;
+    height: 90%;
+    left: 55%;
+    position: absolute;
+    object-fit: contain;
+    filter: grayscale(1);
+}
+
+#third__photo2 img{
+    left: -45%;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    filter: grayscale(1);
+    object-fit: contain;
+}
+
+#fourth{
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    bottom: calc(0% + 5000px);
+}
+
+.fourth__body{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.fourth__photo_keerep{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.fourth__photo_keerep img{
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    display: flex;
+}
+
+.fourth__photo_keerep:nth-of-type(2n+1){
+    align-self: flex-start;
+}
+
+.fourth__photo_keerep:nth-of-type(2n){
+    align-items: flex-end;
+}
+
+#fifth{
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    bottom: calc(0% + 5800px);
+}
+
+.fifth__body{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1fr;
+}
+
+.fifth__photo_keerep{
+    background: #000;
+}
+
+.section__name{
+    position: absolute;
+    top: calc(100% - 50px);
+    right: 50px;
+    transform: translateY(-100%);
+    display: inline-block;
+    color: transparent;
+    font-family: var(--helvb);
+    font-size: 10rem;
+    -webkit-text-stroke: 2px red;
+    opacity: -0.5;
 }
