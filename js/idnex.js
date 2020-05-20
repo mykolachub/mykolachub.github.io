@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     // main page section
     let headerBtnMenu = document.getElementById('header-btn-menu'),
-        page =  document.getElementById('page'),
+        page = document.getElementById('page'),
         projectsSection = document.getElementById('projects'),
         headerMailBtn = document.getElementById('header__mail'),
         offerSection = document.getElementById('offer'),
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         offerSkill = document.getElementById('offer__skill'),
         offerQuestion = document.getElementById('offer__question'),
         OtherWorks =  document.getElementById('works'),
+        OtherWorksWrapper = document.getElementById('works__wrapper'),
         CloseWorks = document.getElementById('works__close'),
         AttentionWorks = document.getElementById('works__attention'),
         AttentionBtnWorks = document.getElementById('works__attention-btn');
@@ -174,33 +175,105 @@ document.addEventListener('DOMContentLoaded', () =>{
         } */
         //jjjjj();
 
+    const worksArticleData = {
+        0: `<div class="works__text">
+                <div class="works__headering">
+                    01: Grammar
+                </div>
+                <div class="works__subhead">
+                    as the first projects
+                </div>
+                <div class="works__features">
+                    <span class="bold">Features:</span> there is nothing special. It is just a simple site made by using HTML5 and CSS3. First time using Media Queries.
+                </div>
+                <a href="./proj/grammar/index.html" class="works__btn">
+                    Learn More
+                </a>
+            </div>
+            <div class="works__picture">
+                <img src="img/projects/grammar.jpg" alt="">
+            </div>`,
+        1: `<div class="works__text">
+                <div class="works__headering">
+                    02: Old Portfolio
+                </div>
+                <div class="works__subhead">
+                    as previous version of this site
+                </div>
+                <div class="works__features">
+                    <span class="bold">Features:</span> projects selection via JavaScript. There is not an adaptation to mobile phones at all. 
+                </div>
+                <a href="./proj/oldportf/index.html" class="works__btn">
+                    Learn More
+                </a>
+            </div>
+            <div class="works__picture">
+                <img src="img/projects/oldportf.jpg" alt="">
+            </div>`,
+        2: `<div class="works__text">
+                <div class="works__headering">
+                    03: Shop loyaut
+                </div>
+                <div class="works__subhead">
+                    as practice of CSS Grid 
+                </div>
+                <div class="works__features">
+                    <span class="bold">Features:</span> using CSS Grid layout. 
+                </div>
+                <a href="./proj/shop/index.html" class="works__btn">
+                    Learn More
+                </a>
+            </div>
+            <div class="works__picture">
+                <img src="img/projects/shop.jpg" alt="">
+            </div>`,
+        3: `<div class="works__text">
+                <div class="works__headering">
+                    04: Portfolio for friend (:
+                </div>
+                <div class="works__subhead">
+                    as the first attempt to create portfolio
+                </div>
+                <div class="works__features">
+                    <span class="bold">Features:</span> definitely needs to be improved or even redo. 
+                </div>
+                <a href="./proj/mary/index.html" class="works__btn">
+                    Learn More
+                </a>
+            </div>
+            <div class="works__picture">
+                <img src="img/projects/marry.jpg" alt="">
+            </div>`,
+        4: `<div class="works__text">
+                <div class="works__headering">
+                    05: UkrLit
+                </div>
+                <div class="works__subhead">
+                    as the first serious project
+                </div>
+                <div class="works__features">
+                    <span class="bold">Features:</span> dark theme supporting, extended mobile adaptation, trying to be in compliance with UI/UX design demands. 
+                </div>
+                <a href="./proj/ukrlit/index.html" class="works__btn">
+                    Learn More
+                </a>
+            </div>
+            <div class="works__picture">
+                <img src="img/projects/ukrlit.jpg" alt="">
+            </div>`
+    }
 
-    window.addEventListener('resize', ()=>{
-        //jjjjj();
-    });
-    
-    function jjjjj() {
-        let workItem = OtherWorks.querySelectorAll('.works__text'),
-            workPic = OtherWorks.querySelectorAll('.works__picture'),
-            workArticle = OtherWorks.querySelectorAll('.works__article'),
-            height;
+    function worksArticlesRender(params) {
+        let workArticle = OtherWorks.querySelectorAll('.works__article');
 
-        workPic.forEach(element => {
-            height = element.clientHeight;
-
-            workItem.forEach(element2 => {
-                element2.setAttribute('style', `height: ${height}px !important;`);
-            });
+        workArticle.forEach(element => {
+            console.log(element.dataset.worksarticle);
+            element.innerHTML = worksArticleData[element.dataset.worksarticle];
         });
-
-         
-
-        
-    };
+    }
 
     headerBtnMenu.addEventListener('click', ()=>{
         pageShowClose();
-        
     });
 
     mainBtn.addEventListener('click', ()=>{
@@ -233,6 +306,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         offerSection.classList.toggle("offer-off");
         projectsSection.classList.toggle('projects-off');
+
+        worksArticlesRender();
     });
 
     CloseWorks.addEventListener('click', ()=>{
