@@ -6,23 +6,27 @@ document.addEventListener('DOMContentLoaded', () =>{
         firstDevider = document.getElementById('firstDevider'),
         wrapper = document.getElementById('wrapper'),
         letter = document.getElementById('letter'),
-        marquee = document.getElementById('marquee');
+        marquee = document.getElementById('marquee'),
+        workImg = document.querySelectorAll('.photo'),
+        starterMainWrap = document.getElementById('starter__main_container'),
+        starterImageWrap = document.getElementById('starter__photo_wrapper');
 
-    function moveToTop() { // func describes the way it moves up to top
+    // btn to top
+    function moveToTop() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         }); 
     };
 
-    console.log(wrapper.getBoundingClientRect());
-
+    // current time
     const interval = setInterval(() => {
         let CurrentTime = new Date();
         starterTime.innerHTML = CurrentTime.getHours()+ ':'+CurrentTime.getMinutes()+':'+CurrentTime.getSeconds();
     }, 1000);
 
-    function scrollToSection(target) { //func describes the way it moves down to necessary section(target)
+    // scroll to section
+    function scrollToSection(target) {
         currentPos = target.getBoundingClientRect().top;
         console.log('currentPos:',  currentPos);
             window.scrollTo({
@@ -31,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         }); 
     };
 
+    // bg color changing on scroll
     window.addEventListener('scroll', ()=>{
         let scrolled = window.pageYOffset;
         let position1 = firstDevider.getBoundingClientRect().top * 2;
@@ -45,18 +50,25 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     });
 
-    let workImg = document.querySelectorAll('.photo-container .photo');
-
+    // random mask index for img
     let randomIndex;
     workImg.forEach(element => {
         function getRandomArbitary(min, max) {
             randomIndex = Math.random() * (max - min) + min;
         }
         getRandomArbitary(1 , 4);
-        element.setAttribute('style', `mask-image: url(./imgs/icons/blob${Math.round(randomIndex)}.svg);`);
-        console.log(element);
+        element.setAttribute('style', `mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important;`);
     });
 
+    function resizePhoto(params) {
+        console.log(starterMainWrap.offsetHeight);
+        starterImageWrap.setAttribute('style', `width: ${starterMainWrap.offsetHeight}px !important; height: ${starterMainWrap.offsetHeight}px !important;`);
+    }
+    resizePhoto();
+
+    window.addEventListener('resize', ()=>{
+        resizePhoto();
+    });
 
     /*function tickerWidth() {
         marquee.setAttribute('style', `width: ${letter.offsetWidth}px !important;`);
