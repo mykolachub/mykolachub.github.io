@@ -311,7 +311,7 @@ html{
 }
 
 .starter__headering{
-    font-size: calc(55px + 51*(100vw - 320px)/1120);
+    font-size: 11.2rem;
     font-family: var(--main);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -328,7 +328,7 @@ html{
 .starter__sub-headering{
     text-align: right;
     padding: 1.5rem 6rem 0 0;
-    font-size: calc(15px + 13*(100vw - 320px)/1120);
+    font-size: 3.6rem;
     font-family: var(--sec);
     line-height: 1.4;
 }
@@ -392,15 +392,27 @@ html{
     max-width: 1440px;
     width: 100%;
     height: 100%;
-    padding: 4rem 2rem 4rem 2rem;
+    padding: 4rem 2rem 25% 2rem;
     margin: 0 auto;
+    position: relative;
 }
 
 .devider__title{
     width: 100%;
-    height: auto;
-    padding: 5%;
-    position: relative;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.divider__name{
+    width: 100%;
+    height: 100%;
+    color: #252525;
+    font-family: var(--main);
+    font-size: 124px /*calc(36px + 88*(100vw / 1903))*/;
+    letter-spacing: -4px;
+    font-weight: 500;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -410,11 +422,6 @@ html{
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    color: #252525;
-    font-family: var(--main);
-    font-size: 124px /*calc(36px + 88*(100vw / 1903))*/;
-    letter-spacing: -4px;
-    font-weight: 500;
 }
 
 .devider__corner1,
@@ -541,6 +548,7 @@ html{
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .work__description-name:after,
@@ -561,6 +569,10 @@ html{
     font-family: var(--sec);
     font-size: 2.2rem;
     font-weight: 400;
+}
+
+.about__text-subname{
+    width: 100%;
 }
 
 .work__description-sub,
@@ -896,9 +908,14 @@ html{
     height: 100%;
 }
 
+.about__text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .about__text-name{
-    width: auto;
-    height: auto;
     display: inline-block;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -906,8 +923,6 @@ html{
     font-family: var(--main);
     font-size: 4.8rem;
 }
-
-
 
 .about__photo-container{
     background: white;
