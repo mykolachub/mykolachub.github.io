@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             randomIndex = Math.random() * (max - min) + min;
         }
         getRandomArbitary(1 , 4);
-        element.setAttribute('style', `mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important;`);
+        element.setAttribute('style', `-webkit-mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important;`);
     });
 
     function resizePhoto(params) {
