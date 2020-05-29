@@ -2,14 +2,60 @@
 document.addEventListener('DOMContentLoaded', () =>{
     console.log('welcome to my console!');
 
+    //
     let starterTime = document.getElementById('starterTime'),
-        firstDevider = document.getElementById('firstDevider'),
-        wrapper = document.getElementById('wrapper'),
         letter = document.getElementById('letter'),
         marquee = document.getElementById('marquee'),
         workImg = document.querySelectorAll('.photo'),
         starterMainWrap = document.getElementById('starter__main_container'),
-        starterImageWrap = document.getElementById('starter__photo_wrapper');
+        starterImageWrap = document.getElementById('starter__photo_wrapper'),
+        contactSection = document.getElementById('contactSection'),
+        contactMail = document.getElementById('contact__mail'),
+        contactPhoto = document.getElementById('contact__photo');
+
+    //
+    let firstDevider = document.getElementById('firstDevider'),
+        secondDevider = document.getElementById('secondDevider'),
+        wrapper = document.getElementById('wrapper'),
+        starter = document.getElementById('starter'),
+        work = document.getElementById('workSection'),
+        contact = document.getElementById('contactSection'),
+        about = document.getElementById('aboutSection');
+
+    // bg color changing on scroll
+    window.addEventListener('scroll', ()=>{
+        let scrolled = window.pageYOffset;
+        let position1 = firstDevider.getBoundingClientRect().top * 2;
+        let position2 = contactSection.getBoundingClientRect().bottom * 4;
+        console.log(scrolled ,' ', position2);
+        
+        if (scrolled <= position1) {
+            wrapper.classList.remove('block-focus');
+
+            starter.classList.remove('block-focus-off');
+            work.classList.add('block-focus-off');
+            contact.classList.add('block-focus-off');
+            about.classList.add('block-focus-off');
+        }
+        else if(scrolled > position1 && scrolled < position2){
+            wrapper.classList.add('block-focus');
+            
+            starter.classList.add('block-focus-off');
+            work.classList.remove('block-focus-off');
+            contact.classList.add('block-focus-off');
+            about.classList.remove('block-focus-off');
+        }
+        else{
+            wrapper.classList.remove('block-focus');
+
+            starter.classList.add('block-focus-off');
+            work.classList.add('block-focus-off');
+            contact.classList.remove('block-focus-off');
+            about.classList.add('block-focus-off');
+        }
+
+    });
+
 
     // btn to top
     function moveToTop() {
@@ -35,21 +81,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         }); 
     };
 
-    // bg color changing on scroll
-    window.addEventListener('scroll', ()=>{
-        let scrolled = window.pageYOffset;
-        let position1 = firstDevider.getBoundingClientRect().top * 2;
-        //position2 = section2.getBoundingClientRect().top;
-        
-        if (scrolled <= position1) {
-            wrapper.classList.remove('works-focus');
-        }
-        else{
-            wrapper.classList.add('works-focus');
-        }
-
-    });
-
     // random mask index for img
     let randomIndex;
     workImg.forEach(element => {
@@ -68,6 +99,14 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     window.addEventListener('resize', ()=>{
         resizePhoto();
+    });
+
+    contactMail.addEventListener('mouseover', e=>{
+        contactPhoto.style.opacity = '1';
+    });
+
+    contactMail.addEventListener('mouseout', e=>{
+        contactPhoto.style.opacity = '0';
     });
 
     /*function tickerWidth() {
