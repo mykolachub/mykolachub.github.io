@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () =>{
         contactMail = document.getElementById('contact__mail'),
         contactPhoto = document.getElementById('contact__photo');
 
+    let starterWorksBtn = document.getElementById('starterWorks'),
+        starterAboutBtn = document.getElementById('starterAbout'),
+        contactFacebookBtn = document.getElementById('contactFacebook'),
+        contactInstagramBtn = document.getElementById('contactInstagram'),
+        contactTelegramBtn = document.getElementById('contactTelegram'),
+        contactScrollBtn = document.getElementById('contactScroll');
+
     //
     let firstDevider = document.getElementById('firstDevider'),
         secondDevider = document.getElementById('secondDevider'),
@@ -73,13 +80,21 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     // scroll to section
     function scrollToSection(target) {
-        currentPos = target.getBoundingClientRect().top;
-        console.log('currentPos:',  currentPos);
+        let currentPos = target.getBoundingClientRect().top;
             window.scrollTo({
             top: currentPos,
             behavior: 'smooth'
         }); 
     };
+
+    starterWorksBtn.addEventListener('click', ()=>{scrollToSection(firstDevider)});
+    starterAboutBtn.addEventListener('click', ()=>{scrollToSection(secondDevider)});
+    contactFacebookBtn.addEventListener('click', ()=>{window.open("https://www.facebook.com/profile.php?id=100013952324659");});
+    contactInstagramBtn.addEventListener('click', ()=>{window.open("https://instagram.com/iisusllik?igshid=ot8o22x7hqi5");});
+    contactTelegramBtn.addEventListener('click', ()=>{window.open("https://t.me/iisusllik");});
+    contactScrollBtn.addEventListener('click', ()=>{
+        moveToTop();
+    });
 
     // random mask index for img
     let randomIndex;
