@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () =>{
         about = document.getElementById('aboutSection');
 
     // bg color changing on scroll
-    window.addEventListener('scroll', ()=>{
+    /*window.addEventListener('scroll', ()=>{
         let scrolled = window.pageYOffset;
         let position1 = firstDevider.getBoundingClientRect().top * 2;
         let position2 = contactSection.getBoundingClientRect().bottom * 4;
-        console.log(scrolled ,' ', position2);
+        //console.log(scrolled ,' ', position2);
         
         if (scrolled <= position1) {
             wrapper.classList.remove('block-focus');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             about.classList.add('block-focus-off');
         }
 
-    });
+    });*/
 
 
     // btn to top
@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     };
 
     // current time
-    const interval = setInterval(() => {
+    /*const interval = setInterval(() => {
         let CurrentTime = new Date();
         starterTime.innerHTML = CurrentTime.getHours()+ ':'+CurrentTime.getMinutes()+':'+CurrentTime.getSeconds();
-    }, 1000);
+    }, 1000);*/
 
     // scroll to section
     function scrollToSection(target) {
@@ -103,11 +103,11 @@ document.addEventListener('DOMContentLoaded', () =>{
             randomIndex = Math.random() * (max - min) + min;
         }
         getRandomArbitary(1 , 4);
-        element.setAttribute('style', `-webkit-mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important;`);
+        element.setAttribute('style', `-webkit-mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important; mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important;`);
     });
 
     function resizePhoto(params) {
-        console.log(starterMainWrap.offsetHeight);
+        //console.log(starterMainWrap.offsetHeight);
         starterImageWrap.setAttribute('style', `width: ${starterMainWrap.offsetHeight}px !important; height: ${starterMainWrap.offsetHeight}px !important;`);
     }
     resizePhoto();
