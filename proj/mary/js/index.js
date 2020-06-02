@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         workImg = document.querySelectorAll('.photo'),
         starterMainWrap = document.getElementById('starter__main_container'),
         starterImageWrap = document.getElementById('starter__photo_wrapper'),
+        starterLetter = document.getElementById('starter__letter'),
         contactSection = document.getElementById('contactSection'),
         contactMail = document.getElementById('contact__mail'),
         contactPhoto = document.getElementById('contact__photo');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         about = document.getElementById('aboutSection');
 
     // bg color changing on scroll
-    /*window.addEventListener('scroll', ()=>{
+    window.addEventListener('scroll', ()=>{
         let scrolled = window.pageYOffset;
         let position1 = firstDevider.getBoundingClientRect().top * 2;
         let position2 = contactSection.getBoundingClientRect().bottom * 4;
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             about.classList.add('block-focus-off');
         }
 
-    });*/
+    });
 
 
     // btn to top
@@ -73,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     };
 
     // current time
-    /*const interval = setInterval(() => {
+    const interval = setInterval(() => {
         let CurrentTime = new Date();
         starterTime.innerHTML = CurrentTime.getHours()+ ':'+CurrentTime.getMinutes()+':'+CurrentTime.getSeconds();
-    }, 1000);*/
+    }, 1000);
 
     // scroll to section
     function scrollToSection(target) {
