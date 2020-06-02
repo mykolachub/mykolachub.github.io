@@ -925,7 +925,7 @@ html{
 .about__container{
     max-width: 1440px;
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 2rem 7.5rem 2rem;
     margin: 0 auto;
     height: auto;
     display: -ms-grid;
@@ -1010,8 +1010,8 @@ html{
     width: 100%;
     height: auto;
     background: #252525;
-    margin-top: 15rem;
-    padding-bottom: 5rem;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
 }
 
 .contact__container{
@@ -1143,9 +1143,54 @@ html{
     border-right: 3px solid #f3f4f8;
 }
 
+.contact__line-block{
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact__line-block1{
+    top: 0;
+}
+
+.contact__line-block2{
+    bottom: 0;
+}
+
+.contact__line1,
+.contact__line2,
+.contact__line3,
+.contact__line4{
+    background: white;
+    height: 3px;
+}
+
+.contact__line1{
+    width: 80%;
+}
+
+.contact__line2{
+    width: 100%;
+}
+
+.contact__line3{
+    width: 100%;
+}
+
+.contact__line4{
+    width: 80%;
+}
+
 @media all and (max-width: 1440px){
     #firstDevider_name,
-    #secondDevider_name{
+    #secondDevider_name,
+    .contact__name{
         font-size: calc(29px + 83*(100vw / 1440));
     }
 
@@ -1176,6 +1221,11 @@ html{
         /*mn 144px mx 22px*/
         font-size: calc(144px + 96*(100vw / 1440));
     }
+
+    .contact__main-item{
+        /*mn 26px mx 72px*/
+        font-size: calc(26px + 46*(100vw / 1440));
+    }
 }
 
 @media all and (max-width: 1366px){
@@ -1197,6 +1247,22 @@ html{
     .about__text-container{
         display: block;
         overflow-y: scroll;
+    }
+
+    .contact__name{
+        padding: 7.5rem 0;
+    }
+
+    .contact__mail{
+        padding: 0 0 7.5rem 0;
+    }
+
+    .contact__link{
+        margin-top: 7.5rem;
+    }
+
+    .contact__main-item{
+        -webkit-text-stroke: 1px #f3f4f8;
     }
 }
 
@@ -1222,6 +1288,10 @@ html{
     
     .work__section{
         grid-template-columns: 1fr 2fr;
+    }
+
+    .contact__link-container{
+        padding: 0 12rem;
     }
 }
 
@@ -1251,6 +1321,29 @@ html{
         /*mn 13.2px mx 22px*/
         font-size: calc(13.2px + (8.8 + 8.8 * 0.7)*((100vw - 320px) / 1440));
     }
+
+    .contact__name{
+        letter-spacing: -2px;
+    }
+
+    .contact__main-item{
+        /*mn 26px mx 72px*/
+        -webkit-text-stroke: 0.5px #f3f4f8;
+        letter-spacing: -2px;
+        font-size: calc(26px + (46 + 46 * 0.7)*((100vw - 320px) / 1440));
+    }
+
+    .contact__name{
+        padding: 5rem 0;
+    }
+
+    .contact__mail{
+        padding: 0 0 5rem 0;
+    }
+
+    .contact__link{
+        margin-top: 5rem;
+    }
 }
 
 @media all and (max-width: 768px){
@@ -1268,11 +1361,19 @@ html{
         margin-bottom: 1rem;
     }
     
+    .contact__line-block{
+        display: flex;
+    }
+
+    .contact__link-container{
+        align-items: flex-start;
+    }
 }
 
 @media all and (max-width: 736px){
     #firstDevider_name,
-    #secondDevider_name{
+    #secondDevider_name,
+    .contact__name{
         font-size: calc(29px + (83 + 83 + 0.7) * ( (100vw - 320px ) / 1440));
     }
 
@@ -1282,7 +1383,9 @@ html{
 }
 
 @media all and (max-width: 667px){
-
+    .contact__link-container{
+        padding: 0 12.5%;
+    }
 }
 
 @media all and (max-width: 568px){
@@ -1305,6 +1408,7 @@ html{
 
     .about__container{
         grid-template-columns: 1fr;
+        padding: 0 2rem 5rem 2rem;
     }
 
     .about__photo,
@@ -1321,6 +1425,40 @@ html{
         width: 100%;
         height: auto;
         position: static;
+    }
+
+    .contact{
+        padding: 5rem 0;
+    }
+
+    .contact__name{
+        padding: 5rem 0 2.5rem 0;
+    }
+
+    .contact__mail{
+        padding: 0 0 2.5rem 0;
+    }
+
+    .contact__link{
+        margin-top: 2.5rem;
+    }
+
+    .link::after, .link::before{
+        font-size: 1.8rem;
+    }
+
+    .contact__line1, .contact__line2, .contact__line3, .contact__line4{
+        height: 2px;
+    }
+
+    .contact__link-container{
+        padding: 0 10%;
+    }
+}
+
+@media all and (max-width: 500px){
+    #contactScroll{
+        display: none;
     }
 }
 
@@ -1351,7 +1489,9 @@ html{
 }
 
 @media all and (max-width: 375px){
-
+    .contact__link-container{
+        padding: 0 6%;
+    }
 }
 
 @media all and (max-width: 320px){
@@ -1362,6 +1502,14 @@ html{
     .other__name{
         bottom: 1rem;
         left: 1rem;
+    }
+
+    .contact__link-container{
+        padding: 0;
+    }
+
+    .link::after, .link::before{
+        font-size: 1.7rem;
     }
 }
 
