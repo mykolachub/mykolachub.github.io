@@ -897,8 +897,8 @@ html{
     -webkit-mask-size: 100%;
             mask-size: 100%;
     transition: all 500ms ease;
-    -webkit-mask-image: url(../imgs/icons/blob2.svg) !important;
-            mask-image: url(../imgs/icons/blob2.svg) !important;
+    /*-webkit-mask-image: url(../imgs/icons/blob2.svg) !important;
+            mask-image: url(../imgs/icons/blob2.svg) !important;*/
 }
 
 /*.work__other-wrapper:hover .other__photo img{
