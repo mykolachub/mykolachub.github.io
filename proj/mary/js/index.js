@@ -113,9 +113,13 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
     resizePhoto();
 
-    window.addEventListener('resize', ()=>{
+    /*window.addEventListener('resize', ()=>{
         resizePhoto();
     });
+
+    window.addEventListener('orientationchange', ()=>{
+        resizePhoto();
+    })*/
 
     contactMail.addEventListener('mouseover', e=>{
         contactPhoto.style.opacity = '1';
