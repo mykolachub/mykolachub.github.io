@@ -857,14 +857,14 @@ html{
 
 .other__letter span{
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: -10px;
     font-size: 24rem;
     font-family: var(--main);
     color: #f3f4f8;
-    -webkit-transform: translateY(-50%);
+    /*-webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+            transform: translateY(-50%);*/
     font-weight: 900;
 }
 
