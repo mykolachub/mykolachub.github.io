@@ -902,23 +902,23 @@ html{
 }
 
 #workModeling .other__photo img{
-    -webkit-mask-image: url(../imgs/icons/blob4.svg);
-            mask-image: url(../imgs/icons/blob4.svg);
+    -webkit-mask-image: url(../imgs/icons/blob4.svg) !important;
+            mask-image: url(../imgs/icons/blob4.svg) !important;
 }
 
 #workPhotography .other__photo img{
-    -webkit-mask-image: url(../imgs/icons/blob2.svg);
-            mask-image: url(../imgs/icons/blob2.svg);
+    -webkit-mask-image: url(../imgs/icons/blob2.svg) !important;
+            mask-image: url(../imgs/icons/blob2.svg) !important;
 }
 
 #workDigital-mob .other__photo img{
-    -webkit-mask-image: url(../imgs/icons/blob1.svg);
-            mask-image: url(../imgs/icons/blob1.svg);
+    -webkit-mask-image: url(../imgs/icons/blob1.svg) !important;
+            mask-image: url(../imgs/icons/blob1.svg) !important;
 }
 
 #workTraditional-mob .other__photo img{
-    -webkit-mask-image: url(../imgs/icons/blob3.svg);
-            mask-image: url(../imgs/icons/blob3.svg);
+    -webkit-mask-image: url(../imgs/icons/blob3.svg) !important;
+            mask-image: url(../imgs/icons/blob3.svg) !important;
 }
 
 #workDigital-mob,
