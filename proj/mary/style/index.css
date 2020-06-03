@@ -1520,8 +1520,7 @@ html{
     
 }
 
-
-@media all and (max-height: 767px) and (orientation: landscape){
+@media all and (min-height: 320px) and (max-height: 767px) and (orientation: landscape){
     .warning-rotate{
         display: block;
     }
