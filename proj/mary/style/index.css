@@ -1520,7 +1520,7 @@ html{
     
 }
 
-@media all and (min-height: 768px) and (orientation: portrait){
+@media all and (min-width: 768px) and (orientation: portrait){
     .warning-rotate{
         display: block;
     }
