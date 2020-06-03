@@ -872,10 +872,15 @@ html{
     position: relative;
 }
 
-.other__photo img{
+.other__photo-container{
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.other__photo img{
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -892,8 +897,8 @@ html{
     -webkit-mask-size: 100%;
             mask-size: 100%;
     transition: all 500ms ease;
-    -webkit-mask-image: url(../imgs/icons/blob2.svg);
-            mask-image: url(../imgs/icons/blob2.svg);
+    -webkit-mask-image: url(../imgs/icons/blob2.svg) !important;
+            mask-image: url(../imgs/icons/blob2.svg) !important;
 }
 
 /*.work__other-wrapper:hover .other__photo img{
@@ -1704,13 +1709,6 @@ html{
         font-size: 1.7rem;
     }
 }
-
-/* fonts querries */
-/*@media all and (max-width: 767px){
-    .devider__title{
-        font-size: calc(36px + (88 + 88 * 0.7) * ((100vw - 320px) / 1903));
-    }
-}*/
 
 /*
 
