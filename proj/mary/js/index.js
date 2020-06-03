@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     window.addEventListener('scroll', ()=>{
         let scrolled = window.pageYOffset;
         let position1 = firstDevider.getBoundingClientRect().top * 2;
-        let position2 = contactSection.getBoundingClientRect().bottom * 4;
+        let position2 = contactSection.getBoundingClientRect().top * 4;
         //console.log(scrolled ,' ', position2);
         
         if (scrolled <= position1) {
