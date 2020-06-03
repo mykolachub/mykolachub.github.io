@@ -887,16 +887,16 @@ html{
     -webkit-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
-    -webkit-mask-origin: view-box;
-            mask-origin: view-box;
     -webkit-mask-position: center;
             mask-position: center;
     -webkit-mask-size: 100%;
             mask-size: 100%;
     transition: all 500ms ease;
+    -webkit-mask-image: url(../imgs/icons/blob2.svg);
+            mask-image: url(../imgs/icons/blob2.svg);
 }
 
-.work__other-wrapper:hover .other__photo img{
+/*.work__other-wrapper:hover .other__photo img{
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
 }
@@ -919,7 +919,7 @@ html{
 #workTraditional-mob .other__photo img{
     -webkit-mask-image: url(../imgs/icons/blob3.svg) !important;
             mask-image: url(../imgs/icons/blob3.svg) !important;
-}
+}*/
 
 #workDigital-mob,
 #workTraditional-mob{
