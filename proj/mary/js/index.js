@@ -33,33 +33,16 @@ document.addEventListener('DOMContentLoaded', () =>{
     // bg color changing on scroll
     window.addEventListener('scroll', ()=>{
         let scrolled = window.pageYOffset;
-        let position1 = firstDevider.getBoundingClientRect().top * 2;
-        let position2 = contactSection.getBoundingClientRect().top * 4;
-        //console.log(scrolled ,' ', position2);
+        let position1 = firstDevider.getBoundingClientRect().top;
+        //console.log(scrolled ,' ', position1);
         
         if (scrolled <= position1) {
             wrapper.classList.remove('block-focus');
-
-            starter.classList.remove('block-focus-off');
             work.classList.add('block-focus-off');
-            contact.classList.add('block-focus-off');
-            about.classList.add('block-focus-off');
-        }
-        else if(scrolled > position1 && scrolled < position2){
-            wrapper.classList.add('block-focus');
-            
-            starter.classList.add('block-focus-off');
-            work.classList.remove('block-focus-off');
-            contact.classList.add('block-focus-off');
-            about.classList.remove('block-focus-off');
         }
         else{
-            wrapper.classList.remove('block-focus');
-
-            starter.classList.add('block-focus-off');
-            work.classList.add('block-focus-off');
-            contact.classList.remove('block-focus-off');
-            about.classList.add('block-focus-off');
+            wrapper.classList.add('block-focus');   
+            work.classList.remove('block-focus-off');
         }
 
     });
@@ -113,13 +96,13 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
     resizePhoto();
 
-    /*window.addEventListener('resize', ()=>{
+    window.addEventListener('resize', ()=>{
         resizePhoto();
     });
 
     window.addEventListener('orientationchange', ()=>{
         resizePhoto();
-    })*/
+    })
 
     contactMail.addEventListener('mouseover', e=>{
         contactPhoto.style.opacity = '1';
