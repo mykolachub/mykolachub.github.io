@@ -251,34 +251,6 @@ html{
             transform: translateX(-50%);
 }
 
-.starter__letter{
-    width: 328.95px;
-    height: 328.95px;
-    position: absolute;
-    bottom: 0;
-    left: 200px;
-    z-index: 5;
-    background: #f4f5f9;
-    border-radius: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-
-.starter__letter span{
-    color: transparent;
-    -webkit-text-stroke: 2px black;
-    font-size: 12.8rem;
-    font-family: var(--third);
-    position: relative;
-}
-
 .starter__corner1,
 .starter__corner2{
     width: 150px;
@@ -635,12 +607,13 @@ html{
 }
 
 .work__photo-item{
-    width: 100%;
+    width: 100%;    
     background: white;
     margin-bottom: 2rem;
-    cursor: pointer;
     position: relative;
     overflow: hidden;
+    display: block;
+    text-decoration: none;
 }
 
 .work__photo-first .additional-space{
@@ -769,6 +742,8 @@ html{
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    text-decoration: none;
+    color: black;
 }
 
 .work__link-item{
@@ -819,8 +794,8 @@ html{
     width: 100%;
     height: auto;
     position: relative;
-    cursor: pointer;
     overflow: hidden;
+    display: block;
 }
 
 .work__other-container{
@@ -1350,19 +1325,9 @@ html{
         height: 10rem;
     }
 
-    .starter__letter{
-        width: 250px;
-        height: 250px;
-    }
 }
 
 @media all and (max-width: 1024px){
-    .starter__letter {
-        width: 200px;
-        -webkit-filter: brightness(0.5);
-                filter: brightness(0.5);
-        height: 200px;
-    }
 
     #starter__photo_item{
         -webkit-filter: brightness(0.5);
@@ -1520,7 +1485,7 @@ html{
     
 }
 
-@media all (max-height: 736) and (orientation: landscape){
+@media all (max-height: 736px) and (orientation: landscape){
     .warning-rotate{
         display: block;
     }
@@ -1541,11 +1506,6 @@ html{
 @media all and (max-width: 667px){
     .contact__link-container{
         padding: 0 12.5%;
-    }
-
-    .starter__letter{
-        width: 175px;
-        height: 175px;
     }
 }
 
@@ -1653,11 +1613,6 @@ html{
         padding-left: 2rem;
     }
 
-    .starter__letter{
-        width: 150px;
-        height: 150px;
-    }
-
     .starter__footer-container{
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1687,10 +1642,6 @@ html{
     .starter__headering {
         padding: 0 2rem 0rem 0;
         line-height: 1.25;
-    }
-
-    .starter__letter{
-        display: none;
     }
 
     .divider__name{
