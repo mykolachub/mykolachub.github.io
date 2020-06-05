@@ -225,7 +225,7 @@ html{
 .starter__main-container{
     max-width: 1440px;
     width: calc(100% - 4rem);
-    height: 80%;
+    height: 100%;
     max-height: 619.2px;
     position: relative;
 }
@@ -1281,8 +1281,8 @@ html{
     }
 
     .other__letter span{
-        /*mn 131px mx 240px*/
-        font-size: calc(131px + 109*(100vw / 1440));
+        /*mn 113px mx 220px*/
+        font-size: calc(113px + 107*(100vw / 1440));
     }
 
     .work__description-sub, 
@@ -1328,7 +1328,10 @@ html{
 }
 
 @media all and (max-width: 1024px){
-
+    .other__letter span{
+        /*mn 131px mx 240px*/
+        font-size: calc(113px + (107 + 107 * 0.7)*((100vw - 320px)  / 1440));
+    }
     #starter__photo_item{
         -webkit-filter: brightness(0.5);
                 filter: brightness(0.5);
@@ -1398,17 +1401,12 @@ html{
 @media all and (max-width: 812px){
     .starter__sub-headering{
         /*9.3px 36px*/
-        font-size: calc(9.3px + (26.7 + 26.7 * 0.7)*((100vw - 320px) / 1440));
+        font-size: calc(11px + (25 + 25 * 0.7)*((100vw - 320px) / 1440));
     }
 
     .other__name{
         /*mx 22px  mn 14px*/
         font-size: calc(14px + (8 + 8 *0.7) * ((100vw - 320px) / 1440));
-    }
-
-    .other__letter span{
-        /*mn 131px mx 240px*/
-        font-size: calc(131px + (109 + 109 * 0.7)*((100vw - 320px)  / 1440));
     }
 
     .work__description-name, 
@@ -1482,6 +1480,14 @@ html{
                 align-items: flex-start;
     }
 
+    .work__rhombus{
+        bottom: 1.7rem;
+        right: 1.7rem;
+    }
+
+    #workModeling  .other__letter-item{
+        left: -11px;
+    }
     
 }
 
@@ -1636,6 +1642,9 @@ html{
     .starter__home{
         display: none;
     }
+
+
+
 }
 
 @media all and (max-width: 425px){
@@ -1668,7 +1677,11 @@ html{
 }
 
 @media all and (max-width: 414px){
-
+    .other__letter span,
+    #workModeling .other__letter-item{
+        top: 36%;
+        left: -3px;
+    }
 }
 
 @media all and (max-width: 375px){
@@ -1689,6 +1702,11 @@ html{
 
     .starter__sub-headering{
         padding: 1rem 0rem 0 0;
+    }
+
+    .other__letter span, #workModeling .other__letter-item{
+        top: 38%;
+        left: -3px;
     }
 }
 
@@ -1716,6 +1734,11 @@ html{
 
     .link::after, .link::before{
         font-size: 1.7rem;
+    }
+
+    .other__letter span, #workModeling .other__letter-item{
+        top: 42%;
+        left: -4px;
     }
 }
 
