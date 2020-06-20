@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         AttentionBtnWorks = document.getElementById('works__attention-btn');
 
     const worksArticleData = {
-        0: `<div class="works__text">
+        /*0: `<div class="works__text">
                 <div class="works__headering">
                     01: Grammar
                 </div>
@@ -79,16 +79,16 @@ document.addEventListener('DOMContentLoaded', () =>{
             </div>
             <div class="works__picture">
                 <img src="img/projects/shop.jpg" alt="">
-            </div>`,
+            </div>`,*/
         3: `<div class="works__text">
                 <div class="works__headering">
-                    04: Portfolio for friend
+                    04: Mary's Portfolio
                 </div>
                 <div class="works__subhead">
                     as the first attempt to create portfolio
                 </div>
                 <div class="works__features">
-                    <span class="bold">Features:</span> definitely needs to be improved or even redo. 
+                    <span class="bold">Features:</span> non-standard typeface pair, mobile adaptation, unusual pictures' and gallery's animation. 
                 </div>
                 <a href="./proj/mary/index.html" class="works__btn">
                     Learn More
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                     05: UkrLit
                 </div>
                 <div class="works__subhead">
-                    as the first serious project
+                    as the first serious test project
                 </div>
                 <div class="works__features">
                     <span class="bold">Features:</span> dark theme supporting, extended mobile adaptation, trying to be in compliance with UI/UX design demands. 
@@ -124,16 +124,27 @@ document.addEventListener('DOMContentLoaded', () =>{
         }); 
     };
 
-    if (window.matchMedia("(max-width: 525px)").matches) {
-        headerMailBtn.innerText = '🌼 mail';
-        headerMailBtn.addEventListener('click', ()=>{
-            pageShowClose();
+    function mailIconChanging(params) {
+        if (window.matchMedia("(max-width: 525px)").matches) {
+            headerMailBtn.innerText = '🌼 mail';
+            headerMailBtn.addEventListener('click', ()=>{
+                pageShowClose();
+    
+            });
+            Mail.classList.toggle('menu__item_mail-on');
+    
+        };
+    }
+    
+    mailIconChanging();
 
-        });
-        Mail.classList.toggle('menu__item_mail-on');
+    window.addEventListener('orientationchange', ()=>{
+        mailIconChanging();
+    });
 
-    };
-
+    window.addEventListener('resize', ()=>{
+        mailIconChanging();
+    });
 
     // animation for menu appearing
     let OnOrOff = 0;
@@ -247,9 +258,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             OnOrOff = 0;
         }
     };
-
-
-
+ 
     function worksArticlesRender() {
         let workArticle = OtherWorks.querySelectorAll('.works__article');
 
