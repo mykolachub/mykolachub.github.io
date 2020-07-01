@@ -180,7 +180,7 @@ html{
 
 .label__wrapper{
     max-width: 1440px;
-    width: calc(100% - 8rem);
+    width: 100%;
     height: auto;
     position: relative;
     padding-bottom: 30%;
@@ -594,7 +594,7 @@ html{
     }
 
     .label__text-second{
-        font-size: calc(11px + 25*(100vw / 1440));
+        font-size: calc(14px + 22*(100vw / 1440));
     }
 
     .footer__offer-text{
@@ -642,7 +642,7 @@ html{
     }
 
     .label__text-second{
-        font-size: calc(11px + (25 + 25 * 0.7)*((100vw - 320px) / 1440));
+        font-size: calc(14px + (22 + 22 * 0.7)*((100vw - 320px) / 1440));
     }
 
     .footer__offer-letter{
@@ -670,11 +670,11 @@ html{
 @media all and (max-width: 667px){}
 
 @media all and (max-width: 568px){
-    .label__wrapper,
     .work__wrapper,
     .footer__wrapper{
         width: calc(100% - 4rem);
     }
+
 
     .starter__header{
         grid-template-columns: 1fr 1fr;
@@ -751,9 +751,9 @@ html{
 
 @media all and (max-width: 320px){
     .footer__offer-letter{
-        font-size: 180px;
-        top: 3px;
-        left: -5px;
+        font-size: 200px;
+        top: 4px;
+        left: -9px;
     }
 
     .footer__offer-label{
