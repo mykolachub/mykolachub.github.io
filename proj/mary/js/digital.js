@@ -32,87 +32,89 @@ document.addEventListener('DOMContentLoaded', () =>{
         element.setAttribute('style', `-webkit-mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important; mask-image: url(imgs/icons/blob${Math.round(randomIndex)}.svg) !important;`);
     });
 
-    let currentIndex = 0;
     workContainer.forEach(element => {
         element.addEventListener('click', ()=>{
-            for (let key in pictures) {
-                if (element.currentSrc == pictures[key]) {
-                    currentIndex = key;
-                    console.log('currentIndex: ', currentIndex);
-                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
+        let currentIndex = 0;
 
-                    if (currentIndex == 1) {
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                        modalArrowLeft.classList.add('modal__arrow-off');
-                    } 
-                    else if (currentIndex == workContainer.length) {
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                        modalArrowRight.classList.add('modal__arrow-off');
-                    }
-                    else if (currentIndex == workContainer.length || currentIndex == workContainer.length) {
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                    }
-                    else {
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                    }
-                    
-                }
-            };
+        for (let key in pictures) {
+            if (element.currentSrc == pictures[key]) {
+                currentIndex = key;
+                console.log('currentIndex: ', currentIndex);
+                modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
 
-            modalArrowLeft.addEventListener('click', ()=>{
                 if (currentIndex == 1) {
-                        modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
-                        console.log('currentIndex: ', currentIndex);
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                        modalArrowLeft.classList.add('modal__arrow-off');
-                    
-                } else {
-                    currentIndex--;
-                    if (currentIndex == 1) {
-                        modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
-                        console.log('currentIndex: ', currentIndex);
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                        modalArrowLeft.classList.add('modal__arrow-off');
-                    } else{
-                        console.log('currentIndex: ', currentIndex);
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                        modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
-                    }
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                    modalArrowLeft.classList.add('modal__arrow-off');
+                } 
+                else if (currentIndex == workContainer.length) {
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                    modalArrowRight.classList.add('modal__arrow-off');
                 }
-            });
+                else if (currentIndex == workContainer.length || currentIndex == workContainer.length) {
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                }
+                else {
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                }
+                
+            }
+        };
 
-            modalArrowRight.addEventListener('click', ()=>{
+        modalArrowLeft.addEventListener('click', ()=>{
+            if (currentIndex == 1) {
+                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
+                    console.log('currentIndex: ', currentIndex);
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                    modalArrowLeft.classList.add('modal__arrow-off');
+                
+            } else {
+                currentIndex--;
+                if (currentIndex == 1) {
+                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
+                    console.log('currentIndex: ', currentIndex);
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                    modalArrowLeft.classList.add('modal__arrow-off');
+                } else{
+                    console.log('currentIndex: ', currentIndex);
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
+                }
+            }
+        });
+
+        modalArrowRight.addEventListener('click', ()=>{
+            if (currentIndex == workContainer.length) {
+                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
+                    console.log('currentIndex: ', currentIndex);
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                    modalArrowRight.classList.add('modal__arrow-off');
+            } else {
+                currentIndex++;
                 if (currentIndex == workContainer.length) {
-                        modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
-                        console.log('currentIndex: ', currentIndex);
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                        modalArrowRight.classList.add('modal__arrow-off');
-                } else {
-                    currentIndex++;
-                    if (currentIndex == workContainer.length) {
-                        modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
-                        console.log('currentIndex: ', currentIndex);
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                        modalArrowRight.classList.add('modal__arrow-off');
-                    } else{
-                        console.log('currentIndex: ', currentIndex);
-                        modalArrowLeft.classList.remove('modal__arrow-off');
-                        modalArrowRight.classList.remove('modal__arrow-off');
-                        modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
-                    }
+                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
+                    console.log('currentIndex: ', currentIndex);
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                    modalArrowRight.classList.add('modal__arrow-off');
+                } else{
+                    console.log('currentIndex: ', currentIndex);
+                    modalArrowLeft.classList.remove('modal__arrow-off');
+                    modalArrowRight.classList.remove('modal__arrow-off');
+                    modalPicture.setAttribute('src', `${pictures[currentIndex]}`);
                 }
-            });
+            }
+        });
 
-            modalWork.classList.toggle('modal-on');
-            body.classList.add('body-off');
+        modalWork.classList.toggle('modal-on');
+        body.classList.add('body-off');
 
-            modalCloak.classList.toggle('modal__pic-cloak-off');
-            modalCloseBtn.classList.toggle('modal__block-on');
-            modalArrowLeft.classList.toggle('modal__block-on');
-            modalArrowRight.classList.toggle('modal__block-on');
+        modalCloak.classList.toggle('modal__pic-cloak-off');
+        modalCloseBtn.classList.toggle('modal__block-on');
+        modalArrowLeft.classList.toggle('modal__block-on');
+        modalArrowRight.classList.toggle('modal__block-on');
+        
         });
     });
 
