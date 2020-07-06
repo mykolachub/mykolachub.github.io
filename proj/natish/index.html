@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Natish's</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/animate.css">
 </head>
-<body>
+<body id="body">
     <div class="wrapper">
         <div class="header">
             <div class="header__content">
@@ -16,18 +17,18 @@
                 <div class="header__nav">
                     <a href="#">works</a>
                     <a href="#">about</a>
-                    <a href="#">contact</a>
+                    <a id="headerNavLast" href="#">contact</a>
                 </div>
             </div>
         </div>
         <div class="main">
-            <div class="main__content">
+            <div id="mainContent" class="main__content">
                 <div class="main__start">
                     <div class="main__text">
-                        <div class="text__content">
-                            <span>All </span><span>you </span><span>need </span><span>is</span><br>
-                            <span>just </span><span>a </span><span >proper </span><br>
-                            <span class="underlined">picture</span><span> of </span><span>things.</span>
+                        <div class="main__text-content">
+                            <span class="start__word1 animate__animated animate__fadeIn wow animate__delay-1s">All </span><span class="start__word2 animate__animated animate__fadeIn wow animate__delay-1s">you </span><span class="start__word3 animate__animated animate__fadeIn wow animate__delay-1s">need </span><span class="start__word4 animate__animated animate__fadeIn wow animate__delay-1s">is</span><br>
+                            <span class="start__word5 animate__animated animate__fadeIn wow animate__delay-1s">just </span><span class="start__word6 animate__animated animate__fadeIn wow animate__delay-1s">a </span><span class="start__word7 animate__animated animate__fadeIn wow animate__delay-1s" >proper </span><br>
+                            <span class="start__word8 underlined animate__animated animate__fadeIn wow animate__delay-1s">picture</span><span class="start__word9 animate__animated animate__fadeIn wow animate__delay-1s"> of </span><span class="start__word10 animate__animated animate__fadeIn wow animate__delay-1s">things.</span>
                         </div>
                     </div>
                     <div class="main__background">
@@ -38,7 +39,7 @@
                     <div class="about__hi">
                         <span class="text-regular">Hello there, I call myself Natish.</span>
                     </div>
-                    <div class="about__me">
+                    <div class="about__me animate__animated animate__fadeInRight wow">
                         <img src="./img/1.jpg" alt="me">
                     </div>
                     <div class="about__text1">
@@ -52,37 +53,32 @@
                     <div class="about__text3">
                         <span class="text-regular">So let me show you the way I see them.</span>
                     </div>
-                    <div class="about__arrow1">
-                        <svg viewBox="0 0 72 100">
-                            <path style="fill:rgba(0, 0, 0, .25);" d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
-                                v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
-                                v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z">
-                            </path>
-                        </svg>
+                    <div class="about__devider">
+                        <div class="about__devider-body"></div>
                     </div>
-                    <div class="about__picture about__picture1">
-                        <img src="./img/5.jpeg" alt="a men">
+                    <div class="about__picture about__picture1 animate__animated animate__fadeInUp animate__slow wow">
+                        <img src="./img/5.jpeg" alt="picture">
                     </div>
-                    <div class="about__text4">
+                    <div class="about__text4 animate__animated animate__fadeIn wow">
                         <span class="text-counter">01</span>
                     </div>
-                    <div class="about__picture about__picture2">
-                        <img src="./img/6.jpg" alt="a women">
+                    <div class="about__picture about__picture2 animate__animated animate__fadeInUp animate__slow wow">
+                        <img  src="./img/6.jpg" alt="picture">
                     </div>
-                    <div class="about__text5">
+                    <div class="about__text5 animate__animated animate__fadeIn wow">
                         <span class="text-counter">02</span>
                     </div>
-                    <div class="about__picture about__picture3">
-                        <img src="./img/7.jpg" alt="a women">
+                    <div class="about__picture about__picture3 animate__animated animate__fadeInUp animate__slow wow">
+                        <img src="./img/7.jpg" alt="picture">
                     </div>
-                    <div class="about__text6">
+                    <div class="about__text6 animate__animated animate__fadeIn wow">
                         <span class="text-counter">03</span>
                     </div>
                     <div class="about__text7">
                         <span class="text-regular">So? Are you alredy</span>
                     </div>
                     <div class="about__text8">
-                        <span class="text-regular gradient-text">excited</span>
+                        <span class="text-regular gradient-text">excited?</span>
                     </div>
                     <div class="about__quiz">
                         <div id="aboutQuiz" class="quiz__question">
@@ -91,13 +87,84 @@
                         </div>
                         <div id="aboutQuizReply" class="quiz__reply">
                             <span id="aboutQuizReplyText" class="text-regular"></span>
+                            <span id="aboutQuizLoading" class="quiz__loading"></span>
                         </div>
                     </div>
+                </div>
+                <div id="workMask" class="work__mask">
+                </div>
+                <div id="workWrapper" class="main__work work__wrapper-first">
+                    <div id="workContent" class="work__content">
+                        <div class="work__start">
+                            <div class="work__first">
+                                <span class="text-regular">Welcome to natish's</span>
+                            </div>
+                            <div class="work__lable">
+                                <span class="text-regular gradient-text">works</span>
+                            </div>
+                            <div class="work__second">
+                                <span class="text-regular">Scroll the page down to see more</span>
+                            </div>
+                            <div class="work__arrow">
+                                <svg viewBox="0 0 72 100">
+                                    <path fill="rgba(0,0,0, 0.5)" d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
+                                        v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
+                                        v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="work__body">
+                            <div class="work__body-pictures">
+                                <div class="work__picture">
+                                    <img src="./img/1.jpg" alt="picture 1">
+                                </div>
+                                <div class="work__picture">
+                                    <img src="./img/2.jpeg" alt="picture 2">
+                                </div>
+                                <div class="work__picture">
+                                    <img src="./img/3.jpeg" alt="picture 3">
+                                </div>
+                                <div class="work__picture">
+                                    <img src="./img/4.jpeg" alt="picture 4">
+                                </div>
+                                <div class="work__picture">
+                                    <img src="./img/5.jpeg" alt="picture 5">
+                                </div>
+                                <div class="work__picture">
+                                    <img class="picture-gray" src="./img/6.jpg" alt="picture 6">
+                                </div>
+                                <div class="work__picture">
+                                    <img class="picture-gray" src="./img/7.jpg" alt="picture 7">
+                                </div>
+                                <div class="work__picture">
+                                    <img class="picture-gray" src="./img/8.jpeg" alt="picture 8">
+                                </div>
+                            </div>
+                            <div class="work__body-info">
+                                <div class="work__body-about">
+                                    <span class="text-regular">I take every moment during shotting models</span>
+                                    <span class="text-regular">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi doloremque nisi quaerat eaque quo alias sed ea dolorem deserunt. Deserunt, obcaecati! Fugit ipsum quis consectetur delectus pariatur quos sed amet!Quae ducimus eaque quidem corrupti voluptate est tenetur deserunt at similique enim, voluptatibus explicabo corporis, officiis fugiat illo inventore quasi natus. Porro, repellat eum maxime ullam dignissimos ipsa voluptate earum.</span>
+                                </div>
+                                <div class="kek"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__contact">
+                <div class="contact__wave">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#ffffff" fill-opacity="1" d="M0,224L48,197.3C96,171,192,117,288,106.7C384,96,480,128,576,165.3C672,203,768,245,864,272C960,299,1056,309,1152,282.7C1248,256,1344,192,1392,160L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                      </svg>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="js/index.js"></script>
+    <script src="js/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>
