@@ -12,12 +12,15 @@
         <div class="header">
             <div class="header__content">
                 <div class="header__logo">
-                    <a href="#">natish</a>
+                    <a href="index.html">natish</a>
                 </div>
                 <div class="header__nav">
-                    <a href="#">works</a>
-                    <a href="#">about</a>
-                    <a id="headerNavLast" href="#">contact</a>
+                    <a id="headerWorkOpen">works</a>
+                    <a id="headerAboutOpen" class="active-page">about</a>
+                    <a id="headerContactOpen">contact</a>
+                </div>
+                <div id="headerCloseWork" class="header__work-close">
+
                 </div>
             </div>
         </div>
@@ -32,7 +35,7 @@
                         </div>
                     </div>
                     <div class="main__background">
-                        <img src="./img/3.jpeg" alt="background">
+                        <img  srcset="./img/bg/bg.jpeg 1x" alt="background">
                     </div>
                 </div>
                 <div class="main__about">
@@ -40,7 +43,7 @@
                         <span class="text-regular">Hello there, I call myself Natish.</span>
                     </div>
                     <div class="about__me animate__animated animate__fadeInRight wow">
-                        <img src="./img/1.jpg" alt="me">
+                        <img srcset="./img/about/1-min.jpg 1x" alt="me">
                     </div>
                     <div class="about__text1">
                         <span class="text-regular">It's me. Yeah, right here</span>
@@ -60,19 +63,19 @@
                         <div class="about__devider-body"></div>
                     </div>
                     <div class="about__picture about__picture1 animate__animated animate__fadeInUp animate__slow wow">
-                        <img src="./img/5.jpeg" alt="picture">
+                        <img srcset="./img/about/2-min.jpeg 1x" alt="picture">
                     </div>
                     <div class="about__text4 animate__animated animate__fadeIn wow">
                         <span class="text-counter">01</span>
                     </div>
                     <div class="about__picture about__picture2 animate__animated animate__fadeInUp animate__slow wow">
-                        <img  src="./img/6.jpg" alt="picture">
+                        <img srcset="./img/about/3-min.jpg 1x" alt="picture">
                     </div>
                     <div class="about__text5 animate__animated animate__fadeIn wow">
                         <span class="text-counter">02</span>
                     </div>
                     <div class="about__picture about__picture3 animate__animated animate__fadeInUp animate__slow wow">
-                        <img src="./img/7.jpg" alt="picture">
+                        <img srcset="./img/about/4-min.jpg 1x" alt="picture">
                     </div>
                     <div class="about__text6 animate__animated animate__fadeIn wow">
                         <span class="text-counter">03</span>
@@ -95,6 +98,7 @@
                     </div>
                 </div>
                 <div id="workMask" class="work__mask">
+                    
                 </div>
                 <div id="workWrapper" class="main__work work__wrapper-first">
                     <div id="workContent" class="work__content">
@@ -103,7 +107,7 @@
                                 <span class="text-regular">Welcome to natish's</span>
                             </div>
                             <div class="work__lable">
-                                <span class="text-regular photo-text">works</span>
+                                <span class="text-regular gradient-text">works</span>
                             </div>
                             <div class="work__second">
                                 <span class="text-regular">Scroll the page down to see more</span>
@@ -119,28 +123,28 @@
                         <div class="work__body">
                             <div class="work__body-pictures">
                                 <div class="work__picture">
-                                    <img src="./img/1.jpg" alt="picture 1">
+                                    <img src="./img/work/1-min.jpg" alt="picture 1">
                                 </div>
                                 <div class="work__picture">
-                                    <img src="./img/2.jpeg" alt="picture 2">
+                                    <img src="./img/work/2-min.jpeg" alt="picture 2">
                                 </div>
                                 <div class="work__picture">
-                                    <img src="./img/3.jpeg" alt="picture 3">
+                                    <img src="./img/work/3-min.jpeg" alt="picture 3">
                                 </div>
                                 <div class="work__picture">
-                                    <img src="./img/4.jpeg" alt="picture 4">
+                                    <img src="./img/work/4-min.jpeg" alt="picture 4">
                                 </div>
                                 <div class="work__picture">
-                                    <img src="./img/5.jpeg" alt="picture 5">
+                                    <img src="./img/work/5-min.jpeg" alt="picture 5">
                                 </div>
                                 <div class="work__picture">
-                                    <img class="picture-gray" src="./img/6.jpg" alt="picture 6">
+                                    <img class="picture-gray" src="./img/work/6-min.jpg" alt="picture 6">
                                 </div>
                                 <div class="work__picture">
-                                    <img class="picture-gray" src="./img/7.jpg" alt="picture 7">
+                                    <img class="picture-gray" src="./img/work/7-min.jpg" alt="picture 7">
                                 </div>
                                 <div class="work__picture">
-                                    <img class="picture-gray" src="./img/8.jpeg" alt="picture 8">
+                                    <img class="picture-gray" src="./img/work/8-min.jpeg" alt="picture 8">
                                 </div>
                             </div>
                             <div class="work__body-info">
@@ -165,6 +169,7 @@
     </div>
 
     <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/2.0.2/layzr.min.js"></script>
     <script src="js/wow.js"></script>
     <script>
         new WOW().init();

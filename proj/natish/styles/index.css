@@ -47,7 +47,7 @@
 :root{
     --font-main: 'La Nord Semi Light', sans-serif;
 
-    --font-other: 'Montserrat', sans-serif;
+    --font-large: 'La Nord Semi Light', sans-serif;
     --color-main: #f4f5f9;
 
     --headerLogo-spacing: -1px;
@@ -70,7 +70,11 @@ html{
     position: relative;
 }
 
-.body-off{
+.body-off-MAIN{
+    animation: bodyOverflow-on 100ms ease 2000ms 1 normal forwards;
+}
+
+.body-off-QUIZ{
     animation: bodyOverflow-on 100ms ease 7500ms 1 normal forwards;
 }
 
@@ -84,7 +88,8 @@ html{
     border-bottom: 5px dotted white;
 }
 
-.gradient-text{
+.gradient-text,
+.active-page{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
@@ -103,60 +108,6 @@ html{
     to {
         background-position:-200% 0
     }   
-}
-
-/*background: linear-gradient(90deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
-    background-repeat: repeat;
-    background-size: auto;
-    background-clip: border-box;
-    background-size: 500% 100%;
-    background-repeat: repeat;
-    animation: gradientText 10s linear infinite;
-    animation-direction: normal;
-    animation-direction: alternate;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-}
-
-@keyframes gradientText {
-    0% {background-position: 0%}
-    100% {background-position: 100%}
-}*/
-
-.photo-text{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: all 250ms ease;
-    animation: photoText-anim 2500ms ease 600ms infinite normal forwards;
-}
-
-@keyframes photoText-anim{
-    0%{
-        background-image: url(../img/1.jpg);
-    }
-    20%{
-        background-image: url(../img/2.jpeg);
-    }
-    40%{
-        background-image: url(../img/3.jpeg);
-    }
-    60%{
-        background-image: url(../img/4.jpeg);
-    }
-    80%{
-        background-image: url(../img/5.jpeg);
-    }
-    100%{
-        background-image: url(../img/6.jpg);
-        filter: grayscale(1);
-    }
 }
 
 .wrapper{
@@ -213,7 +164,7 @@ html{
 }
 
 .header__nav a{
-    transition: all 250ms ease;
+    transition: all 500ms ease;
     cursor: pointer;
     font-family: var(--font-main);
     font-size: 3.6rem;
@@ -253,9 +204,48 @@ html{
     background-image:linear-gradient(90deg,#d97d01,#01928f 40%,#01928f 50%,#9e81d2 60%,#d97d01 80%,#d97d01);
 }
 
+.header__nav a:last-of-type{
+    transition: all 500ms 500ms ease;
+}
+
 .header__nav-last{
     margin: 0 17px 0 4rem !important;
 }
+
+.header__work-close{
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(calc(-50% - 17px / 2));
+    width: 5rem;
+    height: 5rem;
+    background-image: url(../icons/close.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+    transition: all 500ms ease;
+}
+
+.header__work-close-on-MAIN{
+    display: block;
+    animation: headerWorkClose-on 500ms ease 2000ms 1 normal forwards;
+}
+
+.header__work-close-on-QUIZ{
+    display: block;
+    animation: headerWorkClose-on 500ms ease 7500ms 1 normal forwards;
+}
+
+@keyframes headerWorkClose-on{
+    100%{
+        opacity: 1;
+    }
+}
+
+/* WORK */
 
 .main{
     width: 100%;
@@ -672,17 +662,23 @@ html{
     left: 0;
     z-index: 99;
     transform: translateY(100%);
-    transition: all 1000ms ease-in 6000ms;
 }
 
 .main__work{
     background: var(--workBg-color);
+    transition: all 1000ms ease-in 1000ms;
+    overflow: hidden;
 }
 
-
-.work__wrapper-on{
+.work__wrapper-on-MAIN{
     transform: translateY(0%);
-    transition: all 1000ms ease-in 6500ms;
+    transition: transform 1000ms 1000ms ease;
+    animation: workOverflow-off 100ms ease 2000ms 1 normal forwards;
+}
+
+.work__wrapper-on-QUIZ{
+    transform: translateY(0%);
+    transition: transform 1000ms 6500ms ease;
     animation: workOverflow-off 100ms ease 7500ms 1 normal forwards;
 }
 
@@ -694,12 +690,25 @@ html{
 }
 
 .work__mask{
+    transition: all 1000ms ease-in 1500ms;
     background: var(--workMaskBg-color);
 }
 
-.work__mask-on{
+.work__mask-on-MAIN{
     transform: translateY(0%);
-    transition: all 1000ms ease-in 6000ms;
+    transition: transform 1000ms 500ms ease;
+}
+
+.work__mask-on-QUIZ{
+    transform: translateY(0%);
+    transition: transform 1000ms 6000ms ease;
+    /*animation: workMask-on 1000ms ease 6000ms 1 normal forwards;*/
+}
+
+@keyframes workMask-on{
+    100%{
+        transform: translateY(0%);
+    }
 }
 
 .work__content{
@@ -707,11 +716,25 @@ html{
     height: auto;
     margin: 0 auto;
     opacity: 0;
+    transition: opacity 500ms 500ms ease;
 }
 
-.work__content-on{
+.work__content-on-MAIN{
     opacity: 1;
-    transition: all 500ms ease-in 7500ms;
+    transition: opacity 500ms 2000ms ease;
+    /*animation: workCont-on 500ms ease 7500ms 1 normal forwards;*/
+}
+
+.work__content-on-QUIZ{
+    opacity: 1;
+    transition: opacity 500ms 7500ms ease;
+    /*animation: workCont-on 500ms ease 7500ms 1 normal forwards;*/
+}
+
+@keyframes workCont-on{
+    100%{
+        opacity: 1;
+    }
 }
 
 .work__start{
@@ -724,22 +747,12 @@ html{
     position: relative;
 }
 
-.work__first{
-    /*padding: 15rem 0 2.5rem 0;*/
-}
-
-
-.work__lable{
-}
-
 .work__lable .text-regular{
     font-size: 30rem;
     font-weight: 900;
     letter-spacing: var(--textLargeWorks-spacing);
+    font-family: var(--font-large);
     line-height: 1;
-}
-
-.work__second{
 }
 
 .work__second span{
@@ -765,6 +778,7 @@ html{
     grid-column: 1/-1;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
 }
 
 .work__picture{
