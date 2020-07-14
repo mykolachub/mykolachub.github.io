@@ -359,14 +359,23 @@ html{
 
 .footer__offer-letter{
     position: absolute;
-    top: 10px;
+    /*top: 10px;
     left: -13px;
-    font-size: 285px;
     font-family: var(--main);
     color: #f4f5f9;
     line-height: 1;
-    font-weight: bold;
+    font-weight: bold;*/
+    top: -2px;
+    left: -2px;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
     z-index: 2;
+}
+
+.footer__offer-letter img{
+    height: calc(100% + 2px);
+    object-fit: contain;
 }
 
 .footer__offer-diamond{
@@ -606,9 +615,9 @@ html{
         font-size: calc(14px + 8*(100vw / 1440));
     }
 
-    .footer__offer-letter{
+    /*.footer__offer-letter{
         font-size: calc(180px + 105*(100vw / 1440));
-    }
+    }*/
 
 }
 
@@ -645,9 +654,9 @@ html{
         font-size: calc(14px + (22 + 22 * 0.7)*((100vw - 320px) / 1440));
     }
 
-    .footer__offer-letter{
+    /*.footer__offer-letter{
         font-size: calc(180px + (105 + 105 * 0.7)*((100vw - 320px) / 1440));
-    }
+    }*/
 
     .footer__offer-text{
         font-size: calc(28px + (20 + 20 * 0.7)*((100vw - 320px) / 1440));
@@ -724,11 +733,11 @@ html{
 @media all and (max-width: 425px){}
 
 @media all and (max-width: 414px){
-    .footer__offer-letter{
+    /*.footer__offer-letter{
         font-size: 234px;
         top: 7px;
         left: -7px;
-    }
+    }*/
 
     .footer__offer-diamond{
         top: 1rem;
@@ -742,19 +751,19 @@ html{
 }
 
 @media all and (max-width: 375px){
-    .footer__offer-letter{
+    /*.footer__offer-letter{
         font-size: 210px;
         top: 6px;
         left: -6px;
-    }
+    }*/
 }
 
 @media all and (max-width: 320px){
-    .footer__offer-letter{
+    /*.footer__offer-letter{
         font-size: 200px;
         top: 4px;
         left: -9px;
-    }
+    }*/
 
     .footer__offer-label{
         bottom: 1rem;
