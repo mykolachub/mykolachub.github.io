@@ -6,54 +6,6 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400;500&display=swap');
-
-@font-face {
-    font-family: 'eUkraine Bold';
-    font-weight: 900;
-    src: url('../fonts/eUkraine/e-Ukraine-Bold.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/eUkraine/e-Ukraine-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Bold.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-    font-family: 'eUkraine Medium';
-    font-weight: 600;
-    src: url('../fonts/eUkraine/e-Ukraine-Medium.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/eUkraine/e-Ukraine-Medium.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Medium.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Medium.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-    font-family: 'eUkraine Regular';
-    font-weight: 400;
-    src: url('../fonts/eUkraine/e-Ukraine-Regular.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/eUkraine/e-Ukraine-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-    font-family: 'eUkraine Light';
-    font-weight: 300;
-    src: url('../fonts/eUkraine/e-Ukraine-Light.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/eUkraine/e-Ukraine-Light.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Light.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Light.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-    font-family: 'eUkraine Thin';
-    font-weight: 200;
-    src: url('../fonts/eUkraine/e-Ukraine-Thin.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/eUkraine/e-Ukraine-Thin.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Thin.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/eUkraine/e-Ukraine-Thin.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-
 body,
 html{
     width: 100%;
@@ -861,21 +813,21 @@ details > summary {
     .first__content-list{
         margin-bottom: 3rem;
     }
-}
 
-@media all and (max-width: 1024px){
-    .block__wrapper{
-        max-width: 768px;
+    .underline::after{
+        height: .5rem;
     }
 }
 
-@media all and (width: 1024px) and (height: 1366px){
+@media all and (max-width: 767px) and (orientation: portrait) /*(height: 1366px)*/{
     .block__wrapper{
         max-width: 768px;
     }
 
-    .first__wrapper{
+    .first__wrapper,
+    .first__block{
         height: auto;
+        min-height: auto;
     }
 
     .first__content{
@@ -892,6 +844,65 @@ details > summary {
     .first__content-colomn-text > .first__content-section{
         position: static;
     }
+ 
+}
 
-    
+@media all and (max-width: 1024px){
+    .block__wrapper{
+        max-width: 768px;
+    }
+
+    .block__content-text{
+        width: 100%;
+    }
+
+    h1{
+        font-size: 2.4rem;
+        line-height: 1;
+    }
+
+    h3, h4, .first__content-feature{
+        font-size: 1.4rem;
+    }
+
+    h2, h5{
+        font-size: 1.8rem;
+    }
+
+    .first__nav-a, .first__nav-btn{
+        font-size: 1.4rem;
+        padding: 0 1rem;
+    }
+
+    .first__content-li{
+        padding-left: 2.5rem
+    }
+
+    .first__content-li{
+        margin-right: 1rem;
+    }
+
+    .first__content-start, .fifth__content-start, .first__content-login{
+        font-size: 1.6rem;
+        height: 40px;
+        padding: 0 1rem
+    }
+
+    .block__content-illustration-padding, .block__content-section-padding, .fourth__content-colomn{
+        padding: 2rem;
+    }
+
+    .seventh__item{
+        padding: 1.5rem;
+    }
+
+    .seventh__logo-a{
+        font-size: 2.8rem;
+    }
+
+    .seventh__img-img{
+        width: 25px;
+        height: 25px;
+    }
+
 }
