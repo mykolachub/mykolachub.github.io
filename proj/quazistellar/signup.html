@@ -20,11 +20,14 @@
                     Создайте аккаунт <a class="form__headering-a" href="landing.html">Allquasars</a>
                 </div>
                 <div class="form__container">
+                    <!-- АРТИСТ / ЗАКАЗЧИК -->
                     <div class="form__type">
                         <button id="artistBtn" class="form__type-btn form__type-btn--clicked">Артист</button>
                         <button id="employerBtn" class="form__type-btn">Заказчик</button>
                     </div>
                     <span class="form__bio-text">Персональные данные</span>
+
+                    <!-- ИМЯ / ФАМИЛИЯ -->
                     <div class="form__bio">
                         <span id="nameWrapper" class="form__bio-wrap form__clue" data-placeholder="Имя">
                             <input id="inputName" class="form__bio-input" type="text" autocomplete="off" />
@@ -33,31 +36,56 @@
                             <input id="inputSurname" class="form__bio-input" type="text" autocomplete="off" />
                         </span>
                     </div>
+
+                    <!-- С ДНЕМ РОЖДЕНИЯ -->
                     <div class="form__age">
                         <span id="dateWrapper" class="form__age-wrap form__clue" data-placeholder="Дата рождения">
                             <input id="inputDate" class="form__age-input" type="date" name=""/>
                         </span>
                     </div>
                     <span class="form__bio-text">Системные данные</span>
+                    
+                    <!-- ПОЧТА -->
                     <div class="form__mail">
                         <span id="mailWrapper" class="form__mail-wrap form__clue" data-placeholder="Почта">
                             <input id="inputMail" class="form__mail-input" type="email"/>
                         </span>
                     </div>
+
+                    <!-- ПАРОЛЬ / ПОДТВЕРЖДЕНИЕ ПАРОЛЯ -->
                     <div class="form__password">
                         <span id="passwordWrapper" class="form__password-wrap form__clue" data-placeholder="Пароль">
                             <input id="inputPassword" class="form__password-input" type="password"  autocomplete="off"/>
                         </span>
-                        <span id="passwordcheckWrapper" class="form__password-wrap form__clue" data-placeholder="Подтвердите">
+                        <span id="passwordcheckWrapper" class="form__password-wrap form__clue" data-placeholder="Подтверждение">
                             <input id="inputPassworCheck" class="form__password-input" type="password"  autocomplete="off"/>
                         </span>
                     </div>
+
+                    <!-- УСЛОВИЯ -->
                     <div class="form__term">
                         <span id="termWrapper" class="form__term-wrap">
                             <input class="form__term-input" type="checkbox" name="" id="inputTerm">
                         </span>
                         <span class="form__term-message">
-                            Я соглашаюсь с правилами пользования.
+                            Я соглашаюсь с <a class="form__term-a" href="#">правилами</a> пользования.
+                        </span>
+                    </div>
+
+                    <!-- КАПЧА -->
+                    <div class="form__captcha">
+                        <span id="captchaWrapper" class="form__captcha-wrap">
+
+                        </span>
+                    </div>
+
+                    <!-- ВОЙТИ / РЕГИСТРАЦИЯ -->
+                    <div class="form__submit">
+                        <span class="form__submit-wrap">
+                            <a class="from__submit-a" href="#">Войти</a>
+                        </span>
+                        <span class="form__submit-wrap">
+                            <button id="buttonSubmit" class="from__submit-btn" type="submit">Продолжить</button>
                         </span>
                     </div>
                 </div>
