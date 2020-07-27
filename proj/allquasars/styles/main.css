@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html{
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    line-height: 1.25;
+}
