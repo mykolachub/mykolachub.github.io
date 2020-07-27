@@ -1,0 +1,302 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html{
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    line-height: 1.25;
+}
+
+:focus{
+    outline: none;
+}
+
+:root{
+    --font-eUkrBLD: 'eUkraine Bold', sans-serif;
+    --font-eUkrREG: 'eUkraine Regular', sans-serif;
+    --font-eUkrLGH: 'eUkraine Light', sans-serif;
+    --font-eUkrMED: 'eUkraine Medium', sans-serif;
+    --font-eUkrTIN: 'eUkraine Thin', sans-serif;
+
+    --font-Montserrat: 'Montserrat', sans-serif;
+    --font-Roboto: 'Roboto', sans-serif;
+}
+
+.page__wrapper{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: #f5f6fa;
+}
+
+/* wave*/
+
+.page__wave{
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.page__wave-top{
+    top: 0;
+}
+
+.page__wave-bottom{
+    bottom: 0;
+}
+
+.page__wave svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* form */
+
+.form{
+    max-width: 50rem;
+    width: calc(100% - 4rem);
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.form{
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 4rem 3rem;
+}
+
+.form__headering{
+    font-size: 2.2rem;
+    font-family: var(--font-eUkrREG);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.form__headering-a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid #fff;
+    transition: all 250ms ease;
+}
+
+.form__headering-a:focus{
+    border-bottom: 2px solid #37f644;
+}
+
+/* form__bio */
+
+.form__bio-text{
+    width: 100%;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-family: var(--font-eUkrLGH);
+    margin-bottom: 2rem;
+}
+
+.form__password,
+.form__submit,
+.form__mail{
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.form__password-wrap,
+.form__mail-wrap,
+.form__submit-wrap{
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.form__submit-wrap{
+    flex: 1;
+}
+
+.form__clue::after{
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    padding: 0 1rem 0 0.5rem;
+    font-size: 1.6rem;
+    font-family: var(--font-eUkrLGH);
+    width: auto;
+    transform: translateY(-50%);
+    z-index: 0;
+    transition: all 250ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.form__submit-wrap:first-of-type{
+    margin-right: 1rem;
+}
+
+.form__submit-wrap:last-of-type{
+    margin-left: 1rem;
+}
+
+
+/* при клике на инпут вкючается эта анимация */
+.form__clue--clicked::after{
+    top: 0;
+    color: #378ff6;
+    background: white;
+    z-index: 2;
+}
+
+.form__password-input,
+.form__mail-input{
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    font-family: var(--font-eUkrLGH);
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    transition: all 250ms ease;
+    cursor: pointer;
+    padding-left: 1rem;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+.form__password-input:focus,
+.form__mail-input:focus{
+    border: 2px solid #378ff6;
+}
+
+/* form__term */
+
+.form__term{
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-column-gap: 2rem;
+}
+
+.form__term-wrap{
+    width: 100%;
+    display: block;
+    height: 25px;
+    position: relative;
+}
+
+.form__term-input{
+    width: 100%;
+    height: 100%;
+    display: block;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    background: transparent;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    transition: all 250ms ease;
+}
+
+.form__term-input:focus{
+    border: 2px solid #378ff6;
+}
+
+.form__term-input:checked{
+    border: 2px solid #378ff6;
+    background-color: #378ff6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 375.147 375.147' style='enable-background:new 0 0 375.147 375.147;' xml:space='preserve' width='512px' height='512px'%3E%3Cpolygon points='344.96,44.48 119.147,270.293 30.187,181.333 0,211.52 119.147,330.667 375.147,74.667 ' data-original='%23000000' class='active-path' data-old_color='%23000000' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: calc(100% - 4px);
+    background-position: center;
+}
+
+.form__term-message{
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: var(--font-eUkrLGH);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.form__term-a{
+    color: #378ff6;
+    text-decoration: none;
+    margin: 0 .5rem;
+    border-bottom: 2px solid #fff;
+    transition: all 250ms ease;
+}
+
+.form__term-a:focus{
+    border-bottom: 2px solid #37f644;
+}
+
+/* submit */
+
+.form__submit{
+    margin-bottom: 0rem;
+}
+
+.from__submit-a{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    font-size: 1.6rem;
+    font-family: var(--font-eUkrLGH);
+    color: #378ff6;
+    text-decoration: none;
+    text-shadow: 0 6px 12px rgba(55,143,246, 0.25);
+    padding: .5rem;
+}
+
+.from__submit-a:focus{
+    border: 2px solid #37f644;
+    border-radius: 5px;
+}
+
+.from__submit-btn{
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    font-family: var(--font-eUkrLGH);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #378ff6;
+    background: #378ff6;
+    color: white;
+    box-shadow: 0 6px 12px rgba(55,143,246, 0.25);
+    transition: all 250ms ease;
+}
+
+.from__submit-btn:focus{
+    border: 3px solid #37f644;
+}
+
+.from__submit-btn:hover{
+    box-shadow: none;
+}

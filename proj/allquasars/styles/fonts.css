@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400;500&display=swap');
+
+@font-face {
+    font-family: 'eUkraine Bold';
+    font-weight: 900;
+    src: url('../fonts/eUkraine/e-Ukraine-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/eUkraine/e-Ukraine-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'eUkraine Medium';
+    font-weight: 600;
+    src: url('../fonts/eUkraine/e-Ukraine-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/eUkraine/e-Ukraine-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Medium.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'eUkraine Regular';
+    font-weight: 400;
+    src: url('../fonts/eUkraine/e-Ukraine-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/eUkraine/e-Ukraine-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'eUkraine Light';
+    font-weight: 300;
+    src: url('../fonts/eUkraine/e-Ukraine-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/eUkraine/e-Ukraine-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Light.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'eUkraine Thin';
+    font-weight: 200;
+    src: url('../fonts/eUkraine/e-Ukraine-Thin.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/eUkraine/e-Ukraine-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Thin.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/eUkraine/e-Ukraine-Thin.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
